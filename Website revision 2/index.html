@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Construction Arbitration Centre Asia Pacific | CACAP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1B2A;--navy-mid:#1B2D45;--navy-light:#243B55;--gold:#C8A45E;--gold-light:#D4B876;--gold-pale:#F5EDD6;--cream:#FAFAF7;--white:#FFFFFF;--text:#2C2C2C;--text-light:#6B6B6B;--border:#E0DDD5;--hf:'Cormorant Garamond',Georgia,serif;--bf:'Source Sans 3','Segoe UI',sans-serif;--mw:1200px;--tr:0.3s cubic-bezier(0.4,0,0.2,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--bf);font-size:16px;line-height:1.7;color:var(--text);background:var(--cream);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+/* HEADER */
+.site-header{background:var(--navy);position:sticky;top:0;z-index:1000;box-shadow:0 2px 20px rgba(0,0,0,.15)}
+.header-top{display:flex;align-items:center;justify-content:space-between;max-width:var(--mw);margin:0 auto;padding:12px 24px}
+.logo-area{display:flex;align-items:center;gap:16px;cursor:pointer}
+.logo-text{color:var(--white);font-family:var(--hf);font-size:15px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;line-height:1.3}
+.logo-text span{display:block;color:var(--gold);font-size:11px;letter-spacing:2.5px;font-weight:400}
+.btn-nom{background:var(--gold);color:var(--navy);padding:8px 20px;border:none;font-family:var(--bf);font-size:13px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;cursor:pointer;transition:var(--tr)}
+.btn-nom:hover{background:var(--gold-light)}
+
+/* NAV */
+.main-nav{background:var(--navy-mid);border-top:1px solid rgba(255,255,255,.08)}
+.nav-inner{max-width:var(--mw);margin:0 auto;padding:0 24px;display:flex;overflow-x:auto}
+.nav-item{position:relative}
+.nav-link{display:block;padding:14px 18px;color:rgba(255,255,255,.85);font-size:13px;font-weight:500;letter-spacing:.8px;text-transform:uppercase;transition:var(--tr);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap}
+.nav-link:hover,.nav-link.active{color:var(--gold);border-bottom-color:var(--gold)}
+.nav-dropdown{display:none;position:absolute;top:100%;left:0;background:var(--navy);min-width:260px;box-shadow:0 8px 30px rgba(0,0,0,.3);z-index:100;border-top:2px solid var(--gold)}
+.nav-item:hover .nav-dropdown{display:block}
+.nav-dropdown a{display:block;padding:11px 20px;color:rgba(255,255,255,.8);font-size:13px;transition:var(--tr);border-bottom:1px solid rgba(255,255,255,.05);cursor:pointer}
+.nav-dropdown a:hover{background:var(--navy-light);color:var(--gold);padding-left:26px}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 50%,var(--navy-light) 100%);padding:80px 24px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 30% 50%,rgba(200,164,94,.06) 0%,transparent 60%);pointer-events:none}
+.hero-content{position:relative;max-width:800px;margin:0 auto}
+.hero h1{font-family:var(--hf);font-size:clamp(30px,5vw,50px);font-weight:600;color:var(--white);line-height:1.2;margin-bottom:16px}
+.hero h1 .gold{color:var(--gold)}
+.hero p{color:rgba(255,255,255,.7);font-size:18px;font-weight:300;max-width:600px;margin:0 auto 32px;line-height:1.6}
+.hero-sm{padding:56px 24px}
+.hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-p{background:var(--gold);color:var(--navy);padding:14px 32px;border:none;font-family:var(--bf);font-size:14px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;cursor:pointer;transition:var(--tr);display:inline-block;text-align:center}
+.btn-p:hover{background:var(--gold-light);transform:translateY(-1px)}
+.btn-o{background:transparent;color:var(--white);padding:14px 32px;border:1px solid rgba(255,255,255,.3);font-family:var(--bf);font-size:14px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;cursor:pointer;transition:var(--tr);display:inline-block}
+.btn-o:hover{border-color:var(--gold);color:var(--gold)}
+.btn-dark{background:var(--navy);color:var(--white);padding:14px 32px;border:none;font-family:var(--bf);font-size:14px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;cursor:pointer;transition:var(--tr);display:inline-block}
+.btn-dark:hover{background:var(--navy-light)}
+.btn-ghost{background:transparent;color:var(--navy);padding:14px 32px;border:1px solid var(--navy);font-family:var(--bf);font-size:14px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;cursor:pointer;transition:var(--tr);display:inline-block}
+.btn-ghost:hover{background:var(--navy);color:var(--white)}
+
+/* SECTIONS */
+.section{padding:72px 24px}
+.section-inner{max-width:var(--mw);margin:0 auto}
+.section-dark{background:var(--navy);color:var(--white)}
+.section-light{background:var(--white)}
+.section-title{font-family:var(--hf);font-size:clamp(26px,4vw,38px);font-weight:600;color:var(--navy);margin-bottom:8px;line-height:1.2}
+.section-dark .section-title{color:var(--white)}
+.section-sub{color:var(--gold);font-size:13px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:12px}
+.section-intro{color:var(--text-light);font-size:17px;max-width:700px;margin-bottom:40px;line-height:1.7}
+.section-dark .section-intro{color:rgba(255,255,255,.65)}
+.gold-line{width:60px;height:2px;background:var(--gold);margin:20px 0 28px}
+
+/* CARDS */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+.card{background:var(--white);border:1px solid var(--border);padding:36px 28px;transition:var(--tr);position:relative}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:var(--tr)}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
+.card:hover::before{transform:scaleX(1)}
+.card-icon{width:48px;height:48px;background:var(--gold-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:20px;color:var(--gold)}
+.card h3{font-family:var(--hf);font-size:22px;font-weight:600;color:var(--navy);margin-bottom:12px}
+.card p{color:var(--text-light);font-size:15px;line-height:1.7;margin-bottom:16px}
+.card-link{color:var(--gold);font-size:13px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;transition:var(--tr);cursor:pointer}
+.card-link:hover{color:var(--navy)}
+.card-link::after{content:' \2192'}
+
+/* SERVICE DETAIL PAGE */
+.svc-content{max-width:860px}
+.svc-content h2{font-family:var(--hf);font-size:28px;font-weight:600;color:var(--navy);margin:40px 0 16px}
+.svc-content p{color:var(--text-light);font-size:15.5px;line-height:1.8;margin-bottom:16px}
+.svc-content ul{padding-left:20px;margin-bottom:24px}
+.svc-content li{color:var(--text-light);font-size:15px;line-height:1.8;margin-bottom:8px}
+.svc-content li strong{color:var(--navy)}
+.svc-back{color:var(--gold);font-size:13px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;cursor:pointer;display:inline-block;margin-top:32px;transition:var(--tr)}
+.svc-back:hover{color:var(--navy)}
+.svc-back::before{content:'\2190 '}
+.svc-cta{background:var(--navy);padding:32px;margin-top:40px;text-align:center}
+.svc-cta p{color:rgba(255,255,255,.8);font-size:15px;margin-bottom:16px}
+
+/* ACCREDITATION */
+.accred-disciplines{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:40px}
+.accred-card{background:var(--white);border:1px solid var(--border);padding:28px 24px;transition:var(--tr)}
+.accred-card:hover{border-color:var(--gold)}
+.accred-card h4{font-family:var(--hf);font-size:20px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.accred-card .designation{color:var(--gold);font-size:13px;font-weight:600;font-style:italic;margin-bottom:12px}
+.accred-card p{color:var(--text-light);font-size:14px;line-height:1.65}
+.accred-badge{display:inline-block;background:var(--gold-pale);color:var(--gold);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;margin-bottom:16px}
+
+/* TABLE */
+.panel-table{width:100%;border-collapse:collapse;margin-top:32px}
+.panel-table th{background:var(--navy);color:var(--white);padding:14px 20px;text-align:left;font-size:13px;font-weight:600;letter-spacing:.5px;text-transform:uppercase}
+.panel-table td{padding:14px 20px;border-bottom:1px solid var(--border);font-size:15px}
+.panel-table tr:nth-child(even) td{background:#F9F9F6}
+.designation-cell{color:var(--gold);font-weight:600;font-style:italic}
+
+/* BOARD */
+.board-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-top:40px}
+.board-member{text-align:center;padding:24px 16px;background:var(--white);border:1px solid var(--border)}
+.board-avatar{width:80px;height:80px;border-radius:50%;background:var(--navy-light);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:var(--hf);font-size:24px;font-weight:700}
+.board-member h4{font-family:var(--hf);font-size:17px;font-weight:600;color:var(--navy);margin-bottom:4px}
+.board-member .role{color:var(--gold);font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase}
+
+/* MEMBERSHIP */
+.mem-cats{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 40px}
+.mem-cat{background:var(--navy);color:var(--gold);padding:8px 20px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase}
+.steps-list{counter-reset:steps;list-style:none;max-width:700px}
+.steps-list li{counter-increment:steps;padding:16px 0 16px 64px;position:relative;border-bottom:1px solid var(--border);font-size:15px}
+.steps-list li::before{content:counter(steps);position:absolute;left:0;top:16px;width:40px;height:40px;background:var(--gold-pale);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--hf);font-size:18px;font-weight:700}
+.steps-list li strong{color:var(--navy)}
+
+/* RULES TABS */
+.rules-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 32px}
+.rules-tab{background:var(--gold-pale);color:var(--navy);padding:10px 20px;font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;cursor:pointer;transition:var(--tr);border:2px solid transparent}
+.rules-tab:hover,.rules-tab.active{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.rules-panel{display:none}
+.rules-panel.active{display:block}
+.rules-panel h3{font-family:var(--hf);font-size:24px;font-weight:600;color:var(--navy);margin-bottom:16px}
+.rules-step{padding:16px 0;border-bottom:1px solid var(--border)}
+.rules-step strong{color:var(--navy);font-size:15px;display:block;margin-bottom:4px}
+.rules-step p{color:var(--text-light);font-size:14px;line-height:1.65}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--border);padding:24px 0}
+.faq-q{font-family:var(--hf);font-size:20px;font-weight:600;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';color:var(--gold);font-size:24px;font-weight:300;transition:var(--tr)}
+.faq-item.open .faq-q::after{content:'\2212'}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;color:var(--text-light);font-size:15px;line-height:1.7}
+.faq-item.open .faq-a{max-height:200px;padding-top:12px}
+.faq-link{color:var(--gold);font-size:13px;font-weight:600;cursor:pointer}
+
+/* CONTACT / FORMS */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.contact-info h3{font-family:var(--hf);font-size:24px;font-weight:600;color:var(--navy);margin-bottom:20px}
+.contact-detail{margin-bottom:16px;font-size:15px;color:var(--text-light)}
+.contact-detail strong{color:var(--navy);display:block;margin-bottom:4px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:1px solid var(--border);font-family:var(--bf);font-size:15px;margin-bottom:16px;background:var(--white);transition:var(--tr)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--gold)}
+.form-group textarea{height:120px;resize:vertical}
+.form-group label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px;letter-spacing:.3px}
+.form-check{display:flex;align-items:flex-start;gap:8px;margin-bottom:12px;font-size:14px;color:var(--text-light)}
+.form-check input{margin-top:4px}
+
+/* IP NOTICE */
+.ip-notice{background:var(--gold-pale);border-left:4px solid var(--gold);padding:20px 24px;margin-top:40px;font-size:14px;color:var(--text-light);line-height:1.65}
+.ip-notice strong{color:var(--navy)}
+
+/* TERMS LIST */
+.terms-list{list-style:none;counter-reset:terms;margin-top:24px}
+.terms-list li{counter-increment:terms;padding:16px 0 16px 48px;position:relative;border-bottom:1px solid var(--border);font-size:15px;line-height:1.7}
+.terms-list li::before{content:counter(terms)".";position:absolute;left:0;top:16px;color:var(--gold);font-family:var(--hf);font-size:20px;font-weight:700}
+.terms-list li strong{color:var(--navy)}
+
+/* ADMIN LIST */
+.admin-list{counter-reset:admin;list-style:none;margin:24px 0}
+.admin-item{counter-increment:admin;margin-bottom:24px}
+.admin-item h4{font-family:var(--hf);font-size:20px;font-weight:600;color:var(--navy);margin-bottom:8px}
+.admin-item h4::before{content:counter(admin)". ";color:var(--gold)}
+.admin-item p,.admin-item li{color:var(--text-light);font-size:15px;line-height:1.7}
+.admin-item ul{padding-left:20px;margin-top:8px}
+
+/* FOOTER */
+.site-footer{background:var(--navy);color:rgba(255,255,255,.6);padding:60px 24px 24px}
+.footer-inner{max-width:var(--mw);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-col h4{color:var(--gold);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.footer-col a{display:block;color:rgba(255,255,255,.6);font-size:14px;padding:4px 0;transition:var(--tr);cursor:pointer}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{max-width:var(--mw);margin:0 auto;padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:13px}
+.footer-bottom a{color:var(--gold);cursor:pointer}
+
+/* PAGE VISIBILITY */
+.page{display:none}.page.active{display:block}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .footer-inner{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .nav-inner{overflow-x:auto}
+  .header-top{flex-direction:column;gap:12px}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+  .hero{padding:48px 24px}
+  .cards-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-top">
+    <div class="logo-area" onclick="showPage('home')">
+      <div class="logo-text">Construction Arbitration<br>Centre Asia Pacific<span>CACAP</span></div>
+    </div>
+    <div><a class="btn-nom" onclick="showPage('nomination-request')">Nomination Request</a></div>
+  </div>
+  <nav class="main-nav">
+    <div class="nav-inner">
+      <div class="nav-item"><a class="nav-link" onclick="showPage('home')" id="nav-home">Home</a></div>
+      <div class="nav-item">
+        <a class="nav-link" onclick="showPage('about')" id="nav-about">About</a>
+        <div class="nav-dropdown">
+          <a onclick="showPage('about')">Board of Directors</a>
+          <a onclick="showPage('rules')">Rules &amp; Process</a>
+          <a onclick="showPage('faqs')">FAQs</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" onclick="showPage('services')" id="nav-services">Services</a>
+        <div class="nav-dropdown">
+          <a onclick="showPage('arbitration')">Arbitration</a>
+          <a onclick="showPage('mediation')">Mediation</a>
+          <a onclick="showPage('expert-determination')">Expert Determination</a>
+          <a onclick="showPage('expert-witness')">Expert Witness</a>
+          <a onclick="showPage('dispute-boards')">Dispute Boards</a>
+          <a onclick="showPage('adjudication')">Adjudication</a>
+          <a onclick="showPage('nomination')">Nomination</a>
+          <a onclick="showPage('admin-services')">Dispute Resolution Administration</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" onclick="showPage('accreditation')" id="nav-accreditation" style="color:var(--gold)">Accreditation</a>
+        <div class="nav-dropdown">
+          <a onclick="showPage('accreditation')">Accreditation Scheme</a>
+          <a onclick="showPage('panels')">Accredited Panels</a>
+          <a onclick="showPage('training')">Training Courses</a>
+          <a onclick="showPage('register')">Register Interest</a>
+          <a onclick="showPage('scheme-terms')">Scheme Terms</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" onclick="showPage('membership')" id="nav-membership">Membership</a>
+        <div class="nav-dropdown">
+          <a onclick="showPage('membership')">Join CACAP</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" onclick="showPage('contact')" id="nav-contact">Contact</a></div>
+    </div>
+  </nav>
+</header>
+
+<!-- ========== HOME ========== -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Specialist Dispute Resolution<br>for <span class="gold">Construction &amp; Infrastructure</span></h1>
+      <p>The premier appointing authority for arbitration, mediation, expert determination, dispute boards, and professional accreditation across the Asia Pacific region.</p>
+      <div class="hero-buttons">
+        <a class="btn-p" onclick="showPage('services')">Our Services</a>
+        <a class="btn-o" onclick="showPage('accreditation')">Accreditation &amp; Panels</a>
+        <a class="btn-o" onclick="showPage('membership')">Join CACAP</a>
+      </div>
+    </div>
+  </section>
+  <section class="section section-light">
+    <div class="section-inner">
+      <div class="section-sub">Why CACAP</div>
+      <h2 class="section-title">Independent. Specialist. Asia Pacific.</h2>
+      <div class="gold-line"></div>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">&#9878;</div>
+          <h3>Expert Appointments</h3>
+          <p>CACAP maintains a distinguished panel of arbitrators, mediators, expert determiners, adjudicators, and dispute board members with extensive experience in complex commercial disputes across the Asia Pacific region.</p>
+          <a class="card-link" onclick="showPage('services')">View Services</a>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#9733;</div>
+          <h3>Professional Accreditation</h3>
+          <p>Achieve recognised accreditation in dispute resolution through CACAP training courses. Accredited practitioners are eligible for inclusion on our panels of qualified neutrals across five disciplines.</p>
+          <a class="card-link" onclick="showPage('accreditation')">Accreditation Scheme</a>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#9881;</div>
+          <h3>Efficient Process</h3>
+          <p>Our appointment procedures are published and applied consistently. We facilitate the timely selection of independent and impartial neutrals who possess the requisite expertise for each dispute.</p>
+          <a class="card-link" onclick="showPage('rules')">Rules &amp; Process</a>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#9782;</div>
+          <h3>Regional Focus</h3>
+          <p>Established to meet the growing demand for specialised dispute resolution in the Asia Pacific region, CACAP offers services tailored to construction and infrastructure projects across the region.</p>
+          <a class="card-link" onclick="showPage('about')">About CACAP</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ========== SERVICES OVERVIEW ========== -->
+<div class="page" id="page-services">
+  <section class="hero hero-sm"><div class="hero-content"><h1>Dispute Resolution <span class="gold">Services</span></h1><p>Comprehensive dispute resolution services for construction and infrastructure across the Asia Pacific region.</p></div></section>
+  <section class="section section-light">
+    <div class="section-inner">
+      <div class="section-sub">Our Services</div>
+      <h2 class="section-title">Dispute Resolution Services</h2>
+      <div class="gold-line"></div>
+      <div class="cards-grid">
+        <div class="card"><div class="card-icon">&#9878;</div><h3>Arbitration</h3><p>Providing expert, independent arbitrator appointments for confidential and binding dispute resolution in construction and infrastructure.</p><a class="card-link" onclick="showPage('arbitration')">View More</a></div>
+        <div class="card"><div class="card-icon">&#9734;</div><h3>Mediation</h3><p>Appointing independent mediators to assist parties in resolving construction and infrastructure disputes through confidential, voluntary negotiation.</p><a class="card-link" onclick="showPage('mediation')">View More</a></div>
+        <div class="card"><div class="card-icon">&#9873;</div><h3>Expert Determination</h3><p>Experts apply their specialised knowledge to assess disputes and issue determinations that are often final and binding.</p><a class="card-link" onclick="showPage('expert-determination')">View More</a></div>
+        <div class="card"><div class="card-icon">&#9874;</div><h3>Expert Witness</h3><p>Independent expert witnesses provide specialised knowledge and impartial opinions to assist tribunals or courts, while conducting their work entirely independently.</p><a class="card-link" onclick="showPage('expert-witness')">View More</a></div>
+        <div class="card"><div class="card-icon">&#9782;</div><h3>Dispute Boards</h3><p>Independent dispute boards provide expert guidance and, where agreed, render recommendations or decisions during complex construction and infrastructure projects.</p><a class="card-link" onclick="showPage('dispute-boards')">View More</a></div>
+        <div class="card"><div class="card-icon">&#9883;</div><h3>Adjudication</h3><p>Appointing qualified adjudicators for the rapid assessment of claims and the preparation of enforceable decisions under statutory and contractual adjudication procedures.</p><a class="card-link" onclick="showPage('adjudication')">View More</a></div>
+        <div class="card"><div class="card-icon">&#9872;</div><h3>Nomination</h3><p>Nomination ensures the appointment of qualified, independent neutrals to resolve construction and infrastructure disputes efficiently and impartially.</p><a class="card-link" onclick="showPage('nomination')">Submit Request</a></div>
+        <div class="card"><div class="card-icon">&#9881;</div><h3>Dispute Resolution Administration</h3><p>Limited administrative support services for arbitration, expert determination, and dispute resolution proceedings where parties have agreed to engage such services.</p><a class="card-link" onclick="showPage('admin-services')">View More</a></div>
+      </div>
+      <div class="svc-cta"><p>CACAP also offers professional accreditation for qualified dispute resolution practitioners.</p><a class="btn-p" onclick="showPage('accreditation')">View the Accreditation Scheme</a></div>
+    </div>
+  </section>
+</div>
+
+<!-- ========== ARBITRATION ========== -->
+<div class="page" id="page-arbitration">
+  <section class="hero hero-sm"><div class="hero-content"><h1>Arbitration <span class="gold">Services</span></h1></div></section>
+  <section class="section section-light">
+    <div class="section-inner svc-content">
+      <div class="section-sub">Arbitration</div>
+      <h2 class="section-title">Arbitration</h2>
+      <div class="gold-line"></div>
+      <p>Arbitration provides a binding method of resolving disputes outside traditional court litigation. In arbitration, parties agree to submit their dispute to a neutral third party (the arbitrator or arbitral tribunal), who considers the evidence and submissions of both sides and issues a binding and enforceable award.</p>
+  <p>Arbitration is confidential, flexible, and commonly used in construction, infrastructure, commercial, and contractual disputes.</p>
+  <p>The Construction Arbitration Centre (Asia Pacific) serves as an appointing authority for arbitrators in construction and infrastructure disputes throughout the Asia Pacific region. Where parties are unable to agree on the appointment of an arbitrator, or where their contract designates CACAP as the appointing authority, the Centre facilitates the nomination and appointment of qualified, independent, and impartial arbitrators in accordance with its appointment procedures.</p>
+  <p>The Centre maintains a panel of experienced arbitrators with expertise in construction law, engineering, quantity surveying, project management, and related technical disciplines. The appointment process includes review of qualifications, conflict checking, and assessment of availability to ensure that appointed arbitrators possess the requisite expertise and independence for each dispute.</p>
+  <p>Once an arbitrator or tribunal is appointed, the arbitration proceeds independently in accordance with the arbitration rules agreed by the parties, whether institutional rules (such as UNCITRAL, ICC, SIAC, HKIAC, or other recognised rules) or ad hoc procedures. The Centre does not administer arbitration proceedings, provide case management, coordinate communications, or participate in the conduct or substance of the arbitration. All procedural matters, hearings, and determinations are conducted directly between the parties and the appointed tribunal.</p>
+  <p>The Centre’s role is limited to the appointment function and, where applicable, determination of challenges to arbitrators, replacement of arbitrators, or resolution of disputes concerning arbitrator fees in accordance with its rules.</p>
+      <h2>Key Features</h2>
+      <ul><li>Impartial and independent arbitrators with specialised knowledge.</li>
+<li>Flexible procedures tailored to the needs of each dispute.</li>
+<li>Confidential proceedings to protect sensitive commercial information.</li>
+<li>Enforceable awards recognised internationally under the New York Convention.</li></ul>
+      <h2>Process</h2>
+      <p>CACAP’s appointment process is designed to facilitate the selection of qualified and independent arbitrators for construction and infrastructure disputes. The process commences when parties submit a request for the appointment of an arbitrator or arbitral tribunal to the Centre. The request should include details of the dispute, the required expertise, any agreed qualifications or selection criteria, and disclosure of any potential conflicts of interest.</p>
+  <p>The Centre reviews its panel to identify candidates whose qualifications and experience match the requirements of the dispute. Conflict checks are conducted to ensure independence and impartiality. The Centre then proposes suitable candidates to the parties for their consideration and agreement, or, where authorised to act as appointing authority, directly appoints the arbitrator or tribunal.</p>
+  <p>Upon appointment, the Centre issues formal confirmation, and the arbitrator or tribunal assumes responsibility for the conduct of the arbitration. The tribunal issues its binding award directly to the parties. Arbitral awards are recognised and enforceable internationally under the New York Convention on the Recognition and Enforcement of Foreign Arbitral Awards.</p>
+      <h2>Why Choose CACAP for Arbitration?</h2>
+      <ul>
+    <li><strong>Specialist Expertise</strong> – Access to a panel of arbitrators with demonstrated expertise in construction law, engineering, quantity surveying, project management, and related technical disciplines.</li>
+    <li><strong>Independence and Impartiality</strong> – Rigorous conflict-checking processes to ensure the appointment of independent and impartial arbitrators.</li>
+    <li><strong>Efficient Appointment Process</strong> – Appointments conducted in a timely and transparent manner in accordance with the Centre’s procedures.</li>
+    <li><strong>Internationally Recognised</strong> – Awards enforceable internationally under the New York Convention.</li>
+    <li><strong>Professional Standards</strong> – Panel members maintain the highest standards of professional conduct, independence, and ethical practice.</li>
+  </ul>
+      <div class="svc-cta">
+        <p>For further information, please contact the Centre.</p>
+        <a class="btn-p" onclick="showPage('contact')">Contact Us</a>
+      </div>
+      <a class="svc-back" onclick="showPage('services')">Back to Services</a>
+    </div>
+  </section>
+</div>
+<!-- ========== MEDIATION ========== -->
+<div class="page" id="page-mediation">
+  <section class="hero hero-sm"><div class="hero-content"><h1>Mediation <span class="gold">Services</span></h1></div></section>
+  <section class="section section-light">
+    <div class="section-inner svc-content">
+      <div class="section-sub">Mediation</div>
+      <h2 class="section-title">Mediation</h2>
+      <div class="gold-line"></div>
+      <p>Mediation is a structured, confidential, and voluntary process in which disputing parties seek to resolve their conflict with the assistance of a neutral and independent third party, known as a mediator. The mediator facilitates dialogue, assists parties in identifying issues, exploring options, and supports the parties in reaching a mutually acceptable settlement agreement.</p>
+  <p>Mediation is non-adjudicative—the mediator does not impose a decision, determine rights, or make binding determinations. The outcome is determined by the parties themselves through negotiation and agreement.</p>
+  <p>The Construction Arbitration Centre (Asia Pacific) serves as an appointing authority for mediators in construction and infrastructure disputes throughout the Asia Pacific region. Where parties seek assistance in appointing a mediator, or where their contract designates CACAP as the appointing authority, the Centre facilitates the nomination and appointment of qualified, independent, and impartial mediators in accordance with its appointment procedures.</p>
+  <p>The Centre maintains a panel of experienced mediators with expertise in construction disputes, contract negotiation, and facilitation techniques. Once a mediator is appointed, the mediation proceeds independently in accordance with the mediation rules or procedures agreed by the parties. The Centre does not administer mediation proceedings, provide case management, coordinate scheduling or communications, or participate in the conduct or substance of the mediation.</p>
+      <h2>Key Features</h2>
+      <ul><li>Neutral and skilled mediators with industry expertise.</li>
+<li>Confidential process to protect sensitive information.</li>
+<li>Flexible and cost-effective compared to litigation or arbitration.</li>
+<li>Focus on maintaining commercial relationships.</li></ul>
+      <h2>Process</h2>
+      <p>The process commences when parties submit a request for the appointment of a mediator to the Centre. The Centre reviews its panel to identify candidates whose qualifications and mediation experience match the requirements of the dispute. Conflict checks are conducted to ensure independence and impartiality.</p>
+  <p>Upon appointment, the mediator assumes responsibility for the conduct of the mediation. All procedural arrangements, including scheduling of joint meetings and private sessions, facilitation of discussions, and exploration of settlement options, are managed directly between the parties and the appointed mediator.</p>
+  <p>If the parties reach agreement, they prepare and execute a settlement agreement. If settlement is not reached, the mediation concludes without determination, and parties may pursue other dispute resolution options.</p>
+      <h2>Why Choose CACAP for Mediation?</h2>
+      <ul>
+    <li><strong>Specialist Mediators</strong> – Access to a panel with demonstrated expertise in construction disputes, contract negotiation, and facilitation of complex multi-party matters.</li>
+    <li><strong>Independence and Impartiality</strong> – Rigorous conflict-checking processes.</li>
+    <li><strong>Confidentiality</strong> – Mediators maintain confidentiality in accordance with professional standards.</li>
+    <li><strong>Party Control</strong> – Mediation preserves party autonomy and control over outcomes.</li>
+    <li><strong>Professional Standards</strong> – Panel members maintain the highest standards of professional conduct.</li>
+  </ul>
+      <div class="svc-cta">
+        <p>For further information, please contact the Centre.</p>
+        <a class="btn-p" onclick="showPage('contact')">Contact Us</a>
+      </div>
+      <a class="svc-back" onclick="showPage('services')">Back to Services</a>
+    </div>
+  </section>
+</div>
+<!-- ========== EXPERT DETERMINATION ========== -->
+<div class="page" id="page-expert-determination">
+  <section class="hero hero-sm"><div class="hero-content"><h1>Expert Determination <span class="gold">Services</span></h1></div></section>
+  <section class="section section-light">
+    <div class="section-inner svc-content">
+      <div class="section-sub">Expert Determination</div>
+      <h2 class="section-title">Expert Determination</h2>
+      <div class="gold-line"></div>
+      <p>Expert determination is a private, contract-based method of dispute resolution in which the parties appoint a neutral expert with specialised knowledge in a particular field to decide a dispute, typically of a technical or valuation-related nature. Unlike arbitration or mediation, the expert’s role is to apply their professional expertise to assess the matter and render a determination, which is often final and binding, depending on the agreement between the parties.</p>
+  <p>This process is particularly suited to disputes involving complex technical issues, such as those arising in construction, engineering, quantity surveying, programming and delay analysis, defects assessment, valuation, and contract interpretation.</p>
+  <p>The Construction Arbitration Centre (Asia Pacific) serves as an appointing authority for expert determiners in construction and infrastructure disputes throughout the Asia Pacific region. The Centre maintains a panel of experts in specialised areas including structural engineering, civil engineering, mechanical and electrical engineering, quantity surveying, project management, programming and delay analysis, defects assessment, and construction law.</p>
+      <h2>Key Features</h2>
+      <ul><li>Access to a panel of expert determiners with specialised technical knowledge.</li>
+<li>Independent and impartial appointment process, including rigorous conflict checking.</li>
+<li>Determinations are typically binding and final, subject to the terms of the parties’ agreement.</li>
+<li>Expert determination proceedings are confidential.</li>
+<li>Efficient appointment process conducted in accordance with the Centre’s procedures.</li></ul>
+      <h2>Process</h2>
+      <p>The process commences when parties submit a request for the appointment of an expert determiner to the Centre. The request should include details of the dispute, the technical or contractual issues requiring determination, the required area of expertise, any agreed qualifications, and disclosure of any potential conflicts of interest.</p>
+  <p>The Centre reviews its panel to identify candidates whose technical qualifications and professional experience match the specific requirements of the dispute. Upon appointment, the expert determiner assumes responsibility for all procedural matters, including establishing the procedure, requesting submissions and documentation, conducting investigations or site inspections, and preparing the determination.</p>
+  <p>The expert issues their determination directly to the parties. Determinations are typically binding and final, subject to the terms of the parties’ agreement.</p>
+      <h2>Why Choose CACAP for Expert Determination?</h2>
+      <ul>
+    <li><strong>Specialist Technical Expertise</strong> – Expertise in structural, civil, mechanical and electrical engineering, quantity surveying, project management, programming, delay analysis, defects assessment, and construction law.</li>
+    <li><strong>Technical Suitability</strong> – Expert determiners selected based on specific technical qualifications relevant to the issues in dispute.</li>
+    <li><strong>Binding Determinations</strong> – Providing certainty and finality for technical disputes.</li>
+    <li><strong>Professional Standards</strong> – Panel members maintain the highest standards of professional conduct.</li>
+  </ul>
+      <div class="svc-cta">
+        <p>For further information, please contact the Centre.</p>
+        <a class="btn-p" onclick="showPage('contact')">Contact Us</a>
+      </div>
+      <a class="svc-back" onclick="showPage('services')">Back to Services</a>
+    </div>
+  </section>
+</div>
+<!-- ========== EXPERT WITNESS ========== -->
+<div class="page" id="page-expert-witness">
+  <section class="hero hero-sm"><div class="hero-content"><h1>Expert Witness <span class="gold">Services</span></h1></div></section>
+  <section class="section section-light">
+    <div class="section-inner svc-content">
+      <div class="section-sub">Expert Witness</div>
+      <h2 class="section-title">Expert Witness</h2>
+      <div class="gold-line"></div>
+      <p>Expert witness appointments involve the provision of independent, specialised knowledge and opinion by a qualified professional to assist in the resolution of disputes, typically in arbitration, litigation, or other legal proceedings. An expert witness is engaged to analyse complex technical or professional issues, prepare written reports, and, when required, provide oral testimony to assist decision-makers such as arbitrators, judges, or tribunals in understanding the evidence.</p>
+  <p>Expert witnesses must remain objective and impartial, and their primary duty is to the tribunal or court, regardless of which party engages their services.</p>
+  <p>The Construction Arbitration Centre (Asia Pacific) provides nomination services for expert witnesses in construction and infrastructure disputes. The Centre maintains a panel of expert witnesses with professional qualifications and demonstrated experience in areas such as construction and project management, engineering, quantity surveying and cost estimation, programming, delay and disruption analysis, defects assessment, and contract administration and compliance.</p>
+  <p>Engagement of the expert witness, including terms of appointment, scope of instructions, fees, and contractual arrangements, is conducted directly between the nominating party and the expert witness. The Centre is not involved in the engagement process, the provision of instructions, or the expert’s work.</p>
+      <h2>Key Features</h2>
+      <ul><li>Experts with professional qualifications in relevant technical fields.</li>
+<li>Qualified and impartial analysis and testimony.</li>
+<li>Reports compliant with rules and ADR process requirements.</li>
+<li>Technical support for arbitration, litigation, and mediation.</li></ul>
+      <h2>Process</h2>
+      <p>The process begins when parties submit a request specifying required expertise, qualifications, and the nature of proceedings. The Centre reviews its panel, checks for conflicts, and nominates suitable expert witnesses to the parties. Parties then engage the expert directly, with terms, fees, and instructions managed between the parties and the expert.</p>
+  <p>Once engaged, expert witnesses conduct their work independently in accordance with their professional obligations and duties to the tribunal or court.</p>
+      <h2>Why Choose CACAP for Expert Witness?</h2>
+      <ul>
+    <li><strong>Specialist Technical Expertise</strong> – Expert witnesses with professional qualifications in construction, engineering, quantity surveying, programming, delay analysis, and related disciplines.</li>
+    <li><strong>Expert Witness Experience</strong> – Panel members with experience preparing reports and providing testimony.</li>
+    <li><strong>Professional Independence</strong> – Expert witnesses committed to objectivity, impartiality, and compliance with duties to tribunals and courts.</li>
+    <li><strong>Direct Engagement</strong> – Parties engage directly with nominated expert witnesses.</li>
+  </ul>
+      <div class="svc-cta">
+        <p>For further information, please contact the Centre.</p>
+        <a class="btn-p" onclick="showPage('contact')">Contact Us</a>
+      </div>
+      <a class="svc-back" onclick="showPage('services')">Back to Services</a>
+    </div>
+  </section>
+</div>
+<!-- ========== DISPUTE BOARDS ========== -->
+<div class="page" id="page-dispute-boards">
+  <section class="hero hero-sm"><div class="hero-content"><h1>Dispute Boards <span class="gold">Services</span></h1></div></section>
+  <section class="section section-light">
+    <div class="section-inner svc-content">
+      <div class="section-sub">Dispute Boards</div>
+      <h2 class="section-title">Dispute Boards</h2>
+      <div class="gold-line"></div>
+      <p>Dispute Boards involve the establishment of a standing or ad hoc panel of independent experts, known as a Dispute Board, to provide dispute resolution support during complex construction, infrastructure, or engineering projects.</p>
+  <p>A Dispute Board may be appointed at the outset of a project (standing Dispute Board) or formed when a dispute arises (ad hoc Dispute Board). The board’s role is to become familiar with the project, conduct periodic site visits, provide informal assistance in resolving issues, and, when disputes are referred to it, render recommendations or decisions. The nature of the board’s determinations—whether recommendations (Dispute Review Board), binding decisions (Dispute Adjudication Board), or a combination (Combined Dispute Board)—depends on the contractual agreement between the parties.</p>
+  <p>The Construction Arbitration Centre (Asia Pacific) provides nomination and appointment services for Dispute Board members in construction and infrastructure projects throughout the Asia Pacific region. The Centre maintains a panel of Dispute Board members with expertise in construction law, engineering, quantity surveying, project management, and contract administration.</p>
+  <p>Once a Dispute Board is appointed, the board operates independently throughout the project duration in accordance with the contract and applicable Dispute Board rules (such as FIDIC Dispute Board procedures, ICC Dispute Board Rules, or other recognised procedures).</p>
+      <h2>Key Features</h2>
+      <ul><li>Access to a panel of Dispute Board members with demonstrated expertise in construction, engineering, quantity surveying, project management, and contract administration.</li>
+<li>Independent and impartial appointment process, including rigorous conflict checking.</li>
+<li>Dispute Board members with experience serving on standing and ad hoc boards.</li>
+<li>Efficient appointment process conducted in accordance with the Centre’s procedures.</li>
+<li>Board members committed to independence, impartiality, and compliance with applicable Dispute Board rules.</li></ul>
+      <h2>Process</h2>
+      <p>The process commences when parties submit a request for the appointment of Dispute Board members. The request should include details of the project, the type of Dispute Board required (Dispute Review Board, Dispute Adjudication Board, or Combined Dispute Board), the number of members, the required expertise, and any agreed qualifications or selection criteria.</p>
+  <p>The Centre reviews its panel to identify candidates whose qualifications and Dispute Board experience match the requirements of the project. Upon appointment, the board assumes responsibility for its operations in accordance with the contract and applicable Dispute Board rules.</p>
+      <h2>Why Choose CACAP for Dispute Boards?</h2>
+      <ul>
+    <li><strong>Specialist Expertise</strong> – Construction law, engineering, quantity surveying, project management, and contract administration.</li>
+    <li><strong>Dispute Board Experience</strong> – Panel members familiar with FIDIC, ICC, and other recognised procedures.</li>
+    <li><strong>Flexibility</strong> – Appointments for DRBs, DABs, or Combined Dispute Boards.</li>
+    <li><strong>Professional Standards</strong> – Board members committed to independence and compliance with professional codes of conduct.</li>
+  </ul>
+      <div class="svc-cta">
+        <p>For further information, please contact the Centre.</p>
+        <a class="btn-p" onclick="showPage('contact')">Contact Us</a>
+      </div>
+      <a class="svc-back" onclick="showPage('services')">Back to Services</a>
+    </div>
+  </section>
+</div>
+<!-- ========== ADJUDICATION ========== -->
+<div class="page" id="page-adjudication">
+  <section class="hero hero-sm"><div class="hero-content"><h1>Adjudication <span class="gold">Services</span></h1></div></section>
+  <section class="section section-light">
+    <div class="section-inner svc-content">
+      <div class="section-sub">Adjudication</div>
+      <h2 class="section-title">Adjudication</h2>
+      <div class="gold-line"></div>
+      <p>Adjudication is a rapid dispute resolution process used in construction and infrastructure disputes, in which an independent adjudicator assesses the claims and submissions of the parties and issues a binding decision within a compressed timeframe. Adjudication is commonly provided for under statutory regimes or contractual provisions and is designed to ensure the prompt resolution of payment and performance disputes that arise during the course of construction projects.</p>
+  <p>The Construction Arbitration Centre (Asia Pacific) serves as an appointing authority for adjudicators in construction and infrastructure disputes throughout the Asia Pacific region. Where parties require the appointment of an adjudicator under statutory or contractual adjudication provisions, or where their contract designates CACAP as the appointing authority, the Centre facilitates the nomination and appointment of qualified, independent, and impartial adjudicators in accordance with its appointment procedures.</p>
+  <p>The Centre maintains a panel of adjudicators with expertise in construction law, engineering, quantity surveying, project management, and related disciplines. The appointment process includes review of qualifications, conflict checking, and assessment of availability to ensure that appointed adjudicators possess the requisite expertise and independence for each dispute.</p>
+  <p>Once an adjudicator is appointed, the adjudication proceeds independently in accordance with the applicable statutory or contractual adjudication rules. The Centre does not administer adjudication proceedings, provide case management, or participate in the conduct or substance of the adjudication.</p>
+      <h2>Key Features</h2>
+      <ul><li>Rapid and binding determination of construction disputes.</li>
+<li>Independent and impartial adjudicators with relevant construction expertise.</li>
+<li>Suitable for payment disputes, performance claims, and interim determinations.</li>
+<li>Decisions enforceable as a matter of contract or statute, subject to applicable law.</li>
+<li>Efficient appointment process to meet compressed statutory timeframes.</li></ul>
+      <h2>Process</h2>
+      <p>The process commences when a party submits a request for the appointment of an adjudicator, typically under the terms of a construction contract or pursuant to applicable statutory adjudication provisions. The Centre reviews its panel to identify candidates with the requisite expertise and conducts conflict checks.</p>
+  <p>Given the compressed timeframes associated with adjudication, the Centre aims to complete appointments promptly. Upon appointment, the adjudicator assumes responsibility for all procedural matters and issues a binding decision within the applicable timeframe.</p>
+      <h2>Why Choose CACAP for Adjudication?</h2>
+      <ul>
+    <li><strong>Speed</strong> – Appointments made promptly to meet statutory and contractual timeframes.</li>
+    <li><strong>Specialist Expertise</strong> – Adjudicators with demonstrated expertise in construction disputes.</li>
+    <li><strong>Independence and Impartiality</strong> – Rigorous conflict-checking processes.</li>
+    <li><strong>Enforceability</strong> – Adjudication decisions are binding and enforceable.</li>
+    <li><strong>Professional Standards</strong> – Panel members maintain the highest standards of professional conduct.</li>
+  </ul>
+      <div class="svc-cta">
+        <p>For further information, please contact the Centre.</p>
+        <a class="btn-p" onclick="showPage('contact')">Contact Us</a>
+      </div>
+      <a class="svc-back" onclick="showPage('services')">Back to Services</a>
+    </div>
+  </section>
+</div>
+<!-- ========== NOMINATION SERVICES ========== -->
+<div class="page" id="page-nomination">
+  <section class="hero hero-sm"><div class="hero-content"><h1>Nomination Services <span class="gold">Services</span></h1></div></section>
+  <section class="section section-light">
+    <div class="section-inner svc-content">
+      <div class="section-sub">Nomination Services</div>
+      <h2 class="section-title">Nomination Services</h2>
+      <div class="gold-line"></div>
+      <p>Nomination Services refer to the process by which the Centre assists parties or appointing authorities in the selection and appointment of qualified neutrals—such as arbitrators, mediators, adjudicators, experts, or dispute board members—for the resolution of disputes.</p>
+  <p>When parties are unable to agree on an appointment, or when their contract designates the Centre as the appointing body, CACAP facilitates the appointment of a qualified, independent, and impartial professional in accordance with applicable rules, standards, and the case requirements.</p>
+  <p>The Construction Arbitration Centre (Asia Pacific) offers nomination services, appointing highly qualified neutrals for arbitration, mediation, expert determination, adjudication, and dispute boards. The Centre maintains a diverse and experienced panel of dispute resolution professionals, including specialists in construction law, engineering, quantity surveying, project management, and technical analysis.</p>
+  <p>Nomination services are conducted in a transparent and timely manner, in line with the dispute’s subject matter and procedural requirements. The Centre also offers emergency appointment services for time-sensitive cases and provides support in multi-party disputes requiring the appointment of multiple neutrals.</p>
+      <h2>Key Features</h2>
+      <ul><li>Access to a panel of arbitrators, mediators, and experts with relevant qualifications and experience.</li>
+<li>Transparent and impartial nomination process.</li>
+<li>Appointments conducted in accordance with the dispute complexity and required expertise.</li>
+<li>Support for parties needing neutral selection.</li></ul>
+      <h2>Process</h2>
+      <p>Through CACAP’s nomination services, parties may request the appointment of a neutral, providing details of the dispute and the expertise required. CACAP then reviews its panel to identify a candidate whose qualifications match the dispute and required expertise, ensuring independence and no conflicts of interest. Once agreed by the parties, the nominated neutral is formally appointed to proceed with the matter.</p>
+      <h2>Why Choose CACAP for Nomination Services?</h2>
+      <ul>
+    <li><strong>Appointments</strong> – Neutrals selected in accordance with the expertise specified for the dispute.</li>
+    <li><strong>Integrity and Independence</strong> – Conflict-checking process to support impartiality.</li>
+    <li><strong>Extensive Panel</strong> – Access to arbitrators, mediators, and experts across the Asia Pacific region.</li>
+    <li><strong>Efficiency</strong> – Nomination process conducted transparently and in line with procedural requirements.</li>
+    <li><strong>Credibility</strong> – Appointments backed by CACAP’s reputation for professionalism and trust.</li>
+  </ul>
+      <div class="svc-cta">
+        <p>For further information, please contact the Centre.</p>
+        <a class="btn-p" onclick="showPage('contact')">Contact Us</a>
+      </div>
+      <a class="svc-back" onclick="showPage('services')">Back to Services</a>
+    </div>
+  </section>
+</div>
+<!-- ========== ADMIN SERVICES ========== -->
+<div class="page" id="page-admin-services">
+  <section class="hero hero-sm"><div class="hero-content"><h1>Dispute Resolution <span class="gold">Administration</span></h1></div></section>
+  <section class="section section-light">
+    <div class="section-inner svc-content">
+      <div class="section-sub">Administrative Services</div>
+      <h2 class="section-title">Dispute Resolution Administration</h2>
+      <div class="gold-line"></div>
+      <p>The Construction Arbitration Centre (Asia Pacific) provides limited administrative support services for arbitration, expert determination, and dispute resolution proceedings where parties have agreed to engage such services. These administrative services are designed to facilitate the efficient conduct of proceedings whilst maintaining strict neutrality regarding the substance and outcome of disputes.</p>
+      <p>CACAP’s administrative role is confined to procedural coordination, documentation management, and quality control of formal documents for clarity, consistency, and professional presentation. The Centre does not participate in the merits of any dispute, does not provide advice to any party regarding substantive matters, and does not perform any decision-making functions.</p>
+
+      <h2>Key Principles</h2>
+      <ul>
+        <li><strong>Neutrality:</strong> The Centre does not provide advice or express views on the merits, substance, or outcomes of disputes.</li>
+        <li><strong>Independence of Decision-Makers:</strong> Arbitrators, expert determiners, and other neutrals operate fully independently of CACAP.</li>
+        <li><strong>Procedural Integrity:</strong> Administrative processes are conducted in accordance with established procedural standards.</li>
+        <li><strong>Limited Scope:</strong> Administrative services are provided only where parties have expressly agreed to engage such services.</li>
+      </ul>
+
+      <h2>Administrative Services</h2>
+      <ol class="admin-list">
+        <li class="admin-item"><h4>Case Registration and Documentation Management</h4><ul><li>Assist parties in the submission of notices, claims, responses, and supporting documentation.</li><li>Verify that submissions are complete and comply with formatting and procedural requirements.</li><li>Maintain organised case records and facilitate orderly exchange of documents.</li></ul></li>
+        <li class="admin-item"><h4>Award and Determination Formatting Review</h4><ul><li>Review draft awards, determinations, and formal decisions for clarity, grammatical accuracy, formatting consistency, and professional presentation.</li><li>CACAP does not review, comment upon, alter, or influence the substantive content, reasoning, findings, or outcomes of any award or determination.</li></ul></li>
+        <li class="admin-item"><h4>Procedural Communication and Coordination</h4><ul><li>Facilitate clear communication of procedural directions, administrative requirements, and deadlines.</li><li>Coordinate the transmission of procedural orders and communications between the appointed neutral and the parties.</li></ul></li>
+        <li class="admin-item"><h4>Scheduling and Calendar Management</h4><ul><li>Coordinate scheduling of hearings, procedural conferences, site inspections, and administrative meetings.</li><li>Issue notices of hearing dates and maintain an organised calendar for proceedings.</li></ul></li>
+        <li class="admin-item"><h4>Financial Administration</h4><ul><li>Receive and hold deposits for arbitrator or expert determiner fees and administrative costs.</li><li>Facilitate payment of fees to appointed neutrals upon completion of proceedings.</li><li>Provide statements of account to parties as required.</li></ul></li>
+      </ol>
+
+      <div class="svc-cta"><p>For enquiries regarding administrative support for your dispute, please contact the Centre.</p><a class="btn-p" onclick="showPage('contact')">Contact Us</a></div>
+      <a class="svc-back" onclick="showPage('services')">Back to Services</a>
+    </div>
+  </section>
+</div>
+<!-- ========== NOMINATION REQUEST ========== -->
+<div class="page" id="page-nomination-request">
+  <section class="hero hero-sm"><div class="hero-content"><h1>Nomination <span class="gold">Request</span></h1><p>Submit a request for the appointment of a qualified dispute resolver.</p></div></section>
+  <section class="section section-light">
+    <div class="section-inner" style="max-width:720px;">
+      <h2 class="section-title">Nomination Request Form</h2>
+      <div class="gold-line"></div>
+      <p style="color:var(--text-light);margin-bottom:8px;">We offer a confidential and independent nomination service to help you appoint the right dispute resolver for your situation. Whether you need support for arbitration, mediation, expert determination, adjudication, dispute boards, or expert witness services, we are here to assist you in identifying a qualified neutral who fits the needs of your dispute.</p>
+      <div style="background:var(--cream);border:1px solid var(--border);padding:24px;margin:24px 0 32px;">
+        <strong style="color:var(--navy);font-size:14px;">How the Nomination Process Works</strong>
+        <ol style="margin-top:12px;padding-left:20px;color:var(--text-light);font-size:14px;line-height:2;">
+          <li>Parties submit a request providing details of the dispute and the expertise required.</li>
+          <li>CACAP reviews its panel to identify the most suitable candidate.</li>
+          <li>Independence and absence of conflicts of interest are confirmed.</li>
+          <li>The nominated neutral is shared with the parties for agreement.</li>
+          <li>Once agreed, the neutral is formally appointed to proceed with the matter.</li>
+        </ol>
+      </div>
+      <div class="form-group">
+        <label>Company Name *</label><input type="text" placeholder="Company Name">
+        <label>Email *</label><input type="email" placeholder="Email Address">
+        <label>Phone *</label><input type="tel" placeholder="Phone Number">
+        <label>Address *</label><input type="text" placeholder="Address">
+        <label>Contact Person *</label><input type="text" placeholder="Contact Person">
+        <label>Type of Dispute Resolver</label>
+        <select><option value="">Select type</option><option>Arbitrator</option><option>Mediator</option><option>Expert Determiner</option><option>Adjudicator</option><option>Dispute Board Member</option><option>Expert Witness</option></select>
+        <label>Urgency / Timeline</label>
+        <select><option value="">Select urgency</option><option>Urgent (within 7 days)</option><option>Standard (within 14 days)</option><option>No specific timeframe</option></select>
+        <label>Subject or Nature of Dispute *</label>
+        <textarea placeholder="Please provide details of the dispute, including the required expertise and any relevant contractual provisions."></textarea>
+        <div class="form-check"><input type="checkbox"><span>I confirm that the information provided is complete and accurate.</span></div>
+        <div class="form-check"><input type="checkbox"><span>I agree to be contacted for additional information if needed.</span></div>
+        <p style="font-size:12px;color:var(--text-light);font-style:italic;margin-bottom:16px;">All information submitted through this form is handled in strict confidence and accessed only by authorised personnel.</p>
+        <a class="btn-p">Submit Nomination Request</a>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- ========== RULES & PROCESS ========== -->
+<div class="page" id="page-rules">
+  <section class="hero hero-sm"><div class="hero-content"><h1>Rules &amp; <span class="gold">Process</span></h1><p>A guide to the appointment procedures for neutrals in construction and infrastructure disputes.</p></div></section>
+  <section class="section section-light">
+    <div class="section-inner">
+      <div class="section-sub">Appointment Procedures</div>
+      <h2 class="section-title">Rules and Process</h2>
+      <div class="gold-line"></div>
+      <p style="color:var(--text-light);font-size:15.5px;line-height:1.8;margin-bottom:16px;">The Centre’s role involves the nomination and appointment of qualified neutrals. This includes receiving appointment requests, reviewing panel qualifications, conducting conflict checks, and facilitating the appointment process in accordance with the Centre’s rules.</p>
+      <p style="color:var(--text-light);font-size:15.5px;line-height:1.8;margin-bottom:16px;">Once a neutral is appointed, the dispute resolution proceedings are conducted independently by the appointed neutral or panel in accordance with the applicable rules agreed by the parties. The Centre does not administer proceedings, manage case files, coordinate communications, or provide logistical support.</p>
+
+      <div class="rules-tabs">
+        <div class="rules-tab active" onclick="showTab('arb')">Arbitration</div>
+        <div class="rules-tab" onclick="showTab('med')">Mediation</div>
+        <div class="rules-tab" onclick="showTab('ed')">Expert Determination</div>
+        <div class="rules-tab" onclick="showTab('ew')">Expert Witness</div>
+        <div class="rules-tab" onclick="showTab('db')">Dispute Board</div>
+        <div class="rules-tab" onclick="showTab('nom')">Nomination</div>
+      </div>
+
+      <div class="rules-panel active" id="tab-arb">
+        <h3>Arbitration</h3>
+        <div class="rules-step"><strong>Step 1: Request for Appointment</strong><p>Submit your dispute details to CACAP, including required expertise and any potential conflicts of interest.</p></div>
+        <div class="rules-step"><strong>Step 2: Nomination and Appointment</strong><p>The Centre reviews its panel, checks for conflicts, and proposes or appoints a qualified arbitrator/tribunal. Confirmation is issued once accepted.</p></div>
+        <div class="rules-step"><strong>Step 3: Commencement of Proceedings</strong><p>The appointed arbitrator/tribunal manages proceedings according to agreed rules. The Centre’s role ends unless further appointments are needed.</p></div>
+        <div class="rules-step"><strong>Step 4: Independent Proceedings</strong><p>The tribunal handles all case management, evidence submission, and hearings, ensuring fairness and impartiality.</p></div>
+        <div class="rules-step"><strong>Step 5: Award</strong><p>The tribunal issues a binding award, enforceable internationally under the New York Convention.</p></div>
+        <div class="rules-step"><strong>Step 6: Post-Award Matters</strong><p>Parties may request the Centre’s assistance for replacing arbitrators or resolving appointment disputes.</p></div>
+        <a class="card-link" onclick="showPage('arbitration')">View Full Arbitration Page</a>
+      </div>
+
+      <div class="rules-panel" id="tab-med">
+        <h3>Mediation</h3>
+        <div class="rules-step"><strong>Step 1: Request for Appointment</strong><p>Submit dispute details, required mediator expertise, and any potential conflicts to CACAP.</p></div>
+        <div class="rules-step"><strong>Step 2: Nomination and Appointment</strong><p>The Centre reviews its panel, checks for conflicts, and proposes or appoints a mediator.</p></div>
+        <div class="rules-step"><strong>Step 3: Commencement of Mediation</strong><p>The mediator takes charge of proceedings according to the parties’ agreed rules.</p></div>
+        <div class="rules-step"><strong>Step 4: Independent Mediation Process</strong><p>The mediator facilitates discussions, meetings, and negotiations to help parties reach a voluntary settlement.</p></div>
+        <div class="rules-step"><strong>Step 5: Outcome</strong><p>Parties execute a settlement if agreement is reached; otherwise, mediation concludes without determination.</p></div>
+        <a class="card-link" onclick="showPage('mediation')">View Full Mediation Page</a>
+      </div>
+
+      <div class="rules-panel" id="tab-ed">
+        <h3>Expert Determination</h3>
+        <div class="rules-step"><strong>Step 1: Request for Appointment</strong><p>Submit dispute details, technical issues, required expertise, and any potential conflicts to CACAP.</p></div>
+        <div class="rules-step"><strong>Step 2: Nomination and Appointment</strong><p>The Centre reviews its panel, checks for conflicts, and proposes or appoints an expert determiner.</p></div>
+        <div class="rules-step"><strong>Step 3: Commencement</strong><p>The expert takes charge of proceedings under the parties’ agreed rules.</p></div>
+        <div class="rules-step"><strong>Step 4: Independent Determination Process</strong><p>The expert manages submissions, inspections, meetings, and preparation of the determination.</p></div>
+        <div class="rules-step"><strong>Step 5: Determination</strong><p>The expert issues a binding determination directly to the parties.</p></div>
+        <a class="card-link" onclick="showPage('expert-determination')">View Full Expert Determination Page</a>
+      </div>
+
+      <div class="rules-panel" id="tab-ew">
+        <h3>Expert Witness</h3>
+        <div class="rules-step"><strong>Step 1: Request for Nomination</strong><p>Parties submit a request specifying required expertise, qualifications, and the nature of proceedings.</p></div>
+        <div class="rules-step"><strong>Step 2: Nomination</strong><p>The Centre reviews its panel, checks for conflicts, and nominates suitable expert witnesses.</p></div>
+        <div class="rules-step"><strong>Step 3: Direct Engagement</strong><p>Parties engage the expert directly. Terms, fees, and instructions are managed between the parties and the expert.</p></div>
+        <div class="rules-step"><strong>Step 4: Independent Expert Work</strong><p>The expert carries out their work independently. The Centre does not participate or influence the process.</p></div>
+        <a class="card-link" onclick="showPage('expert-witness')">View Full Expert Witness Page</a>
+      </div>
+
+      <div class="rules-panel" id="tab-db">
+        <h3>Dispute Board</h3>
+        <div class="rules-step"><strong>Step 1: Request for Appointment</strong><p>Submit project details, board type, number of members, required expertise, and any potential conflicts.</p></div>
+        <div class="rules-step"><strong>Step 2: Nomination &amp; Appointment</strong><p>The Centre reviews its panel, checks for conflicts, and proposes or appoints board members.</p></div>
+        <div class="rules-step"><strong>Step 3: Commencement of Operations</strong><p>The board assumes responsibility and operates according to the contract and agreed rules.</p></div>
+        <div class="rules-step"><strong>Step 4: Independent Proceedings</strong><p>The board manages site visits, meetings, dispute hearings, and issues recommendations or decisions independently.</p></div>
+        <a class="card-link" onclick="showPage('dispute-boards')">View Full Dispute Board Page</a>
+      </div>
+
+      <div class="rules-panel" id="tab-nom">
+        <h3>Nomination</h3>
+        <div class="rules-step"><strong>Step 1: Request for Nomination</strong><p>Parties submit dispute details, type of neutral, required expertise, and potential conflicts to CACAP.</p></div>
+        <div class="rules-step"><strong>Step 2: Nomination &amp; Appointment</strong><p>The Centre reviews its panel, checks for conflicts, and proposes or appoints a neutral.</p></div>
+        <div class="rules-step"><strong>Step 3: Commencement of Proceedings</strong><p>The neutral manages proceedings according to the parties’ agreed rules.</p></div>
+        <div class="rules-step"><strong>Step 4: Post-Appointment Matters</strong><p>Parties may approach the Centre for challenges, replacements, or fee disputes.</p></div>
+        <a class="card-link" onclick="showPage('nomination')">View Full Nomination Page</a>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- ========== FAQs ========== -->
+<div class="page" id="page-faqs">
+  <section class="hero hero-sm"><div class="hero-content"><h1>Frequently Asked <span class="gold">Questions</span></h1></div></section>
+  <section class="section section-light">
+    <div class="section-inner" style="max-width:800px;">
+      <div class="section-sub">FAQs</div>
+      <h2 class="section-title">Common Questions</h2>
+      <div class="gold-line"></div>
+
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Which process provides a binding and enforceable decision?</div><div class="faq-a">Arbitration enables parties to obtain a private determination that is both binding and enforceable. <a class="faq-link" onclick="showPage('arbitration')">View Arbitration Process →</a></div></div>
+
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How does mediation help parties resolve construction disputes?</div><div class="faq-a">Mediation provides a confidential and collaborative process where a neutral mediator facilitates discussions, helping parties reach a voluntary and mutually acceptable agreement while preserving relationships. <a class="faq-link" onclick="showPage('mediation')">View Mediation Process →</a></div></div>
+
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Which approach is used for disputes involving technical expertise?</div><div class="faq-a">Expert Determination allows a neutral expert to assess complex technical or valuation issues and provide a binding decision based on specialised knowledge. <a class="faq-link" onclick="showPage('expert-determination')">View Expert Determination Process →</a></div></div>
+
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Who offers impartial technical advice during formal proceedings?</div><div class="faq-a">Expert Witness services provide independent analysis, reports, and testimony to assist tribunals or courts in understanding complex issues and making informed decisions. <a class="faq-link" onclick="showPage('expert-witness')">View Expert Witness Process →</a></div></div>
+
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What functions do Dispute Boards serve in overseeing and resolving project disputes?</div><div class="faq-a">Dispute Boards provide proactive oversight, guidance, and timely recommendations or decisions to prevent escalation, resolve disputes efficiently, and help maintain project relationships. <a class="faq-link" onclick="showPage('dispute-boards')">View Dispute Board Process →</a></div></div>
+
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What happens if parties cannot agree on the appointment of a neutral?</div><div class="faq-a">CACAP provides nomination services, appointing a suitably qualified and impartial professional in accordance with the needs of the case. <a class="faq-link" onclick="showPage('nomination')">View Nomination Process →</a></div></div>
+
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is CACAP accreditation and how do I become accredited?</div><div class="faq-a">CACAP operates a professional accreditation programme for dispute resolution practitioners. Accreditation is awarded to individuals who have successfully completed a CACAP training course and demonstrated exemplary competence in assessed practical sessions. <a class="faq-link" onclick="showPage('accreditation')">View Accreditation Scheme →</a></div></div>
+    </div>
+  </section>
+</div>
+<!-- ========== ABOUT ========== -->
+<div class="page" id="page-about">
+  <section class="hero hero-sm"><div class="hero-content"><h1>About <span class="gold">CACAP</span></h1><p>The premier institution for resolving construction and infrastructure disputes in the Asia Pacific region.</p></div></section>
+  <section class="section section-light">
+    <div class="section-inner">
+      <div class="section-sub">Our Role</div>
+      <h2 class="section-title">About the Centre</h2>
+      <div class="gold-line"></div>
+      <p style="color:var(--text-light);font-size:16px;line-height:1.8;margin-bottom:20px;">The Construction Arbitration Centre (Asia Pacific) (CACAP) serves as an appointing authority and nomination service provider for construction and infrastructure disputes in the Asia Pacific region. Established to meet the demand for specialised dispute resolution expertise, CACAP facilitates the appointment of qualified neutrals for arbitration, mediation, expert determination, dispute boards, and related dispute resolution processes.</p>
+      <p style="color:var(--text-light);font-size:16px;line-height:1.8;margin-bottom:20px;">The Centre maintains a panel of arbitrators, mediators, expert determiners, adjudicators, and industry professionals with relevant qualifications and experience in construction and infrastructure matters. CACAP provides nomination services in accordance with its appointment procedures, ensuring the selection of independent and impartial neutrals who possess the requisite expertise for each dispute.</p>
+      <p style="color:var(--text-light);font-size:16px;line-height:1.8;margin-bottom:20px;">The Centre’s primary role is the nomination and appointment of dispute resolvers. The Centre also conducts professional training courses and confers accreditation upon practitioners who demonstrate exemplary competence. CACAP does not administer arbitrations, conduct case management, provide hearing facilities, or otherwise participate in the conduct or substance of dispute resolution proceedings. Once a neutral is appointed, the dispute resolution process proceeds independently under the appointed neutral’s direction or in accordance with the applicable rules agreed by the parties.</p>
+      <div style="background:var(--cream);border:1px solid var(--border);padding:28px;margin-top:32px;">
+        <strong style="color:var(--navy);font-size:15px;">Our Commitments</strong>
+        <ul style="margin-top:12px;padding-left:20px;color:var(--text-light);font-size:15px;line-height:2;">
+          <li><strong style="color:var(--navy)">Independent and Not-for-Profit:</strong> The Centre operates independently and on a not-for-profit basis.</li>
+          <li><strong style="color:var(--navy)">Appointing Authority:</strong> The Centre nominates and appoints qualified neutrals in accordance with its procedures and rules.</li>
+          <li><strong style="color:var(--navy)">Panel Maintenance:</strong> The Centre maintains panels of arbitrators, mediators, expert determiners, adjudicators, and industry professionals.</li>
+          <li><strong style="color:var(--navy)">Professional Accreditation:</strong> The Centre conducts training courses and awards accreditation to practitioners who demonstrate exemplary competence. <a style="color:var(--gold);cursor:pointer" onclick="showPage('accreditation')">View Accreditation Scheme.</a></li>
+          <li><strong style="color:var(--navy)">Transparent Process:</strong> Appointment procedures and fees are published and applied consistently.</li>
+        </ul>
+      </div>
+      <div style="margin-top:56px;">
+        <div class="section-sub">Governance</div>
+        <h2 class="section-title">Board of Directors</h2>
+        <div class="gold-line"></div>
+        <div class="board-grid">
+          <div class="board-member"><div class="board-avatar">NK</div><h4>Neil Kirkpatrick</h4><div class="role">President</div></div>
+          <div class="board-member"><div class="board-avatar">AKM</div><h4>Ajit Kumar Mishra</h4><div class="role">Vice President</div></div>
+          <div class="board-member"><div class="board-avatar">JS</div><h4>John Shenton</h4><div class="role">Vice President</div></div>
+          <div class="board-member"><div class="board-avatar">NTV</div><h4>Nam Trung Nguyen</h4><div class="role">Programme Director</div></div>
+          <div class="board-member"><div class="board-avatar">AT</div><h4>Amnart Tangkiriphimarn</h4><div class="role">Secretary</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ========== ACCREDITATION ========== -->
+<div class="page" id="page-accreditation">
+  <section class="hero hero-sm"><div class="hero-content"><h1>Accreditation &amp; <span class="gold">Panel Membership</span></h1><p>Professional accreditation for dispute resolution practitioners assessed through CACAP training courses.</p></div></section>
+  <section class="section section-light">
+    <div class="section-inner">
+      <div class="section-sub">Accreditation Programme</div>
+      <h2 class="section-title">About the CACAP Accreditation Scheme</h2>
+      <div class="gold-line"></div>
+      <p class="section-intro">The Construction Arbitration Centre Asia Pacific operates a professional accreditation programme for dispute resolution practitioners across the Asia Pacific region. Accreditation is awarded to individuals who have successfully completed a CACAP training course and who have demonstrated, through assessed practical sessions, an exemplary standard of competence, understanding, and professional aptitude in their respective discipline.</p>
+      <h3 style="font-family:var(--hf);font-size:28px;font-weight:600;color:var(--navy);margin-bottom:24px;">Accreditation Disciplines</h3>
+      <div class="accred-disciplines">
+        <div class="accred-card"><div class="accred-badge">Dispute Board</div><h4>Dispute Board Practice</h4><div class="designation">CACAP Accredited Dispute Board Practitioner</div><p>Recognises practical competence in the constitution, operation, and procedures of dispute boards, including dispute adjudication boards, dispute review boards, and combined dispute boards.</p></div>
+        <div class="accred-card"><div class="accred-badge">Arbitration</div><h4>Arbitration</h4><div class="designation">CACAP Accredited Arbitrator</div><p>Recognises practical competence in arbitral procedure, the conduct of hearings, the assessment of evidence, and the preparation of reasoned awards.</p></div>
+        <div class="accred-card"><div class="accred-badge">Expert Determination</div><h4>Expert Determination</h4><div class="designation">CACAP Accredited Expert Determiner</div><p>Recognises practical competence in the conduct of expert determination proceedings, including the evaluation of submissions and the preparation of binding determinations.</p></div>
+        <div class="accred-card"><div class="accred-badge">Mediation</div><h4>Mediation</h4><div class="designation">CACAP Accredited Mediator</div><p>Recognises practical competence in mediation techniques, facilitated negotiation, and the structured resolution of construction and commercial disputes.</p></div>
+        <div class="accred-card"><div class="accred-badge">Adjudication</div><h4>Adjudication</h4><div class="designation">CACAP Accredited Adjudicator</div><p>Recognises practical competence in statutory and contractual adjudication procedures, including the rapid assessment of claims within compressed timeframes.</p></div>
+      </div>
+      <div style="margin-top:48px;"><h3 style="font-family:var(--hf);font-size:24px;font-weight:600;color:var(--navy);margin-bottom:16px;">Basis of Award</h3><p style="color:var(--text-light);font-size:15px;line-height:1.7;max-width:800px;">Accreditation is not awarded automatically upon completion of a training course. It is reserved for those candidates who, in the assessment of the course instructors and with the approval of the President of CACAP, have demonstrated an exceptional standard of understanding, practical application, and professional aptitude during the assessed practical sessions. Each certificate bears a unique reference number and records the specific training course upon which the accreditation is founded.</p></div>
+      <div style="margin-top:40px;display:flex;gap:16px;flex-wrap:wrap;">
+        <a class="btn-p" onclick="showPage('panels')">View Accredited Panels</a>
+        <a class="btn-dark" onclick="showPage('training')">View Training Courses</a>
+        <a class="btn-ghost" onclick="showPage('register')">Register Interest</a>
+      </div>
+      <div class="ip-notice"><strong>Intellectual Property Notice.</strong> The CACAP accreditation programme, including all designations, certificate formats, panel structures, and associated materials, is the exclusive intellectual property of the Construction Arbitration Centre Asia Pacific. No part of this programme derives from, replicates, or incorporates the intellectual property, curricula, certification structures, or professional designations of any other institution, organisation, or dispute resolution body.</div>
+    </div>
+  </section>
+</div>
+
+<!-- ========== PANELS ========== -->
+<div class="page" id="page-panels">
+  <section class="hero hero-sm"><div class="hero-content"><h1>Accredited <span class="gold">Panels</span></h1><p>Register of practitioners accredited by CACAP through assessed training courses.</p></div></section>
+  <section class="section section-light">
+    <div class="section-inner">
+      <div class="section-sub">Panel of Dispute Board Practitioners</div>
+      <h2 class="section-title">CACAP Accredited Dispute Board Practitioners</h2>
+      <div class="gold-line"></div>
+      <p style="color:var(--text-light);margin-bottom:8px;">Accredited through the CACAP Dispute Board Foundation Training Course, January 2026.</p>
+      <table class="panel-table"><thead><tr><th>Name</th><th>Designation</th><th>Date of Accreditation</th><th>Certificate No.</th></tr></thead><tbody>
+        <tr><td>Kumpon [Surname]</td><td class="designation-cell">CACAP Accredited Dispute Board Practitioner</td><td>[Date] 2026</td><td>CACAP/DB/2026/001</td></tr>
+        <tr><td>Chokchai [Surname]</td><td class="designation-cell">CACAP Accredited Dispute Board Practitioner</td><td>[Date] 2026</td><td>CACAP/DB/2026/002</td></tr>
+      </tbody></table>
+      <div style="margin-top:56px;"><div class="section-sub">Further Panels</div><h3 style="font-family:var(--hf);font-size:24px;color:var(--navy);margin-bottom:16px;">Additional Accredited Panels</h3><p style="color:var(--text-light);margin-bottom:24px;">The following panels will be populated as practitioners achieve accreditation through future CACAP training courses.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+        <div style="background:var(--gold-pale);padding:20px;text-align:center;"><strong style="color:var(--navy);font-size:14px;">Panel of Arbitrators</strong><br><span style="color:var(--text-light);font-size:13px;">Coming soon</span></div>
+        <div style="background:var(--gold-pale);padding:20px;text-align:center;"><strong style="color:var(--navy);font-size:14px;">Panel of Expert Determiners</strong><br><span style="color:var(--text-light);font-size:13px;">Coming soon</span></div>
+        <div style="background:var(--gold-pale);padding:20px;text-align:center;"><strong style="color:var(--navy);font-size:14px;">Panel of Mediators</strong><br><span style="color:var(--text-light);font-size:13px;">Coming soon</span></div>
+        <div style="background:var(--gold-pale);padding:20px;text-align:center;"><strong style="color:var(--navy);font-size:14px;">Panel of Adjudicators</strong><br><span style="color:var(--text-light);font-size:13px;">Coming soon</span></div>
+      </div></div>
+    </div>
+  </section>
+</div>
+
+<!-- ========== TRAINING ========== -->
+<div class="page" id="page-training">
+  <section class="hero hero-sm"><div class="hero-content"><h1>Training <span class="gold">Courses</span></h1><p>Professional development programmes conducted by CACAP across the Asia Pacific region.</p></div></section>
+  <section class="section section-light">
+    <div class="section-inner">
+      <div class="section-sub">Completed Courses</div><h2 class="section-title">Past Training Programmes</h2><div class="gold-line"></div>
+      <div class="card" style="max-width:700px;"><div class="accred-badge">Dispute Board</div><h3>Dispute Board Foundation Training Course</h3><p><strong>Date:</strong> January 2026<br><strong>Location:</strong> Bangkok, Thailand<br><strong>Accreditations awarded:</strong> 2 practitioners accredited as CACAP Accredited Dispute Board Practitioners</p></div>
+      <div style="margin-top:56px;"><div class="section-sub">Upcoming</div><h3 style="font-family:var(--hf);font-size:24px;color:var(--navy);margin-bottom:16px;">Future Training Programmes</h3><p style="color:var(--text-light);margin-bottom:24px;">Details of upcoming CACAP training courses will be published here. To receive notification of future courses, please register your interest.</p><a class="btn-p" onclick="showPage('register')">Register Interest</a></div>
+    </div>
+  </section>
+</div>
+
+<!-- ========== REGISTER INTEREST ========== -->
+<div class="page" id="page-register">
+  <section class="hero hero-sm"><div class="hero-content"><h1>Register <span class="gold">Interest</span></h1><p>Express your interest in attending a future CACAP training course.</p></div></section>
+  <section class="section section-light">
+    <div class="section-inner" style="max-width:640px;">
+      <h2 class="section-title">Training Course Enquiry</h2><div class="gold-line"></div>
+      <p style="color:var(--text-light);margin-bottom:32px;">Please complete the form below and we will notify you when the next course in your discipline of interest is scheduled.</p>
+      <div class="form-group">
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email Address">
+        <input type="text" placeholder="Organisation">
+        <select><option value="">Discipline of Interest</option><option>Dispute Board Practice</option><option>Arbitration</option><option>Expert Determination</option><option>Mediation</option><option>Adjudication</option></select>
+        <textarea placeholder="Message (optional)"></textarea>
+        <a class="btn-p">Submit</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ========== SCHEME TERMS ========== -->
+<div class="page" id="page-scheme-terms">
+  <section class="hero hero-sm"><div class="hero-content"><h1>Accreditation <span class="gold">Scheme Terms</span></h1><p>Terms governing the CACAP Accreditation Programme.</p></div></section>
+  <section class="section section-light">
+    <div class="section-inner" style="max-width:800px;">
+      <h2 class="section-title">Terms of the CACAP Accreditation Scheme</h2><div class="gold-line"></div>
+      <ol class="terms-list">
+        <li><strong>Intellectual Property.</strong> The CACAP designations, certificate format, and accreditation framework are the exclusive intellectual property of the Construction Arbitration Centre Asia Pacific and do not derive from or replicate the credentials of any other body.</li>
+        <li><strong>Scope of Accreditation.</strong> Accreditation is specific to the training course completed and the discipline assessed. It does not confer any qualification, certification, or professional standing attributable to any other institution.</li>
+        <li><strong>Basis of Award.</strong> Accreditation is awarded at the discretion of the President of CACAP on the recommendation of the course instructors, having regard to performance in assessed practical sessions.</li>
+        <li><strong>Panel Eligibility.</strong> Accredited practitioners are eligible for inclusion on the relevant CACAP Accredited Panel, subject to the Centre’s discretion.</li>
+        <li><strong>Use of Designation.</strong> Accredited practitioners may use their CACAP designation in professional materials. The designation must be reproduced accurately and not altered or abbreviated without the Centre’s consent.</li>
+        <li><strong>Revocation.</strong> The Centre reserves the right to revoke accreditation in circumstances of professional misconduct, misrepresentation, or conduct that brings the Centre into disrepute.</li>
+        <li><strong>Continuing Obligations.</strong> The Centre may in due course introduce continuing professional development requirements as a condition of maintaining accredited status.</li>
+      </ol>
+      <p style="color:var(--text-light);font-size:14px;margin-top:32px;">These terms are effective from February 2026 and may be amended by the Centre from time to time.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ========== MEMBERSHIP ========== -->
+<div class="page" id="page-membership">
+  <section class="hero hero-sm"><div class="hero-content"><h1>Membership with <span class="gold">CACAP</span></h1><p>Join our panel of qualified dispute resolution professionals across the Asia Pacific region.</p></div></section>
+  <section class="section section-light">
+    <div class="section-inner">
+      <div class="section-sub">Panel Membership</div><h2 class="section-title">Membership Categories</h2><div class="gold-line"></div>
+      <p style="color:var(--text-light);margin-bottom:8px;">Membership with the Construction Arbitration Centre (CACAP) is open to qualified professionals involved in construction dispute resolution. Members form our rosters of neutrals who may be considered for appointments across Asia Pacific disputes.</p>
+      <div class="mem-cats"><div class="mem-cat">Arbitrator</div><div class="mem-cat">Mediator</div><div class="mem-cat">Expert Determiner</div><div class="mem-cat">Expert Witness</div><div class="mem-cat">Dispute Board</div><div class="mem-cat">Adjudicator</div></div>
+      <h3 style="font-family:var(--hf);font-size:24px;color:var(--navy);margin-bottom:16px;">Benefits of Membership</h3>
+      <ul style="padding-left:20px;color:var(--text-light);font-size:15px;line-height:2.2;margin-bottom:32px;">
+        <li>Eligibility for inclusion on CACAP’s panel of neutrals and consideration for nomination or appointment.</li>
+        <li>Listing in CACAP’s professional roster of arbitrators, mediators, expert determiners, adjudicators, and dispute board members.</li>
+        <li>Access to member updates, panel opportunities, and notification of nomination requests.</li>
+        <li>Priority access to CACAP professional development programmes, training, and networking events.</li>
+        <li>Opportunity to serve as an appointed neutral in disputes throughout the Asia Pacific region.</li>
+        <li>Members may also be eligible for CACAP professional accreditation upon successful completion of a CACAP training course. <a style="color:var(--gold);cursor:pointer" onclick="showPage('accreditation')">View the Accreditation Scheme.</a></li>
+      </ul>
+      <h3 style="font-family:var(--hf);font-size:24px;color:var(--navy);margin-bottom:16px;">Application Process</h3>
+      <ol class="steps-list">
+        <li><strong>Review and Apply:</strong> Review the eligibility requirements and click the Apply for Membership button below.</li>
+        <li><strong>Complete Application:</strong> Provide all required information regarding your professional qualifications and experience.</li>
+        <li><strong>Panel Committee Review:</strong> Your application will be reviewed by the Panel Selection Committee (typically 5–7 business days).</li>
+        <li><strong>Approval Notification:</strong> Upon acceptance, a notification will be sent to your email address.</li>
+        <li><strong>Profile Management:</strong> Access the Member Portal to manage your profile, availability, and credentials.</li>
+      </ol>
+      <div style="margin-top:40px;text-align:center;background:var(--navy);padding:40px;">
+        <p style="color:rgba(255,255,255,.7);font-size:14px;margin-bottom:16px;">By applying for membership, you agree to our membership terms and acknowledge that you have read and understood our Privacy Policy.</p>
+        <a class="btn-p">Apply for Membership</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ========== CONTACT ========== -->
+<div class="page" id="page-contact">
+  <section class="hero hero-sm"><div class="hero-content"><h1>Contact <span class="gold">CACAP</span></h1><p>All enquiries should be made in writing initially.</p></div></section>
+  <section class="section section-light">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <div class="contact-detail"><strong>Address</strong>65/158 Chamnan Phenjati Business Center, Floor 19,<br>Huay Kwang Subdistrict, Huay Kwang District,<br>Bangkok 10310, Thailand</div>
+          <div class="contact-detail"><strong>Email</strong><a href="mailto:info@cacap.asia" style="color:var(--gold)">info@cacap.asia</a></div>
+        </div>
+        <div class="form-group">
+          <h3 style="font-family:var(--hf);font-size:24px;color:var(--navy);margin-bottom:20px;">Send an Enquiry</h3>
+          <input type="text" placeholder="First Name">
+          <input type="text" placeholder="Last Name">
+          <input type="email" placeholder="Email Address">
+          <select><option value="">Nature of Enquiry</option><option>Nomination Request</option><option>Membership Enquiry</option><option>Accreditation Enquiry</option><option>General Enquiry</option></select>
+          <textarea placeholder="Message"></textarea>
+          <a class="btn-p">Send</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo-text" style="margin-bottom:16px;">Construction Arbitration<br>Centre Asia Pacific<span>CACAP</span></div>
+      <p style="font-size:14px;line-height:1.6;max-width:280px;">The premier institution for resolving high-value construction and infrastructure disputes in the Asia Pacific region.</p>
+    </div>
+    <div class="footer-col"><h4>Quick Links</h4>
+      <a onclick="showPage('about')">About</a><a onclick="showPage('services')">Services</a><a onclick="showPage('accreditation')">Accreditation</a><a onclick="showPage('membership')">Membership</a><a onclick="showPage('nomination-request')">Nomination Request</a><a onclick="showPage('contact')">Contact</a>
+    </div>
+    <div class="footer-col"><h4>Accreditation</h4>
+      <a onclick="showPage('accreditation')">Accreditation Scheme</a><a onclick="showPage('panels')">Accredited Panels</a><a onclick="showPage('training')">Training Courses</a><a onclick="showPage('register')">Register Interest</a><a onclick="showPage('scheme-terms')">Scheme Terms</a>
+    </div>
+    <div class="footer-col"><h4>Contact</h4>
+      <p style="font-size:14px;line-height:1.6;margin-bottom:8px;">65/158 Chamnan Phenjati Business Center, Floor 19, Bangkok 10310, Thailand</p>
+      <a href="mailto:info@cacap.asia" style="color:var(--gold)">info@cacap.asia</a>
+      <p style="font-size:13px;margin-top:12px;">All enquiries should be made in writing initially.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Construction Arbitration Centre (Asia Pacific). All rights reserved.</span>
+    <span><a onclick="showPage('scheme-terms')">Scheme Terms</a> &middot; <a href="#">Privacy Policy</a> &middot; <a href="#">Terms &amp; Conditions</a></span>
+  </div>
+</footer>
+
+<script>
+function showPage(page){
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.nav-link').forEach(function(l){l.classList.remove('active')});
+  var el=document.getElementById('page-'+page);
+  if(el){el.classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+  // highlight parent nav
+  var map={home:'home',about:'about',rules:'about',faqs:'about',services:'services',arbitration:'services',mediation:'services','expert-determination':'services','expert-witness':'services','dispute-boards':'services',adjudication:'services',nomination:'services','admin-services':'services','nomination-request':'services',accreditation:'accreditation',panels:'accreditation',training:'accreditation',register:'accreditation','scheme-terms':'accreditation',membership:'membership',contact:'contact'};
+  var nav=document.getElementById('nav-'+(map[page]||page));
+  if(nav)nav.classList.add('active');
+}
+function showTab(id){
+  document.querySelectorAll('.rules-tab').forEach(function(t){t.classList.remove('active')});
+  document.querySelectorAll('.rules-panel').forEach(function(p){p.classList.remove('active')});
+  event.target.classList.add('active');
+  document.getElementById('tab-'+id).classList.add('active');
+}
+function toggleFaq(el){
+  el.parentElement.classList.toggle('open');
+}
+</script>
+</body></html>
