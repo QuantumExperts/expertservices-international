@@ -360,10 +360,7 @@ const sp=document.getElementById('scrollProgress');
 window.addEventListener('scroll',()=>{const h=document.documentElement;const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;sp.style.width=pct+'%';},{passive:true});
 /* Lazy image reveal */
 document.querySelectorAll('img[loading="lazy"]').forEach(img=>{if(img.complete){img.classList.add('loaded');}else{img.addEventListener('load',()=>img.classList.add('loaded'));}});
-/* Logo alignment — match INTERNATIONAL width to EXPERT SERVICES */
-function alignLogo(){document.querySelectorAll('.logo__wordmark').forEach(wm=>{const nm=wm.querySelector('.logo__name'),sb=wm.querySelector('.logo__sub');if(!nm||!sb)return;sb.style.letterSpacing='0px';sb.style.display='block';void sb.offsetWidth;const nw=nm.getBoundingClientRect().width,sw=sb.getBoundingClientRect().width,chars=sb.textContent.trim().length;if(nw>0&&sw>0&&chars>1&&nw>sw){const extra=(nw-sw)/(chars-1);sb.style.letterSpacing=extra.toFixed(2)+'px';}});}
-if(document.fonts&&document.fonts.ready){document.fonts.ready.then(()=>{alignLogo();});}else{window.addEventListener('load',alignLogo);}
-window.addEventListener('resize',alignLogo);setTimeout(alignLogo,500);
+
 </script>
 
 </body>
