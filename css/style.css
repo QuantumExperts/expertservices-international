@@ -47,9 +47,9 @@ button { font-family: var(--font); }
 
 /* Typography — all Inter, weights create hierarchy */
 h1, h2, h3, h4, h5, h6 { font-family: var(--font); color: var(--charcoal); line-height: 1.2; }
-h1 { font-size: clamp(2.5rem, 5vw, 3.75rem); font-weight: 700; letter-spacing: -0.025em; }
-h2 { font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight: 700; letter-spacing: -0.02em; }
-h3 { font-size: clamp(1.25rem, 2vw, 1.625rem); font-weight: 600; }
+h1 { font-size: clamp(2.5rem, 5vw, 3.75rem); font-weight: 700; letter-spacing: -0.025em; margin-bottom: 1.25rem; }
+h2 { font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 1.1rem; }
+h3 { font-size: clamp(1.25rem, 2vw, 1.625rem); font-weight: 600; margin-bottom: 0.85rem; }
 h4 { font-size: 1.25rem; font-weight: 600; }
 p { margin-bottom: 1.25em; color: var(--slate-600); line-height: 1.8; font-size: 1.05rem; }
 p:last-child { margin-bottom: 0; }
@@ -262,7 +262,7 @@ p:last-child { margin-bottom: 0; }
    ================================================ */
 .detail-block { padding: 2.5rem 0; border-bottom: 1px solid var(--slate-100); }
 .detail-block:last-child { border-bottom: none; }
-.detail-block__title { font-size: 1.2rem; font-weight: 700; color: var(--charcoal); margin-bottom: 0.75rem; }
+.detail-block__title { font-size: 1.2rem; font-weight: 700; color: var(--charcoal); margin-bottom: 1rem; }
 .detail-block__text { font-size: 0.95rem; color: var(--slate-600); line-height: 1.8; }
 .detail-block__text p { margin-bottom: 0.75em; }
 
@@ -271,7 +271,7 @@ p:last-child { margin-bottom: 0; }
 .numbered-block:last-child { border-bottom: none; }
 .numbered-block__num { font-size: 2.5rem; font-weight: 800; color: var(--slate-200); flex-shrink: 0; line-height: 1; min-width: 50px; }
 .numbered-block__content { flex: 1; }
-.numbered-block__title { font-size: 1.15rem; font-weight: 700; color: var(--charcoal); margin-bottom: 0.5rem; }
+.numbered-block__title { font-size: 1.15rem; font-weight: 700; color: var(--charcoal); margin-bottom: 0.85rem; }
 .numbered-block__text { font-size: 0.95rem; color: var(--slate-600); line-height: 1.8; }
 
 /* ================================================
