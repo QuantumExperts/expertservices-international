@@ -610,7 +610,7 @@ p {
 }
 
 .hero--page {
-  min-height: 50vh;
+  min-height: 35vh;
 }
 
 .hero--tall {
@@ -1522,6 +1522,13 @@ p {
 
   .content-columns--reverse {
     direction: ltr;
+  }
+}
+
+@media (max-width: 768px) {
+  .two-col-layout {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
   }
 }
 
