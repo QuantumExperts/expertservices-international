@@ -1,0 +1,176 @@
+================================================================================
+EXPERT SERVICES INTERNATIONAL — PREMIUM WEBSITE PAGES REBUILT
+================================================================================
+Date: March 12, 2026
+Status: Complete
+
+================================================================================
+PAGES CREATED
+================================================================================
+
+1. /tmp/esi-deploy/expert-witness.html
+   - Service Page for Expert Witness Services
+   - Hero Image: hero-expert.jpg (50vh height with overlay)
+   - Content: Quantum, valuation, time and technical expertise
+   - Sections: Introduction, Expertise Areas, Protocols, Related Services, CTA
+   - Length: 336 lines
+
+2. /tmp/esi-deploy/expert-witness-protocols.html
+   - Professional Standards & Protocol Compliance Page
+   - Hero Image: hero-protocols.jpg (50vh height with overlay)
+   - Content: International arbitration, Australia, UK, US protocols
+   - Sections: International Arbitration (21 protocols), Australia (14), UK (3), US (6)
+   - Protocol Grid Class: Used for 2-column layout with diamond bullets
+   - Length: 373 lines
+
+3. /tmp/esi-deploy/quantum-delay-disruption.html
+   - Specialized Service Page for Quantum, Delay & Disruption Analysis
+   - Hero Image: hero-quantum.jpg (50vh height with overlay)
+   - Content: Complex quantum claims, delay analysis, disruption assessment
+   - Sections: Quantum Analysis, Delay & Disruption, Expertise, Related Services
+   - Length: 345 lines
+
+4. /tmp/esi-deploy/claims-analysis.html
+   - Claims & Damages Analysis Service Page
+   - Hero Image: hero-claims.jpg (50vh height with overlay)
+   - Content: Strategic support for claims quantification and resolution
+   - Sections: Claims Analysis, Strategic Support, Methodology, Early Intervention
+   - Length: 363 lines
+
+================================================================================
+DESIGN COMPLIANCE
+================================================================================
+
+FONTS:
+✓ DM Serif Display for headings (via Google Fonts)
+✓ Inter for body text (via Google Fonts)
+✓ CSS Google Fonts link included in all pages
+
+COLORS:
+✓ Copper/Bronze accent: #b07c4b
+✓ Charcoal: #111827
+✓ Slate greys throughout
+✓ NO TEAL colors used
+
+HEADER & NAVIGATION:
+✓ Transparent background header
+✓ SVG logo mark with copper background
+✓ Logo text: "Expert Services International"
+✓ Navigation structure:
+  - Home
+  - About (dropdown: The Consultancy, Neil Kirkpatrick, Consultants)
+  - Services (dropdown: Expert Witness, Protocols, Quantum Delay, Claims Analysis, etc.)
+  - Disputes (dropdown: Dispute Resolution, Expert Determination, Arbitration, Mediation, Security of Payment)
+  - Contact Us (pill style button)
+✓ Mobile menu toggle with hamburger icon
+
+HERO SECTIONS:
+✓ .hero--sub class (50vh height)
+✓ Proper background image overlay gradient
+✓ Eyebrow text with accent color
+✓ Large hero titles
+✓ Descriptive text content
+
+CSS CLASSES USED:
+✓ .section and .section--light for content areas
+✓ .content-split for two-column layouts
+✓ .content-split--reverse for reversed layouts
+✓ .grid-2 and .grid-3 for responsive grids
+✓ .service-card with hover effects
+✓ .feature for feature items
+✓ .protocol-grid for protocol listings (2-column with diamond bullets)
+✓ .fade-up for scroll animations
+✓ .cta-banner for call-to-action section
+✓ .container and .container--narrow for responsive widths
+
+FOOTER:
+✓ Exact same structure as index.html
+✓ Logo in footer
+✓ 4-column grid (Brand, Services, Company, Contact)
+✓ Contact icons (email, phone, address)
+✓ Location tags (Australia, Asia, United Kingdom)
+✓ Social links (LinkedIn)
+✓ Copyright notice
+
+JAVASCRIPT:
+✓ Menu toggle functionality
+✓ Scroll header state changes
+✓ IntersectionObserver for fade-up animations
+✓ Mobile dropdown menu handling
+✓ Passive scroll listeners
+
+================================================================================
+CONTENT SOURCES
+================================================================================
+
+All content extracted from:
+- Original website: expertservices.com.au
+- Data file: /sessions/vigilant-compassionate-maxwell/subpages-data.json
+- Expert witness services, protocols, quantum/delay, and claims analysis sections
+- Rebranded from "Construction Expert Services" to "Expert Services International"
+
+================================================================================
+FEATURES INCLUDED
+================================================================================
+
+Each page includes:
+✓ Complete HTML structure with semantic markup
+✓ Google Fonts CDN links
+✓ CSS stylesheet link (css/style.css)
+✓ Meta tags for descriptions
+✓ Responsive viewport meta tag
+✓ Proper header with navigation
+✓ Hero section with background image
+✓ Multiple content sections with varied layouts
+✓ Service card grids with hover effects
+✓ Protocol grid for structured lists
+✓ CTA banner sections
+✓ Complete footer with all links
+✓ Minified JavaScript at bottom
+✓ Fade-up scroll animations throughout
+
+================================================================================
+FILE SIZES
+================================================================================
+
+expert-witness.html:              22 KB (336 lines)
+expert-witness-protocols.html:    23 KB (373 lines)
+quantum-delay-disruption.html:    22 KB (345 lines)
+claims-analysis.html:             23 KB (363 lines)
+
+Total: ~90 KB (1,417 lines)
+
+================================================================================
+TESTING CHECKLIST
+================================================================================
+
+✓ All pages have proper HTML5 structure
+✓ All meta tags present (charset, viewport, description)
+✓ Google Fonts loaded correctly
+✓ CSS stylesheet linked
+✓ SVG logo displays properly
+✓ Navigation structure matches specification
+✓ Hero sections use .hero--sub class
+✓ Content sections properly styled
+✓ CTA banners present on all pages
+✓ Footer identical across pages
+✓ JavaScript includes all required functionality
+✓ Responsive classes applied (grid-2, grid-3, etc.)
+✓ Scroll animations (fade-up) configured
+✓ Colors follow design system (copper/charcoal/slate)
+✓ No teal colors present
+✓ Protocol grids use proper 2-column layout
+✓ Service cards have proper image and hover states
+
+================================================================================
+READY FOR DEPLOYMENT
+================================================================================
+
+All pages are complete, tested, and ready for:
+- Integration with existing website
+- Image asset linking (hero images already referenced)
+- Browser testing across devices
+- Performance optimization
+- SEO review
+
+Project Complete.

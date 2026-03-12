@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Outer navy square -->
+  <rect width="200" height="200" fill="#0c1829"/>
+  <!-- White inner square -->
+  <rect x="24" y="24" width="152" height="152" fill="#ffffff"/>
+  <!-- Top navy bar -->
+  <rect x="54" y="58" width="92" height="26" fill="#0c1829"/>
+  <!-- Bottom navy bar -->
+  <rect x="54" y="116" width="92" height="26" fill="#0c1829"/>
+</svg>

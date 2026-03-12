@@ -1,0 +1,115 @@
+EXPERT SERVICES INTERNATIONAL - 4 NEW HTML PAGES CREATED
+=========================================================
+
+All 4 pages have been successfully created at /tmp/esi-deploy/
+
+1. SECURITY OF PAYMENT PAGE
+   File: /tmp/esi-deploy/security-of-payment.html
+   Hero: hero--sub class with hero-payment.jpg background
+   Eyebrow: "Payment Disputes"
+   Title: "Security of Payment"
+   Content: Uses EXACT text from JSON "security-of-payment" page
+   Sections:
+     - Quick Response Services (intro section)
+     - Focused & Efficient Advice
+     - Claims and Schedules
+     - Early Intervention
+   Features:
+     - Alternating .section and .section--grey classes
+     - .fade-up animations on content
+     - CTA banner at bottom
+     - Same header/nav/footer as index.html
+
+2. COMMERCIAL ANALYSIS PAGE
+   File: /tmp/esi-deploy/commercial-analysis.html
+   Hero: hero--sub class with hero-commercial.jpg background
+   Eyebrow: "Contract Management"
+   Title: "Commercial Analysis"
+   Content: Full lifecycle commercial management consultancy from feasibility through final account negotiation
+   Services (using .protocol-grid and .protocol-item):
+     - Full Lifecycle Commercial Management
+     - Quantity Surveying
+     - Contract Drafting
+     - Subcontract Work Packaging
+     - Risk Assessment
+     - Contract Notices & Documentation
+     - Claim & Defense Preparation
+     - Work in Progress Reporting
+     - Payment Claim & Schedule Analysis
+     - Final Account Resolution
+   Features:
+     - 10-item protocol grid for services
+     - Trusted partnership section with image
+     - Clean Inter font only (no Playfair Display)
+     - Teal accent (#00a3a3) and navy base (#0c1829)
+
+3. CONSTRUCTION DEFECTS PAGE
+   File: /tmp/esi-deploy/construction-defects.html
+   Hero: hero--sub class with hero-defects.jpg background
+   Eyebrow: "Defect Analysis"
+   Title: "Construction Defects"
+   Content: Investigation of design issues and construction defects
+   Scope (using .protocol-grid and .protocol-item):
+     - Review of Contracts, Drawings & Specifications
+     - Forensic Analysis of Defect Causes
+     - Site Inspection & Assessment
+     - Quantification of Damage Costs
+     - Remedial Work Review
+     - Assessment of Secondary Impacts
+     - Expert Witness Reports & Testimony
+   Features:
+     - 7-item protocol grid for investigation scope
+     - Expert approach section with reverse content-split
+     - Same design template and footer as other pages
+
+4. CONTACT PAGE
+   File: /tmp/esi-deploy/contact.html
+   Hero: hero--sub class with hero-contact.jpg background
+   Eyebrow: "Get in Touch"
+   Title: "Contact Us"
+   Layout: grid-2 (two column layout)
+   Left Column: Contact Form
+     - Full Name (required)
+     - Email Address (required)
+     - Phone Number
+     - Subject (required)
+     - Message (textarea, required)
+     - Submit button with .btn .btn--primary styling
+   Right Column: Contact Details
+     - Email: contact@expertservices.com.au
+     - Phone: +61 (0) 2 9057 9088
+     - Address: Grosvenor Place, Level 15, 225 George Street, Sydney, NSW 2000, Australia
+     - Locations: Australia, Asia, United Kingdom (with .location-tag styling)
+
+DESIGN SPECIFICATIONS IMPLEMENTED
+==================================
+✓ Inter font only (no Playfair Display) - font imported from Google Fonts
+✓ Teal accent color (#00a3a3)
+✓ Navy base color (#0c1829)
+✓ Hero uses "hero hero--sub" class for subpages (45vh height)
+✓ CSS classes used: .eyebrow, .lead, .content-split, .fade-up, .protocol-grid, .protocol-item
+✓ Buttons: .btn .btn--primary and .btn--outline-dark
+✓ Content sections: .section, .section--grey (alternating)
+✓ Forms: .form-group, .form-label, .form-input, .form-textarea
+✓ CTA banner: .cta-banner class
+✓ Same header/nav structure from index.html on all pages
+✓ Same footer structure from index.html on all pages
+✓ Same script block for menu and scroll functionality on all pages
+✓ Images from images/new/ folder
+✓ CSS link to css/style.css
+
+CONTENT FROM JSON
+=================
+All page content uses EXACT text from /sessions/vigilant-compassionate-maxwell/subpages-data.json
+Navigation has been updated to show "Expert Services International" throughout
+All internal links (nav, footer, buttons) follow the correct URL structure
+The pages are ready for integration into the website deployment
+
+FILES CREATED
+=============
+1. /tmp/esi-deploy/security-of-payment.html (212 lines)
+2. /tmp/esi-deploy/commercial-analysis.html (239 lines)
+3. /tmp/esi-deploy/construction-defects.html (227 lines)
+4. /tmp/esi-deploy/contact.html (226 lines)
+
+Total: 904 lines of code across 4 pages

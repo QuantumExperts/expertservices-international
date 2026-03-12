@@ -15,12 +15,7 @@
 <header class="header" id="header">
     <div class="header__inner">
         <a href="index.html" class="logo">
-            <div class="logo__icon">
-                <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="38" height="38" rx="4" fill="#b07c4b"/>
-                    <path d="M10 10h18v3.5H14.5v4H25v3.5H14.5v4H28V29H10V10z" fill="#fff"/>
-                </svg>
-            </div>
+            <div class="logo__icon"><img src="images/logo.svg" alt="ESI Logo"></div>
             <div class="logo__wordmark">
                 <span class="logo__name">Expert Services</span>
                 <span class="logo__sub">International</span>
@@ -59,6 +54,7 @@
                 </div>
             </div>
             <div class="nav__actions">
+                <a href="expert-witness.html" class="btn btn--outline btn--small">Expert Witness</a>
                 <a href="contact.html" class="btn btn--primary btn--small">Contact Us</a>
             </div>
         </nav>
@@ -286,9 +282,7 @@
         <div class="footer__grid">
             <div class="fade-up">
                 <a href="index.html" class="logo" style="margin-bottom: 1.5rem; display: inline-flex;">
-                    <div class="logo__icon" style="width: 30px; height: 30px;">
-                        <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="38" rx="4" fill="#b07c4b"/><path d="M10 10h18v3.5H14.5v4H25v3.5H14.5v4H28V29H10V10z" fill="#fff"/></svg>
-                    </div>
+                    <div class="logo__icon" style="width:32px;height:32px;"><img src="images/logo.svg" alt="ESI Logo"></div>
                     <div class="logo__wordmark">
                         <span class="logo__name" style="font-size: 0.85rem;">Expert Services</span>
                         <span class="logo__sub" style="font-size: 0.52rem;">International</span>
@@ -357,6 +351,7 @@
     </div>
 </footer>
 
+<div class="scroll-progress" id="scrollProgress"></div>
 <script>
 const mt=document.getElementById('menuToggle'),mn=document.getElementById('mainNav');
 if(mt&&mn){

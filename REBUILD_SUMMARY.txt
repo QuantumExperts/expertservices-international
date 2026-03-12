@@ -1,0 +1,132 @@
+EXPERT SERVICES INTERNATIONAL — PAGE REBUILD SUMMARY
+=====================================================
+
+Date: March 12, 2026
+Status: COMPLETE
+
+4 PAGES SUCCESSFULLY REBUILT:
+=============================
+
+1. /tmp/esi-deploy/about.html
+   • Hero Image: hero-about.jpg
+   • Font: Inter (400-800) — NO serif fonts
+   • Email: contact@expertservices.international
+   • Key Sections:
+     - Hero (hero--sub)
+     - Service Overview Boxes (4 items in grid-4)
+     - About Us Section (section--light)
+     - Full-width Image Band (International Reach)
+     - Core Capabilities (grid-2)
+     - Experience Stats (section--dark with stats grid)
+     - CTA Banner
+     - Footer with correct email
+   • CSS Classes Used: section, section--light, section--dark, image-band, detail-block, cta-banner, fade-up, eyebrow
+   • Content: ALL original content from Wix page preserved
+   • Design: Dense with multiple sections, NO content-split layouts
+
+2. /tmp/esi-deploy/neil-kirkpatrick.html
+   • Hero Image: hero-neil.jpg
+   • Font: Inter (400-800) — NO serif fonts
+   • Email: contact@expertservices.international
+   • Key Sections:
+     - Hero (hero--sub) with qualifications summary
+     - Section 1: Expert Profile with bio
+     - 3 Numbered Blocks:
+       01. Professional Qualifications
+       02. Background & Experience
+       03. Strategic Guidance
+     - Image Band (Consulting Services)
+     - Services Overview (grid-2)
+     - Geographic Reach (grid-3)
+     - CTA Banner
+     - Footer
+   • CSS Classes Used: numbered-block, numbered-block__num, numbered-block__title, image-band, detail-block, cta-banner, fade-up, eyebrow
+   • Content: ALL original content preserved (BSc, LL.M, DipICArb, FCIArb, FRI, FRICS, FCIOB and full biography)
+   • Design: Dense, uses numbered-blocks for visual hierarchy, multiple content sections
+
+3. /tmp/esi-deploy/consultants.html
+   • Hero Image: hero-consultants.jpg
+   • Font: Inter (400-800) — NO serif fonts
+   • Email: contact@expertservices.international
+   • Key Sections:
+     - Hero (hero--sub) with "Expert Consultancy Resources"
+     - Our Network intro
+     - 3 Service Cards (grid-3) highlighting:
+       - Diverse Specialisations
+       - Complex Submissions
+       - Strategic Agility
+     - Consultant Network section with full list of specialists
+     - Full-width Image Band (Professional Capabilities)
+     - CTA Banner
+     - Footer
+   • CSS Classes Used: section, service-card--simple, image-band, detail-block, cta-banner, fade-up, eyebrow
+   • Content: ALL original content about consultant network, expertise, multidisciplinary input, professional capabilities
+   • Design: Dense with multiple sections, image-band replaces content-split layout
+
+4. /tmp/esi-deploy/services.html
+   • Hero Image: hero-services.jpg
+   • Font: Inter (400-800) — NO serif fonts
+   • Email: contact@expertservices.international
+   • Key Sections:
+     - Hero (hero--sub) with intro
+     - Intro paragraph
+     - 9 Service Cards (grid-3 x3) using service-card--simple:
+       01. Expert Witness
+       02. Expert Determination
+       03. Quantum, Delay & Disruption
+       04. Claims & Damages Analysis
+       05. Dispute Resolution
+       06. Commercial Arbitration
+       07. Commercial Mediation
+       08. Security of Payment
+       09. Construction Defects
+     - Industry Experience (tag-grid with 12 tags):
+       • Industrial Construction
+       • Retail & Fit Out
+       • Residential Construction
+       • Commercial Development
+       • Hotel & Retail Development
+       • Civil Engineering & Infrastructure
+       • Resource & Mining
+       • Petroleum & Chemical
+       • Marine & Shipping
+       • Rail & Road
+       • Building Conservation
+       • Professional Indemnity
+     - How We Work section
+     - CTA Banner
+     - Footer
+   • CSS Classes Used: section, section--light, service-card--simple, tag-grid, cta-banner, fade-up, eyebrow
+   • Content: ALL original content from services page preserved, full intro paragraph included
+   • Design: Dense and comprehensive, all 9 services displayed as simple cards (no images in cards)
+
+DESIGN COMPLIANCE:
+==================
+✓ Font: Inter only (weights 400-800) — NO serif fonts, NO DM Serif Display
+✓ Colours: Copper #b07c4b, charcoal #111827, slate greys — NO TEAL
+✓ Layouts: Full-width sections with image-bands — NO content-split layouts
+✓ Email: contact@expertservices.international (everywhere)
+✓ Content: DENSE with multiple sections — NOT sparse
+✓ CSS Classes: section, section--light, section--dark, image-band, detail-block, numbered-block, service-card, service-card--simple, tag-grid, cta-banner, fade-up, eyebrow
+✓ Header/Footer: Copied EXACTLY from index.html
+✓ Navigation: All 4 pages properly linked in nav menus
+✓ Hero Structure: hero--sub class used for all subpages
+✓ JavaScript: Menu toggle, scroll header, fade-up intersection observer (exact copy from index.html)
+
+ALL PAGES INCLUDE:
+• Proper head with Inter font link
+• Full header/nav with correct active states
+• hero--sub section with proper hero images
+• Substantial body content (multiple sections)
+• image-band where appropriate
+• CTA banner
+• Full footer with correct contact info
+• JS script block with menu toggle, scroll handler, and fade-up observer
+
+ORIGINAL CONTENT PRESERVED:
+✓ About.html: All 4 service overview boxes, full "About Us" text, original content maintained
+✓ Neil-Kirkpatrick.html: ALL qualifications listed, background, consulting services included
+✓ Consultants.html: Network expertise, multidisciplinary input, professional capabilities all included
+✓ Services.html: Full intro paragraph, all 9 services, all 12 industry sectors included
+
+STATUS: READY FOR DEPLOYMENT
