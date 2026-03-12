@@ -262,7 +262,7 @@
 <section class="cta-banner fade-up">
     <div class="container">
         <p class="eyebrow" style="color: var(--accent-light);">Engage Our Expertise</p>
-        <h2>How May We Assist You?</h2>
+        <h2>How May We Assist?</h2>
         <p>We welcome the opportunity to discuss your requirements and to outline how our advisory and expert witness services may be of assistance.</p>
         <a href="contact.html" class="btn btn--primary">Contact Us <span class="arrow">&rarr;</span></a>
     </div>
@@ -277,7 +277,7 @@
                     <div class="logo__icon" style="width:34px;height:34px;"><img src="images/logo.svg" alt="ESI Logo"></div>
                     <div class="logo__wordmark">
                         <span class="logo__name" style="font-size: 0.88rem;">Expert Services</span>
-                        <span class="logo__sub" style="font-size: 0.62rem; letter-spacing: 0.44em;">International</span>
+                        <span class="logo__sub" style="font-size: 0.62rem;">International</span>
                     </div>
                 </a>
                 <p class="footer__brand-text">Independent advisory services for construction, infrastructure and engineering disputes across Australia, Asia and the United Kingdom.</p>
@@ -361,8 +361,9 @@ window.addEventListener('scroll',()=>{const h=document.documentElement;const pct
 /* Lazy image reveal */
 document.querySelectorAll('img[loading="lazy"]').forEach(img=>{if(img.complete){img.classList.add('loaded');}else{img.addEventListener('load',()=>img.classList.add('loaded'));}});
 /* Logo alignment — match INTERNATIONAL width to EXPERT SERVICES */
-function alignLogo(){document.querySelectorAll('.logo__wordmark').forEach(wm=>{const nm=wm.querySelector('.logo__name'),sb=wm.querySelector('.logo__sub');if(!nm||!sb)return;sb.style.letterSpacing='0';const nw=nm.offsetWidth,sw=sb.offsetWidth,chars=sb.textContent.trim().length;if(sw>0&&chars>1){const extra=(nw-sw)/(chars-1);sb.style.letterSpacing=Math.max(0,extra)+'px';}});}
-alignLogo();window.addEventListener('resize',alignLogo);
+function alignLogo(){document.querySelectorAll('.logo__wordmark').forEach(wm=>{const nm=wm.querySelector('.logo__name'),sb=wm.querySelector('.logo__sub');if(!nm||!sb)return;sb.style.letterSpacing='0px';sb.style.display='block';void sb.offsetWidth;const nw=nm.getBoundingClientRect().width,sw=sb.getBoundingClientRect().width,chars=sb.textContent.trim().length;if(nw>0&&sw>0&&chars>1&&nw>sw){const extra=(nw-sw)/(chars-1);sb.style.letterSpacing=extra.toFixed(2)+'px';}});}
+if(document.fonts&&document.fonts.ready){document.fonts.ready.then(()=>{alignLogo();});}else{window.addEventListener('load',alignLogo);}
+window.addEventListener('resize',alignLogo);setTimeout(alignLogo,500);
 </script>
 
 </body>
