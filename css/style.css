@@ -146,7 +146,7 @@ p:last-child { margin-bottom: 0; }
 /* ================================================
    HERO
    ================================================ */
-.hero { position: relative; min-height: 70vh; display: flex; align-items: center; overflow: hidden; }
+.hero { position: relative; min-height: 78vh; display: flex; align-items: center; overflow: hidden; }
 .hero--showcase { min-height: 65vh; }
 .hero__overlay--light { background: linear-gradient(160deg, rgba(10,15,26,0.25) 0%, rgba(15,23,42,0.1) 50%, rgba(10,15,26,0.2) 100%); }
 .hero--sub { min-height: 55vh; }
@@ -242,13 +242,13 @@ p:last-child { margin-bottom: 0; }
    FULL-WIDTH IMAGE BAND — replaces small side images
    ================================================ */
 .image-band { position: relative; min-height: 400px; background-size: cover; background-position: center; background-attachment: fixed; }
-.image-band__overlay { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(10,15,26,0.88) 0%, rgba(15,23,42,0.65) 100%); }
+.image-band__overlay { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(10,15,26,0.93) 0%, rgba(15,23,42,0.78) 100%); }
 .image-band__content { position: relative; z-index: 2; padding: var(--section-pad) 0; }
 .image-band h2 { color: var(--white); margin-bottom: 1.25rem; }
 .image-band p { color: rgba(255,255,255,0.65); max-width: 700px; }
 .image-band .eyebrow { color: var(--accent-light); }
 .eyebrow--band { font-size: 0.85rem; letter-spacing: 0.18em; }
-.image-band--tribunal .image-band__overlay { background: linear-gradient(160deg, rgba(10,15,26,0.92) 0%, rgba(15,23,42,0.78) 100%); }
+.tribunal-band p:not(.eyebrow) { color: rgba(255,255,255,0.65); max-width: 700px; }
 .image-band .btn { margin-top: 1rem; }
 
 /* ================================================
