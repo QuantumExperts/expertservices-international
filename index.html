@@ -360,6 +360,9 @@ const sp=document.getElementById('scrollProgress');
 window.addEventListener('scroll',()=>{const h=document.documentElement;const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;sp.style.width=pct+'%';},{passive:true});
 /* Lazy image reveal */
 document.querySelectorAll('img[loading="lazy"]').forEach(img=>{if(img.complete){img.classList.add('loaded');}else{img.addEventListener('load',()=>img.classList.add('loaded'));}});
+/* Logo alignment — match INTERNATIONAL width to EXPERT SERVICES */
+function alignLogo(){document.querySelectorAll('.logo__wordmark').forEach(wm=>{const nm=wm.querySelector('.logo__name'),sb=wm.querySelector('.logo__sub');if(!nm||!sb)return;sb.style.letterSpacing='0';const nw=nm.offsetWidth,sw=sb.offsetWidth,chars=sb.textContent.trim().length;if(sw>0&&chars>1){const extra=(nw-sw)/(chars-1);sb.style.letterSpacing=Math.max(0,extra)+'px';}});}
+alignLogo();window.addEventListener('resize',alignLogo);
 </script>
 
 </body>

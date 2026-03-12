@@ -281,6 +281,9 @@ window.addEventListener('scroll',()=>{hdr.classList.toggle('header--scrolled',wi
 /* IntersectionObserver for fade-up */
 const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+/* Logo alignment — match INTERNATIONAL width to EXPERT SERVICES */
+function alignLogo(){document.querySelectorAll('.logo__wordmark').forEach(wm=>{const nm=wm.querySelector('.logo__name'),sb=wm.querySelector('.logo__sub');if(!nm||!sb)return;sb.style.letterSpacing='0';const nw=nm.offsetWidth,sw=sb.offsetWidth,chars=sb.textContent.trim().length;if(sw>0&&chars>1){const extra=(nw-sw)/(chars-1);sb.style.letterSpacing=Math.max(0,extra)+'px';}});}
+alignLogo();window.addEventListener('resize',alignLogo);
 </script>
 </body>
 </html>
