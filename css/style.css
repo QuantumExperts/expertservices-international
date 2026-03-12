@@ -111,8 +111,8 @@ p:last-child { margin-bottom: 0; }
 .logo__icon { width: 44px; height: 44px; flex-shrink: 0; }
 .logo__icon img, .logo__icon svg { width: 100%; height: 100%; }
 .logo__wordmark { display: flex; flex-direction: column; justify-content: center; }
-.logo__name { font-size: 1.1rem; font-weight: 700; color: var(--white); line-height: 1.15; letter-spacing: 0.15em; text-transform: uppercase; }
-.logo__sub { font-size: 0.78rem; font-weight: 400; letter-spacing: 0.44em; text-transform: uppercase; color: rgba(255,255,255,0.6); line-height: 1; margin-top: 2px; display: block; }
+.logo__name { font-size: 1.05rem; font-weight: 700; color: var(--white); line-height: 1.15; letter-spacing: 0.15em; text-transform: uppercase; }
+.logo__sub { font-size: 0.82rem; font-weight: 400; letter-spacing: 0.48em; text-transform: uppercase; color: rgba(255,255,255,0.6); line-height: 1; margin-top: 2px; display: block; }
 
 .nav { display: flex; align-items: center; gap: 0; flex: 1; }
 .nav__item { position: relative; }
@@ -248,7 +248,10 @@ p:last-child { margin-bottom: 0; }
 .image-band p { color: rgba(255,255,255,0.65); max-width: 700px; }
 .image-band .eyebrow { color: var(--accent-light); }
 .eyebrow--band { font-size: 0.85rem; letter-spacing: 0.18em; }
+.tribunal-band { background: #1a2744; }
+.tribunal-band h2, .tribunal-band h3 { color: var(--white); }
 .tribunal-band p:not(.eyebrow) { color: rgba(255,255,255,0.65); max-width: 700px; }
+.tribunal-band .eyebrow { color: var(--accent-light); }
 .image-band .btn { margin-top: 1rem; }
 
 /* ================================================
