@@ -1,448 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Metadata & SEO -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Expert Services International provides comprehensive multidisciplinary expert services including expert determination, expert witness, dispute resolution, quantum analysis, and claims analysis for complex projects globally.">
-    <meta name="keywords" content="expert services, expert witness, expert determination, quantum delay, disruption, claims analysis, dispute resolution, arbitration, mediation">
-    <meta name="author" content="Expert Services International">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-
-    <!-- Open Graph Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://expertservices.international/services.html">
-    <meta property="og:title" content="Expert Services - Expert Services International">
-    <meta property="og:description" content="Comprehensive multidisciplinary expert services including expert witness, quantum analysis, dispute resolution, and claims analysis for complex projects.">
-    <meta property="og:site_name" content="Expert Services International">
-    <meta property="og:locale" content="en_US">
-
-    <!-- Twitter/X Tags -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://expertservices.international/services.html">
-    <meta property="twitter:title" content="Expert Services">
-    <meta property="twitter:description" content="Comprehensive multidisciplinary expert services for complex disputes and projects.">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-
-    <!-- Title -->
-    <title>Expert Services - Expert Services International</title>
-
-    <!-- Google Fonts -->
+    <meta name="description" content="Comprehensive expert services including expert witness, dispute resolution, claims analysis, and consulting services.">
+    <title>Expert Services — Expert Services International</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Expert Services International",
-        "url": "https://expertservices.international/",
-        "logo": "https://expertservices.international/images/logo.png",
-        "description": "Expert Services International provides comprehensive multidisciplinary expert services including expert witness, quantum analysis, dispute resolution, and claims analysis.",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Grosvenor Place, Level 15, 225 George Street",
-            "addressLocality": "Sydney",
-            "addressRegion": "NSW",
-            "postalCode": "2000",
-            "addressCountry": "AU"
-        },
-        "telephone": "+61 2 9057 9088",
-        "email": "contact@expertservices.com.au",
-        "sameAs": [
-            "https://au.linkedin.com/company/constructionexpertservices",
-            "https://twitter.com/QuantumExperts"
-        ],
-        "areaServed": ["AU", "AS", "GB"],
-        "serviceType": ["Expert Witness Services", "Expert Determination", "Dispute Resolution", "Quantum Analysis"]
-    }
-    </script>
 </head>
 <body>
 
-    <!-- ============================================
-         HEADER NAVIGATION
-         ============================================ -->
-    <header class="header">
-        <div class="header__inner">
-            <!-- Logo -->
-            <a href="index.html" class="logo">
-                <div class="logo__icon">E</div>
-                <div class="logo__text">
-                    <div class="logo__name">EXPERT SERVICES</div>
-                    <div class="logo__tagline">INTERNATIONAL</div>
+<header class="header" id="header">
+    <div class="header__inner">
+        <a href="index.html" class="logo">
+            <div class="logo__mark">E</div>
+            <div class="logo__text">
+                <div class="logo__name">Expert Services</div>
+                <div class="logo__tagline">International</div>
+            </div>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <nav class="nav" id="mainNav">
+            <div class="nav__item"><a href="index.html" class="nav__link">Home</a></div>
+            <div class="nav__item">
+                <a href="about.html" class="nav__link">About Us</a>
+                <div class="nav__dropdown">
+                    <a href="about.html" class="nav__dropdown-link">The Consultancy</a>
+                    <a href="neil-kirkpatrick.html" class="nav__dropdown-link">Neil Kirkpatrick</a>
+                    <a href="consultants.html" class="nav__dropdown-link">Consultants</a>
                 </div>
-            </a>
-
-            <!-- Mobile Menu Toggle -->
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <!-- Main Navigation -->
-            <nav class="nav" id="mainNav">
-                <div class="nav__item">
-                    <a href="index.html" class="nav__link">HOME</a>
+            </div>
+            <div class="nav__item">
+                <a href="services.html" class="nav__link nav__link--active">Expert Services</a>
+                <div class="nav__dropdown">
+                    <a href="expert-witness.html" class="nav__dropdown-link">Expert Witness Services</a>
+                    <a href="expert-witness-protocols.html" class="nav__dropdown-link">Expert Witness Protocols</a>
+                    <a href="quantum-delay-disruption.html" class="nav__dropdown-link">Quantum Delay &amp; Disruption</a>
+                    <a href="claims-analysis.html" class="nav__dropdown-link">Claims &amp; Damages Analysis</a>
+                    <a href="dispute-resolution.html" class="nav__dropdown-link">Dispute Resolution</a>
+                    <a href="expert-determination.html" class="nav__dropdown-link">Expert Determination</a>
+                    <a href="commercial-arbitration.html" class="nav__dropdown-link">Commercial Arbitration</a>
+                    <a href="commercial-mediation.html" class="nav__dropdown-link">Commercial Mediation</a>
+                    <a href="security-of-payment.html" class="nav__dropdown-link">Security of Payment</a>
+                    <a href="commercial-analysis.html" class="nav__dropdown-link">Commercial Analysis</a>
+                    <a href="construction-defects.html" class="nav__dropdown-link">Construction Defects</a>
                 </div>
+            </div>
+            <div class="nav__actions">
+                <a href="expert-witness.html" class="btn btn--primary btn--small">Expert Witness</a>
+                <a href="contact.html" class="btn btn--outline btn--small">Contact</a>
+            </div>
+        </nav>
+    </div>
+</header>
 
-                <div class="nav__item" id="aboutDropdown">
-                    <a href="about.html" class="nav__link">ABOUT US</a>
-                    <div class="nav__dropdown">
-                        <a href="about.html" class="nav__dropdown-link">THE CONSULTANCY</a>
-                        <a href="neil-kirkpatrick.html" class="nav__dropdown-link">NEIL KIRKPATRICK</a>
-                        <a href="consultants.html" class="nav__dropdown-link">CONSULTANTS</a>
-                    </div>
-                </div>
-
-                <div class="nav__item" id="servicesDropdown">
-                    <a href="services.html" class="nav__link nav__link--active">EXPERT SERVICES</a>
-                    <div class="nav__dropdown">
-                        <a href="expert-witness.html" class="nav__dropdown-link">EXPERT WITNESS SERVICES</a>
-                        <a href="expert-witness-protocols.html" class="nav__dropdown-link">EXPERT WITNESS PROTOCOLS</a>
-                        <a href="quantum-delay-disruption.html" class="nav__dropdown-link">QUANTUM DELAY & DISRUPTION</a>
-                        <a href="claims-analysis.html" class="nav__dropdown-link">CLAIMS & DAMAGES ANALYSIS</a>
-                        <a href="dispute-resolution.html" class="nav__dropdown-link">DISPUTE RESOLUTION</a>
-                        <a href="expert-determination.html" class="nav__dropdown-link">EXPERT DETERMINATION</a>
-                        <a href="commercial-arbitration.html" class="nav__dropdown-link">COMMERCIAL ARBITRATION</a>
-                        <a href="commercial-mediation.html" class="nav__dropdown-link">COMMERCIAL MEDIATION</a>
-                        <a href="security-of-payment.html" class="nav__dropdown-link">SECURITY OF PAYMENT</a>
-                        <a href="commercial-analysis.html" class="nav__dropdown-link">COMMERCIAL ANALYSIS</a>
-                        <a href="construction-defects.html" class="nav__dropdown-link">CONSTRUCTION DEFECTS</a>
-                    </div>
-                </div>
-
-                <!-- Action Buttons for Desktop -->
-                <div style="margin-left: auto; display: flex; gap: 0.75rem; align-items: center; flex-shrink: 0;">
-                    <a href="expert-witness.html" class="btn btn--navy btn--small">EXPERT WITNESS</a>
-                    <a href="contact.html" class="btn btn--contact btn--small">CONTACT</a>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- ============================================
-         HERO SECTION
-         ============================================ -->
-    <section class="hero hero--page">
-        <div class="hero__bg" style="background-image: url('images/background-11-11.jpg');"></div>
-        <div class="hero__overlay"></div>
-
+<section class="hero hero--sub">
+    <div class="hero__bg" style="background-image: url('images/new/hero-services.jpg');"></div>
+    <div class="hero__overlay"></div>
+    <div class="container">
         <div class="hero__content">
-            <h1 class="hero__title">
-                <span>EXPERT SERVICES</span>
-            </h1>
-
-            <p class="hero__text">
-                Comprehensive multidisciplinary services for complex disputes and projects
-            </p>
+            <p class="hero__eyebrow">What We Do</p>
+            <h1 class="hero__title">Expert Services</h1>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ============================================
-         MAIN CONTENT SECTION: INTRODUCTION
-         ============================================ -->
-    <section class="section content-section">
-        <div class="container">
+<section class="section">
+    <div class="container">
+        <div class="text-center fade-up" style="margin-bottom: 3rem;">
+            <p class="eyebrow">Our Services</p>
+            <h2>Comprehensive Multidisciplinary Services</h2>
+            <p class="lead">We provide a comprehensive range of multidisciplinary services to the world's top law firms and corporations, major infrastructure organisations, professional practice, resource companies, international contractors and specialist subcontractors. We find solutions to complex problems, contentious and non contentious issues that arise on complex contracts over the lifecycle of projects.</p>
+        </div>
+        <div class="grid-3 fade-up">
+            <a href="expert-witness.html" class="service-card">
+                <h3 class="service-card__title">Expert Witness Service</h3>
+                <p class="service-card__text">Our expert witness service embraces quantum, valuation, time and technical matters and can make the difference in success by conveying the correct expert opinion reflecting a detailed understanding of industry and factual accuracy.</p>
+                <span class="service-card__link">Learn more <span class="arrow">&rarr;</span></span>
+            </a>
+            <a href="expert-determination.html" class="service-card">
+                <h3 class="service-card__title">Expert Determination</h3>
+                <p class="service-card__text">Our consultants can be appointed to act as independent expert determiner to provide an efficient expert determination on technical matters, the expert determination may be legally binding or may be subject to other rules dependent on the contractual mechanisms in place.</p>
+                <span class="service-card__link">Learn more <span class="arrow">&rarr;</span></span>
+            </a>
+            <a href="security-of-payment.html" class="service-card">
+                <h3 class="service-card__title">Security of Payment</h3>
+                <p class="service-card__text">We assist various clients in the construction industry with the identification and analysis of correct quantum and valuation under contract and provide appropriate analysis, quantification and presentation required for the resolution of security of payment claims.</p>
+                <span class="service-card__link">Learn more <span class="arrow">&rarr;</span></span>
+            </a>
+            <a href="commercial-mediation.html" class="service-card">
+                <h3 class="service-card__title">Commercial Mediation</h3>
+                <p class="service-card__text">Because of the unique and technical nature of construction projects and the complex nature of relationships involved in a project or a development, appointing a construction mediator with broad construction experience is essential.</p>
+                <span class="service-card__link">Learn more <span class="arrow">&rarr;</span></span>
+            </a>
+            <a href="commercial-arbitration.html" class="service-card">
+                <h3 class="service-card__title">Construction Arbitration</h3>
+                <p class="service-card__text">We offer fixed cost and efficient fee arbitration schemes for appropriate disputes with limited complexity. The object of this service is to enable disputants to have an efficient and cost effective means to resolving a dispute.</p>
+                <span class="service-card__link">Learn more <span class="arrow">&rarr;</span></span>
+            </a>
+            <a href="claims-analysis.html" class="service-card">
+                <h3 class="service-card__title">Construction Claims Analysis</h3>
+                <p class="service-card__text">Experts at identifying, analysing, preparation or rebutting contractual claims we also provide supporting services including the quantification, presentation, management and assistance with resolution of contractual claims.</p>
+                <span class="service-card__link">Learn more <span class="arrow">&rarr;</span></span>
+            </a>
+            <a href="commercial-analysis.html" class="service-card">
+                <h3 class="service-card__title">Commercial Consultancy</h3>
+                <p class="service-card__text">From time to time contractual issues that arise on projects can place a burden on a company. We provide commercial services that utilise the requisite expertise and experience to resolve issues without detracting from clients physical resources.</p>
+                <span class="service-card__link">Learn more <span class="arrow">&rarr;</span></span>
+            </a>
+            <a href="dispute-resolution.html" class="service-card">
+                <h3 class="service-card__title">Construction Dispute Resolution</h3>
+                <p class="service-card__text">Expert Services International provide dispute resolution support associated with various tribunals. This representation for parties can provide a vital link between the technical and legal aspects of a case.</p>
+                <span class="service-card__link">Learn more <span class="arrow">&rarr;</span></span>
+            </a>
+            <a href="construction-defects.html" class="service-card">
+                <h3 class="service-card__title">Construction Defect Analysis</h3>
+                <p class="service-card__text">Inadequate quality, design and defective work are common sources of dispute. With extensive knowledge and experience, we are well placed to provide investigation and analysis into complicated construction defects.</p>
+                <span class="service-card__link">Learn more <span class="arrow">&rarr;</span></span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="section section--grey">
+    <div class="container">
+        <div class="text-center fade-up" style="margin-bottom: 3rem;">
+            <p class="eyebrow">Industry Experience</p>
+            <h2>Expertise Across Multiple Sectors</h2>
+        </div>
+        <div class="tag-grid fade-up">
+            <div class="tag">Industrial Construction</div>
+            <div class="tag">Retail and Fit Out Works</div>
+            <div class="tag">Residential Construction</div>
+            <div class="tag">Commercial Development</div>
+            <div class="tag">Hotel and Retail Development</div>
+            <div class="tag">Civil Engineering &amp; Infrastructure</div>
+            <div class="tag">Resource and Mining Industry</div>
+            <div class="tag">Petroleum and Chemical</div>
+            <div class="tag">Marine and Shipping</div>
+            <div class="tag">Rail and Road</div>
+            <div class="tag">Building Conservation</div>
+            <div class="tag">Professional Indemnity</div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-banner fade-up">
+    <div class="container">
+        <p class="eyebrow" style="color: var(--teal-light);">Get Started</p>
+        <h2>Ready to Discuss Your Requirements?</h2>
+        <p>Contact Expert Services International to discuss how our expertise can support your case or project.</p>
+        <a href="contact.html" class="btn btn--primary">Contact Us <span class="arrow">&rarr;</span></a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container--wide">
+        <div class="footer__grid">
             <div class="fade-up">
-                <h2 style="margin-bottom: 1.5rem;">Our Services</h2>
-                <p style="font-weight: 600; font-size: 1.05rem; line-height: 1.8; color: var(--text-primary);">We provide a comprehensive range of multidisciplinary services to the world's top law firms and corporations, major infrastructure organisations, professional practice, resource companies, international contractors and specialist subcontractors. We find solutions to complex problems, contentious and non contentious issues that arise on complex contracts over the lifecycle of projects.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-         SERVICES GRID (9 CARDS)
-         ============================================ -->
-    <section class="section content-section">
-        <div class="container">
-            <div class="cards-grid fade-up">
-                <!-- Expert Determination -->
-                <div class="card">
-                    <h3 class="card__title">Expert Determination</h3>
-                    <p class="card__text">Our consultants can be appointed to act as independent expert determiner to provide an efficient expert determination on technical matters, the expert determination may be legally binding or may be subject to other rules dependent on the contractual mechanisms in place and / or rules agreed by the disputants.</p>
-                    <a href="expert-determination.html" class="card__link">LEARN MORE</a>
-                </div>
-
-                <!-- Expert Witness Service -->
-                <div class="card">
-                    <h3 class="card__title">Expert Witness Service</h3>
-                    <p class="card__text">Our expert witness service embraces quantum, valuation, time and technical matters and can make the difference in success by conveying the correct expert opinion reflecting a detailed understanding of industry and factual accuracy.</p>
-                    <a href="expert-witness.html" class="card__link">LEARN MORE</a>
-                </div>
-
-                <!-- Security of Payment -->
-                <div class="card">
-                    <h3 class="card__title">Security of Payment</h3>
-                    <p class="card__text">We assist various clients in the construction industry with the identification and analysis of correct quantum and valuation under contract and provide appropriate analysis, quantification and presentation required for the resolution of security of payment claims or responses across all jurisdictions in Australia.</p>
-                    <a href="security-of-payment.html" class="card__link">LEARN MORE</a>
-                </div>
-
-                <!-- Commercial Mediation -->
-                <div class="card">
-                    <h3 class="card__title">Commercial Mediation</h3>
-                    <p class="card__text">Because of the unique and technical nature of construction projects and the complex nature of relationships involved in a project or a development, appointing a construction mediator with broad construction experience and substantial qualifications is essential.</p>
-                    <a href="commercial-mediation.html" class="card__link">LEARN MORE</a>
-                </div>
-
-                <!-- Construction Arbitration -->
-                <div class="card">
-                    <h3 class="card__title">Construction Arbitration</h3>
-                    <p class="card__text">We offer fixed cost and efficient fee arbitration schemes for appropriate disputes with limited complexity. The object of this service is to enable disputants to have an efficient and cost effective means to resolving a dispute.</p>
-                    <a href="commercial-arbitration.html" class="card__link">LEARN MORE</a>
-                </div>
-
-                <!-- Construction Claims Analysis -->
-                <div class="card">
-                    <h3 class="card__title">Construction Claims Analysis</h3>
-                    <p class="card__text">Experts at identifying, analysing, preparation or rebutting contractual claims we also provide supporting services including the quantification, presentation, management and assistance with resolution of contractual claims that arise on construction and engineering projects.</p>
-                    <a href="claims-analysis.html" class="card__link">LEARN MORE</a>
-                </div>
-
-                <!-- Commercial Consultancy -->
-                <div class="card">
-                    <h3 class="card__title">Commercial Consultancy</h3>
-                    <p class="card__text">From time to time contractual issues that arise on projects can place a burden on a company, Expert Services International provide commercial services that utilise the requisite expertise and experience to resolve issues without detracting from clients physical resources.</p>
-                    <a href="commercial-analysis.html" class="card__link">LEARN MORE</a>
-                </div>
-
-                <!-- Construction Dispute Resolution -->
-                <div class="card">
-                    <h3 class="card__title">Construction Dispute Resolution</h3>
-                    <p class="card__text">Expert Services International provide dispute resolution support associated with various tribunals. This representation for parties can provide a vital link between the technical and legal aspects of a case and can prove invaluable when preparing a client's submissions.</p>
-                    <a href="dispute-resolution.html" class="card__link">LEARN MORE</a>
-                </div>
-
-                <!-- Construction Defect Analysis -->
-                <div class="card">
-                    <h3 class="card__title">Construction Defect Analysis</h3>
-                    <p class="card__text">Inadequate quality, design and defective work are common sources of dispute. With extensive knowledge and experience, Expert Services International are well placed to provide investigation and analysis into complicated construction defects and problems that arise.</p>
-                    <a href="construction-defects.html" class="card__link">LEARN MORE</a>
+                <a href="index.html" class="logo" style="margin-bottom: 1.25rem; display: inline-flex;">
+                    <div class="logo__mark" style="background: var(--teal); width: 32px; height: 32px; font-size: 0.95rem;">E</div>
+                    <div class="logo__text">
+                        <div class="logo__name" style="font-size: 0.7rem;">Expert Services</div>
+                        <div class="logo__tagline" style="font-size: 0.55rem;">International</div>
+                    </div>
+                </a>
+                <p class="footer__brand">Independent advisory services for construction, infrastructure and engineering disputes across Australia, Asia and the United Kingdom.</p>
+                <div class="location-tags">
+                    <span class="location-tag">Australia</span>
+                    <span class="location-tag">Asia</span>
+                    <span class="location-tag">United Kingdom</span>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-         INDUSTRY EXPERIENCE SECTION
-         ============================================ -->
-    <section class="section content-section">
-        <div class="container">
             <div class="fade-up">
-                <h2 style="margin-bottom: 3rem;">Industry Experience</h2>
-
-                <div class="industry-tags">
-                    <span class="industry-tag">Industrial Construction</span>
-                    <span class="industry-tag">Retail and Fit Out Works</span>
-                    <span class="industry-tag">Residential Construction</span>
-                    <span class="industry-tag">Commercial Development</span>
-                    <span class="industry-tag">Hotel and Retail Development</span>
-                    <span class="industry-tag">Civil Engineering & Infrastructure</span>
-                    <span class="industry-tag">Resource and Mining Industry</span>
-                    <span class="industry-tag">Petroleum and Chemical</span>
-                    <span class="industry-tag">Marine and Shipping</span>
-                    <span class="industry-tag">Rail and Road</span>
-                    <span class="industry-tag">Building Conservation</span>
-                    <span class="industry-tag">Professional Indemnity</span>
+                <h4 class="footer__heading">Services</h4>
+                <a href="expert-witness.html" class="footer__link">Expert Witness</a>
+                <a href="dispute-resolution.html" class="footer__link">Dispute Resolution</a>
+                <a href="quantum-delay-disruption.html" class="footer__link">Quantum &amp; Delay</a>
+                <a href="claims-analysis.html" class="footer__link">Claims Analysis</a>
+                <a href="expert-determination.html" class="footer__link">Expert Determination</a>
+                <a href="commercial-arbitration.html" class="footer__link">Arbitration</a>
+                <a href="commercial-mediation.html" class="footer__link">Mediation</a>
+            </div>
+            <div class="fade-up">
+                <h4 class="footer__heading">Company</h4>
+                <a href="about.html" class="footer__link">The Consultancy</a>
+                <a href="neil-kirkpatrick.html" class="footer__link">Neil Kirkpatrick</a>
+                <a href="consultants.html" class="footer__link">Consultants</a>
+                <a href="services.html" class="footer__link">All Services</a>
+                <a href="contact.html" class="footer__link">Contact Us</a>
+            </div>
+            <div class="fade-up">
+                <h4 class="footer__heading">Contact</h4>
+                <div class="footer__contact-item">
+                    <span class="footer__contact-icon">&#9993;</span>
+                    <div>
+                        <div style="font-size: 0.75rem; color: rgba(255,255,255,0.35); margin-bottom: 0.15rem;">Email</div>
+                        <a href="mailto:contact@expertservices.com.au">contact@expertservices.com.au</a>
+                    </div>
+                </div>
+                <div class="footer__contact-item">
+                    <span class="footer__contact-icon">&#9742;</span>
+                    <div>
+                        <div style="font-size: 0.75rem; color: rgba(255,255,255,0.35); margin-bottom: 0.15rem;">Phone</div>
+                        <a href="tel:+61290579088">+61 (0) 2 9057 9088</a>
+                    </div>
+                </div>
+                <div class="footer__contact-item">
+                    <span class="footer__contact-icon">&#9679;</span>
+                    <div>
+                        <div style="font-size: 0.75rem; color: rgba(255,255,255,0.35); margin-bottom: 0.15rem;">Address</div>
+                        <div style="line-height: 1.5;">Grosvenor Place<br>Level 15, 225 George Street<br>Sydney, NSW 2000, Australia</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- ============================================
-         CTA BANNER
-         ============================================ -->
-    <section class="cta-banner fade-up">
-        <div class="container text-center">
-            <div>
-                <h2 style="color: var(--white); margin-bottom: 1.5rem;">Ready to Resolve Your Complex Issues?</h2>
-
-                <p style="color: rgba(255, 255, 255, 0.85); max-width: 750px; margin: 0 auto 2.5rem; font-size: 1.1rem; line-height: 1.8;">
-                    Contact Expert Services International today to discuss your specific requirements and discover how our multidisciplinary expertise can help resolve your disputes.
-                </p>
-
-                <a href="contact.html" class="btn btn--gold btn--arrow">CONTACT US</a>
+        <div class="footer__bottom">
+            <span>&copy; 2024 Expert Services International. All Rights Reserved.</span>
+            <div class="footer__social">
+                <a href="https://au.linkedin.com/company/constructionexpertservices" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
             </div>
         </div>
-    </section>
+    </div>
+</footer>
 
-    <!-- ============================================
-         FOOTER
-         ============================================ -->
-    <footer class="footer">
-        <div class="container--wide">
-            <div class="footer__grid">
-                <!-- Brand Column -->
-                <div class="footer__brand fade-up">
-                    <a href="index.html" class="logo" style="display: inline-flex; margin-bottom: 1.5rem;">
-                        <div class="logo__icon" style="background: var(--gold); width: 40px; height: 40px; font-size: 1.35rem; color: var(--navy-dark);">E</div>
-                        <div class="logo__text">
-                            <div class="logo__name" style="color: var(--white); font-size: 0.75rem;">EXPERT SERVICES</div>
-                            <div class="logo__tagline" style="color: var(--gold); font-size: 0.6rem;">INTERNATIONAL</div>
-                        </div>
-                    </a>
+<script>
+const mt=document.getElementById('menuToggle'),mn=document.getElementById('mainNav');
+if(mt&&mn){mt.addEventListener('click',()=>{mt.classList.toggle('active');mn.classList.toggle('nav--open');});
+mn.querySelectorAll('.nav__link,.nav__dropdown-link').forEach(l=>l.addEventListener('click',()=>{mt.classList.remove('active');mn.classList.remove('nav--open');}));
+mn.querySelectorAll('.nav__item').forEach(i=>{const l=i.querySelector('.nav__link');if(l&&i.querySelector('.nav__dropdown')){l.addEventListener('click',e=>{if(window.innerWidth<1024){e.preventDefault();i.classList.toggle('nav__item--open');}});}});}
+const hdr=document.querySelector('.header');window.addEventListener('scroll',()=>{hdr.classList.toggle('header--scrolled',window.scrollY>10);});
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target);}});},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
 
-                    <p>Expert Services International provides strategic advice to leading law firms and businesses through expert witness services, quantum and delay analysis, construction claims, and dispute resolution.</p>
-
-                    <div class="locations">
-                        <span class="location-tag">Australia, Asia</span>
-                        <span class="location-tag">United Kingdom</span>
-                    </div>
-                </div>
-
-                <!-- Services Column -->
-                <div class="fade-up" style="animation-delay: 0.1s;">
-                    <h4 class="footer__heading">SERVICES</h4>
-                    <ul style="list-style: none;">
-                        <li><a href="expert-witness.html" class="footer__link">Expert Witness</a></li>
-                        <li><a href="dispute-resolution.html" class="footer__link">Dispute Resolution</a></li>
-                        <li><a href="quantum-delay-disruption.html" class="footer__link">Quantum & Delay</a></li>
-                        <li><a href="claims-analysis.html" class="footer__link">Claims & Damages</a></li>
-                        <li><a href="expert-determination.html" class="footer__link">Expert Determination</a></li>
-                        <li><a href="commercial-arbitration.html" class="footer__link">Arbitration</a></li>
-                        <li><a href="commercial-mediation.html" class="footer__link">Mediation</a></li>
-                    </ul>
-                </div>
-
-                <!-- Quick Links Column -->
-                <div class="fade-up" style="animation-delay: 0.2s;">
-                    <h4 class="footer__heading">QUICK LINKS</h4>
-                    <ul style="list-style: none;">
-                        <li><a href="index.html" class="footer__link">Home</a></li>
-                        <li><a href="about.html" class="footer__link">The Consultancy</a></li>
-                        <li><a href="neil-kirkpatrick.html" class="footer__link">Neil Kirkpatrick</a></li>
-                        <li><a href="consultants.html" class="footer__link">Our Consultants</a></li>
-                        <li><a href="services.html" class="footer__link">All Services</a></li>
-                        <li><a href="contact.html" class="footer__link">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Column -->
-                <div class="fade-up" style="animation-delay: 0.3s;">
-                    <h4 class="footer__heading">CONTACT</h4>
-
-                    <div class="footer__contact-item">
-                        <span class="footer__contact-icon">✉</span>
-                        <div>
-                            <div style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.5); margin-bottom: 0.25rem;">Email</div>
-                            <a href="mailto:contact@expertservices.com.au">contact@expertservices.com.au</a>
-                        </div>
-                    </div>
-
-                    <div class="footer__contact-item">
-                        <span class="footer__contact-icon">📞</span>
-                        <div>
-                            <div style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.5); margin-bottom: 0.25rem;">Phone</div>
-                            <a href="tel:+61290579088">+61 (0) 2 9057 9088</a>
-                        </div>
-                    </div>
-
-                    <div class="footer__contact-item">
-                        <span class="footer__contact-icon">📍</span>
-                        <div>
-                            <div style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.5); margin-bottom: 0.25rem;">Address</div>
-                            <div style="font-size: 0.9rem; line-height: 1.6;">
-                                <div>Grosvenor Place</div>
-                                <div>Level 15, 225 George Street</div>
-                                <div>Sydney, NSW 2000</div>
-                                <div>Australia</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Footer Bottom -->
-            <div class="footer__bottom">
-                <div style="text-align: center; flex: 1; font-size: 0.8rem;">
-                    <p style="margin: 0;">&copy; 2024 Expert Services International. All Rights Reserved.</p>
-                </div>
-
-                <div class="footer__social">
-                    <a href="https://au.linkedin.com/company/constructionexpertservices" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="Follow on LinkedIn">in</a>
-                    <a href="https://twitter.com/QuantumExperts" target="_blank" rel="noopener noreferrer" title="X (Twitter)" aria-label="Follow on X">𝕏</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- ============================================
-         SCRIPTS
-         ============================================ -->
-    <script src="js/main.js"></script>
-    <script>
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const mainNav = document.getElementById('mainNav');
-
-        if (menuToggle && mainNav) {
-            menuToggle.addEventListener('click', () => {
-                menuToggle.classList.toggle('active');
-                mainNav.classList.toggle('nav--open');
-            });
-
-            // Close menu when a link is clicked
-            const navLinks = mainNav.querySelectorAll('.nav__link, .nav__dropdown-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    menuToggle.classList.remove('active');
-                    mainNav.classList.remove('nav--open');
-                });
-            });
-
-            // Mobile dropdown toggle
-            const navItems = mainNav.querySelectorAll('.nav__item');
-            navItems.forEach(item => {
-                const link = item.querySelector('.nav__link');
-                if (link && item.querySelector('.nav__dropdown')) {
-                    link.addEventListener('click', (e) => {
-                        if (window.innerWidth < 1024) {
-                            e.preventDefault();
-                            item.classList.toggle('nav__item--open');
-                        }
-                    });
-                }
-            });
-        }
-
-        // Header scroll effect
-        const header = document.querySelector('.header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 10) {
-                header.classList.add('header--scrolled');
-            } else {
-                header.classList.remove('header--scrolled');
-            }
-        });
-
-        // Fade-up animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-up, .fade-in, .slide-in-left, .slide-in-right').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>
