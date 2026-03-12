@@ -7,7 +7,7 @@
     <title>Expert Determination — Expert Services International</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,17 +15,22 @@
 <header class="header" id="header">
     <div class="header__inner">
         <a href="index.html" class="logo">
-            <div class="logo__mark">E</div>
-            <div class="logo__text">
-                <div class="logo__name">Expert Services</div>
-                <div class="logo__tagline">International</div>
+            <div class="logo__icon">
+                <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="38" height="38" rx="4" fill="#b07c4b"/>
+                    <path d="M10 10h18v3.5H14.5v4H25v3.5H14.5v4H28V29H10V10z" fill="#fff"/>
+                </svg>
+            </div>
+            <div class="logo__wordmark">
+                <span class="logo__name">Expert Services</span>
+                <span class="logo__sub">International</span>
             </div>
         </a>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
         <nav class="nav" id="mainNav">
             <div class="nav__item"><a href="index.html" class="nav__link">Home</a></div>
             <div class="nav__item">
-                <a href="about.html" class="nav__link">About Us</a>
+                <a href="about.html" class="nav__link">About</a>
                 <div class="nav__dropdown">
                     <a href="about.html" class="nav__dropdown-link">The Consultancy</a>
                     <a href="neil-kirkpatrick.html" class="nav__dropdown-link">Neil Kirkpatrick</a>
@@ -33,36 +38,41 @@
                 </div>
             </div>
             <div class="nav__item">
-                <a href="services.html" class="nav__link nav__link--active">Expert Services</a>
+                <a href="services.html" class="nav__link">Services</a>
                 <div class="nav__dropdown">
                     <a href="expert-witness.html" class="nav__dropdown-link">Expert Witness Services</a>
                     <a href="expert-witness-protocols.html" class="nav__dropdown-link">Expert Witness Protocols</a>
-                    <a href="quantum-delay-disruption.html" class="nav__dropdown-link">Quantum Delay &amp; Disruption</a>
+                    <a href="quantum-delay-disruption.html" class="nav__dropdown-link">Quantum, Delay &amp; Disruption</a>
                     <a href="claims-analysis.html" class="nav__dropdown-link">Claims &amp; Damages Analysis</a>
+                    <a href="construction-defects.html" class="nav__dropdown-link">Construction Defects</a>
+                    <a href="commercial-analysis.html" class="nav__dropdown-link">Commercial Analysis</a>
+                </div>
+            </div>
+            <div class="nav__item">
+                <a href="dispute-resolution.html" class="nav__link nav__link--active">Disputes</a>
+                <div class="nav__dropdown">
                     <a href="dispute-resolution.html" class="nav__dropdown-link">Dispute Resolution</a>
                     <a href="expert-determination.html" class="nav__dropdown-link">Expert Determination</a>
                     <a href="commercial-arbitration.html" class="nav__dropdown-link">Commercial Arbitration</a>
                     <a href="commercial-mediation.html" class="nav__dropdown-link">Commercial Mediation</a>
                     <a href="security-of-payment.html" class="nav__dropdown-link">Security of Payment</a>
-                    <a href="commercial-analysis.html" class="nav__dropdown-link">Commercial Analysis</a>
-                    <a href="construction-defects.html" class="nav__dropdown-link">Construction Defects</a>
                 </div>
             </div>
             <div class="nav__actions">
-                <a href="expert-witness.html" class="btn btn--primary btn--small">Expert Witness</a>
-                <a href="contact.html" class="btn btn--outline btn--small">Contact</a>
+                <a href="contact.html" class="btn btn--primary btn--small btn--pill">Contact Us</a>
             </div>
         </nav>
     </div>
 </header>
 
 <section class="hero hero--sub">
-    <div class="hero__bg" style="background-image: url('images/new/hero-about.jpg');"></div>
+    <div class="hero__bg" style="background-image: url('images/new/hero-expert.jpg');"></div>
     <div class="hero__overlay"></div>
     <div class="container">
         <div class="hero__content">
             <p class="hero__eyebrow">Dispute Resolution</p>
             <h1 class="hero__title">Expert Determination</h1>
+            <p class="hero__text">Efficient, confidential and cost-effective dispute resolution through independent technical expertise.</p>
         </div>
     </div>
 </section>
@@ -73,13 +83,16 @@
             <div>
                 <p class="eyebrow">What is Expert Determination?</p>
                 <h2>Efficient Resolution Through Independent Expertise</h2>
-                <p>Expert determination is a dispute resolution process that utilises an independent expert, expert in the subject matter of the dispute. The expert determiner is appointed by the parties and a determination may be legally binding dependent on the rules agreed by the parties to a dispute for the expert determination Expert Determination has the benefit of being a confidential process and can be an efficient and cost effective means to resolving a dispute of technical nature.</p>
+                <p>Expert determination is a dispute resolution process that utilises an independent expert, expert in the subject matter of the dispute. The expert determiner is appointed by the parties and a determination may be legally binding dependent on the rules agreed by the parties to a dispute for the expert determination. Expert Determination has the benefit of being a confidential process and can be an efficient and cost effective means to resolving a dispute of technical nature.</p>
+            </div>
+            <div class="content-split__image">
+                <img src="images/new/section-city.jpg" alt="Expert determination services" loading="lazy">
             </div>
         </div>
     </div>
 </section>
 
-<section class="section section--grey">
+<section class="section section--light">
     <div class="container">
         <div class="fade-up">
             <p class="eyebrow">Confidential & Efficient</p>
@@ -99,22 +112,22 @@
     </div>
 </section>
 
-<section class="section section--grey">
+<section class="section section--light">
     <div class="container">
         <div class="fade-up">
             <p class="eyebrow">Available Nationwide</p>
             <h2>Service Availability Across Australia</h2>
-            <p>Expert determination services are available throughout Australia where we assist with expedient, cost effective and independent resolution of issues submitted to the expert determination process enabling businesses to return to the their core businesses quickly with disputes resolved pursuant to the rules adopted by the parties to the process.</p>
+            <p>Expert determination services are available throughout Australia where we assist with expedient, cost effective and independent resolution of issues submitted to the expert determination process enabling businesses to return to their core businesses quickly with disputes resolved pursuant to the rules adopted by the parties to the process.</p>
         </div>
     </div>
 </section>
 
 <section class="cta-banner fade-up">
     <div class="container">
-        <p class="eyebrow" style="color: var(--teal-light);">Get Started</p>
-        <h2>Ready to Discuss Your Requirements?</h2>
-        <p>Contact Expert Services International to discuss how our expertise can support your case or project.</p>
-        <a href="contact.html" class="btn btn--primary">Contact Us <span class="arrow">&rarr;</span></a>
+        <p class="eyebrow" style="color: var(--accent-light);">Get Started</p>
+        <h2>Ready to Resolve Your Matter?</h2>
+        <p>Contact Expert Services International to discuss how our expertise can support your expert determination process.</p>
+        <a href="contact.html" class="btn btn--primary btn--pill">Contact Us <span class="arrow">&rarr;</span></a>
     </div>
 </section>
 
@@ -122,14 +135,19 @@
     <div class="container--wide">
         <div class="footer__grid">
             <div class="fade-up">
-                <a href="index.html" class="logo" style="margin-bottom: 1.25rem; display: inline-flex;">
-                    <div class="logo__mark" style="background: var(--teal); width: 32px; height: 32px; font-size: 0.95rem;">E</div>
-                    <div class="logo__text">
-                        <div class="logo__name" style="font-size: 0.7rem;">Expert Services</div>
-                        <div class="logo__tagline" style="font-size: 0.55rem;">International</div>
+                <a href="index.html" class="logo" style="margin-bottom: 1.5rem; display: inline-flex;">
+                    <div class="logo__icon" style="width: 30px; height: 30px;">
+                        <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="38" height="38" rx="4" fill="#b07c4b"/>
+                            <path d="M10 10h18v3.5H14.5v4H25v3.5H14.5v4H28V29H10V10z" fill="#fff"/>
+                        </svg>
+                    </div>
+                    <div class="logo__wordmark">
+                        <span class="logo__name" style="font-size: 0.85rem;">Expert Services</span>
+                        <span class="logo__sub" style="font-size: 0.52rem;">International</span>
                     </div>
                 </a>
-                <p class="footer__brand">Independent advisory services for construction, infrastructure and engineering disputes across Australia, Asia and the United Kingdom.</p>
+                <p class="footer__brand-text">Independent advisory services for construction, infrastructure and engineering disputes across Australia, Asia and the United Kingdom.</p>
                 <div class="location-tags">
                     <span class="location-tag">Australia</span>
                     <span class="location-tag">Asia</span>
@@ -151,30 +169,37 @@
                 <a href="about.html" class="footer__link">The Consultancy</a>
                 <a href="neil-kirkpatrick.html" class="footer__link">Neil Kirkpatrick</a>
                 <a href="consultants.html" class="footer__link">Consultants</a>
+                <a href="expert-witness-protocols.html" class="footer__link">Expert Protocols</a>
                 <a href="services.html" class="footer__link">All Services</a>
                 <a href="contact.html" class="footer__link">Contact Us</a>
             </div>
             <div class="fade-up">
                 <h4 class="footer__heading">Contact</h4>
                 <div class="footer__contact-item">
-                    <span class="footer__contact-icon">&#9993;</span>
+                    <div class="footer__contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                    </div>
                     <div>
-                        <div style="font-size: 0.75rem; color: rgba(255,255,255,0.35); margin-bottom: 0.15rem;">Email</div>
+                        <div class="footer__contact-label">Email</div>
                         <a href="mailto:contact@expertservices.com.au">contact@expertservices.com.au</a>
                     </div>
                 </div>
                 <div class="footer__contact-item">
-                    <span class="footer__contact-icon">&#9742;</span>
+                    <div class="footer__contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                    </div>
                     <div>
-                        <div style="font-size: 0.75rem; color: rgba(255,255,255,0.35); margin-bottom: 0.15rem;">Phone</div>
+                        <div class="footer__contact-label">Phone</div>
                         <a href="tel:+61290579088">+61 (0) 2 9057 9088</a>
                     </div>
                 </div>
                 <div class="footer__contact-item">
-                    <span class="footer__contact-icon">&#9679;</span>
+                    <div class="footer__contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                    </div>
                     <div>
-                        <div style="font-size: 0.75rem; color: rgba(255,255,255,0.35); margin-bottom: 0.15rem;">Address</div>
-                        <div style="line-height: 1.5;">Grosvenor Place<br>Level 15, 225 George Street<br>Sydney, NSW 2000, Australia</div>
+                        <div class="footer__contact-label">Address</div>
+                        <div style="line-height: 1.6; color: rgba(255,255,255,0.5);">Grosvenor Place<br>Level 15, 225 George Street<br>Sydney, NSW 2000, Australia</div>
                     </div>
                 </div>
             </div>
@@ -182,19 +207,27 @@
         <div class="footer__bottom">
             <span>&copy; 2024 Expert Services International. All Rights Reserved.</span>
             <div class="footer__social">
-                <a href="https://au.linkedin.com/company/constructionexpertservices" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+                <a href="https://au.linkedin.com/company/constructionexpertservices" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                </a>
             </div>
         </div>
     </div>
 </footer>
 
 <script>
+/* Menu toggle */
 const mt=document.getElementById('menuToggle'),mn=document.getElementById('mainNav');
-if(mt&&mn){mt.addEventListener('click',()=>{mt.classList.toggle('active');mn.classList.toggle('nav--open');});
-mn.querySelectorAll('.nav__link,.nav__dropdown-link').forEach(l=>l.addEventListener('click',()=>{mt.classList.remove('active');mn.classList.remove('nav--open');}));
-mn.querySelectorAll('.nav__item').forEach(i=>{const l=i.querySelector('.nav__link');if(l&&i.querySelector('.nav__dropdown')){l.addEventListener('click',e=>{if(window.innerWidth<1024){e.preventDefault();i.classList.toggle('nav__item--open');}});}});}
-const hdr=document.querySelector('.header');window.addEventListener('scroll',()=>{hdr.classList.toggle('header--scrolled',window.scrollY>10);});
-const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target);}});},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+if(mt&&mn){
+  mt.addEventListener('click',()=>{mt.classList.toggle('active');mn.classList.toggle('nav--open');document.body.style.overflow=mn.classList.contains('nav--open')?'hidden':'';});
+  mn.querySelectorAll('.nav__link,.nav__dropdown-link').forEach(l=>l.addEventListener('click',()=>{mt.classList.remove('active');mn.classList.remove('nav--open');document.body.style.overflow='';}));
+  mn.querySelectorAll('.nav__item').forEach(i=>{const l=i.querySelector('.nav__link');if(l&&i.querySelector('.nav__dropdown')){l.addEventListener('click',e=>{if(window.innerWidth<1024){e.preventDefault();i.classList.toggle('nav__item--open');}});}});
+}
+/* Scroll header */
+const hdr=document.querySelector('.header');
+window.addEventListener('scroll',()=>{hdr.classList.toggle('header--scrolled',window.scrollY>60);},{passive:true});
+/* IntersectionObserver for fade-up */
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 </script>
 
