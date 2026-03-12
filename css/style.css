@@ -147,6 +147,8 @@ p:last-child { margin-bottom: 0; }
    HERO
    ================================================ */
 .hero { position: relative; min-height: 52vh; display: flex; align-items: center; overflow: hidden; }
+.hero--showcase { min-height: 65vh; }
+.hero__overlay--light { background: linear-gradient(160deg, rgba(10,15,26,0.25) 0%, rgba(15,23,42,0.1) 50%, rgba(10,15,26,0.2) 100%); }
 .hero--sub { min-height: 55vh; }
 .hero__bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
 .hero__overlay { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(10,15,26,0.6) 0%, rgba(15,23,42,0.35) 45%, rgba(10,15,26,0.25) 100%); }
@@ -291,11 +293,69 @@ p:last-child { margin-bottom: 0; }
 .section--dark .tag:hover { border-color: var(--accent); color: var(--accent-light); }
 
 /* ================================================
-   TRIBUNAL ADVISORY BAR
+   TRIBUNAL ADVISORY BAR (legacy — subpages)
    ================================================ */
 .tribunal-bar { background: var(--slate-50); border-top: 1px solid var(--slate-200); border-bottom: 1px solid var(--slate-200); padding: 3.5rem 0; text-align: center; }
 .tribunal-bar__title { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 700; color: var(--charcoal); margin-bottom: 0.75rem; letter-spacing: 0.02em; }
 .tribunal-bar__text { font-size: 0.95rem; color: var(--slate-500); max-width: 780px; margin: 0 auto; line-height: 1.8; }
+
+/* ================================================
+   TRIBUNAL OVERLAY — Semi-transparent, gradient L→R
+   ================================================ */
+.tribunal-overlay {
+  position: relative;
+  margin-top: -6rem;
+  z-index: 5;
+  padding: 2.5rem 0;
+  background: linear-gradient(90deg, rgba(10,15,26,0.82) 0%, rgba(15,23,42,0.55) 55%, rgba(10,15,26,0.15) 100%);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.tribunal-overlay__title {
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.03em;
+}
+.tribunal-overlay__text {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.6);
+  max-width: 700px;
+  line-height: 1.75;
+}
+
+/* ================================================
+   INVESTIGATE BANNER — Coloured section
+   ================================================ */
+.investigate-banner {
+  padding: clamp(3rem, 5vw, 4.5rem) 0;
+  background: var(--charcoal-deep);
+  position: relative;
+}
+.investigate-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background: var(--accent);
+  margin-left: 2rem;
+}
+.hero__keywords--static { margin-bottom: 1.25rem; }
+.hero__keyword--static {
+  opacity: 1;
+  transform: none;
+  animation: none;
+  display: inline-block;
+  margin-right: 1.5rem;
+  font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+}
+.hero__keyword--static:nth-child(2) { color: var(--accent-light); }
+
+/* Pillar row flat variant (not overlapping hero) */
+.pillar-row--flat { margin-top: 0; }
 
 /* ================================================
    CTA BANNER
