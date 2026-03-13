@@ -193,8 +193,8 @@ p:last-child { margin-bottom: 0; }
 .hero__eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-light); margin-bottom: 0.75rem; opacity: 0; animation: heroFade 0.8s var(--ease) 0.1s forwards; }
 .hero__subtitle { font-size: 0.92rem; line-height: 1.7; color: rgba(255,255,255,0.55); margin-bottom: 1.25rem; max-width: 640px; opacity: 0; animation: heroFade 0.8s var(--ease) 0.2s forwards; font-style: normal; }
 .hero__title { color: var(--white); font-weight: 700; margin-bottom: 1.5rem; opacity: 0; animation: heroFade 0.8s var(--ease) 0.35s forwards; line-height: 1.15; letter-spacing: -0.02em; }
-.hero__text { font-size: 0.95rem; line-height: 1.75; color: rgba(255,255,255,0.65); margin-bottom: 1.5rem; max-width: 640px; opacity: 0; animation: heroFade 1.4s var(--ease) 2.6s forwards; }
-.hero__buttons { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: heroFade 1.0s var(--ease) 3.2s forwards; }
+.hero__text { font-size: 0.95rem; line-height: 1.75; color: rgba(255,255,255,0.65); margin-bottom: 1.5rem; max-width: 640px; opacity: 0; animation: heroFade 1.4s var(--ease) 5.6s forwards; }
+.hero__buttons { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: heroFade 1.4s var(--ease) 5.6s forwards; }
 .hero--sub .hero__title { font-size: clamp(1.75rem, 3.5vw, 2.75rem); }
 .hero--sub .hero__eyebrow { animation-delay: 0.1s; }
 .hero--sub .hero__title { animation-delay: 0.2s; }
