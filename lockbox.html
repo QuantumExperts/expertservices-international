@@ -196,9 +196,7 @@
             <h2>Upload Your Documents</h2>
             <p style="margin-bottom: 2rem;">Submit your documents below. All files are encrypted during transfer and stored securely.</p>
 
-            <form name="lockbox-upload" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/lockbox-success.html">
-                <input type="hidden" name="form-name" value="lockbox-upload">
-                <p class="form-hidden" style="display:none;"><label>Don&rsquo;t fill this out: <input name="bot-field"></label></p>
+            <form id="lockboxUploadForm" enctype="multipart/form-data">
 
                 <!-- Hidden fields auto-populated from access form -->
                 <input type="hidden" id="hidden-matter-ref" name="matter-reference">
@@ -232,7 +230,7 @@
                 <div class="form-group">
                     <label for="upload-file" class="form-label">File Upload</label>
                     <input type="file" id="upload-file" name="documents" class="form-input" accept=".pdf,.doc,.docx,.xls,.xlsx,.zip,.png,.jpg" multiple required>
-                    <p style="font-size: 0.82rem; color: var(--slate-500); margin-top: 0.5rem;">Accepted formats: PDF, Word (DOC/DOCX), Excel (XLS/XLSX), ZIP, PNG, JPG. Maximum 10MB per file.</p>
+                    <p style="font-size: 0.82rem; color: var(--slate-500); margin-top: 0.5rem;">Accepted formats: PDF, Word (DOC/DOCX), Excel (XLS/XLSX), ZIP, PNG, JPG. Maximum 50MB per file.</p>
                 </div>
 
                 <div class="form-checkbox">
@@ -394,24 +392,51 @@ if (accessForm) {
         const matterRef = document.getElementById('matter-ref').value.trim();
         const accessCode = document.getElementById('access-pwd').value.trim();
 
-        // Simple validation: matter reference not empty, access code at least 8 characters
         if (matterRef && accessCode.length >= 8) {
-            // Auto-populate hidden fields in upload form
             document.getElementById('hidden-matter-ref').value = matterRef;
             document.getElementById('hidden-access-code').value = accessCode;
 
-            // Show upload section with smooth transition
             uploadContainer.style.display = 'block';
             setTimeout(() => {
                 uploadSection.classList.add('visible');
                 uploadContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }, 50);
 
-            // Hide error message
             errorMessage.classList.remove('show');
         } else {
-            // Show error message
             errorMessage.classList.add('show');
+        }
+    });
+}
+
+/* Lockbox Upload to SharePoint */
+const lockboxForm = document.getElementById('lockboxUploadForm');
+if (lockboxForm) {
+    lockboxForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const submitBtn = lockboxForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = 'Uploading securely&hellip;';
+        submitBtn.disabled = true;
+
+        try {
+            const formData = new FormData(lockboxForm);
+            const response = await fetch('/.netlify/functions/upload-lockbox', {
+                method: 'POST',
+                body: formData,
+            });
+            const result = await response.json();
+            if (response.ok && result.success) {
+                window.location.href = '/lockbox-success.html';
+            } else {
+                alert('Upload failed: ' + (result.error || 'Unknown error. Please contact us directly.'));
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        } catch (err) {
+            alert('Upload failed. Please check your connection and try again, or contact us directly.');
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
         }
     });
 }

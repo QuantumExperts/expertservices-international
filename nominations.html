@@ -136,9 +136,7 @@
             <h2 style="margin-bottom: 0.5rem;">Nominations & Engagements</h2>
             <p style="color: var(--slate-600); margin-bottom: 2rem;">Submit an enquiry to engage our services as expert witness, arbitrator, adjudicator, expert determiner or mediator. All enquiries are treated in strict confidence and reviewed promptly.</p>
 
-            <form name="nomination" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/nomination-success.html" style="margin-top: 2rem;">
-                <input type="hidden" name="form-name" value="nomination">
-                <p class="form-hidden" style="display:none;"><label>Don&rsquo;t fill this out: <input name="bot-field"></label></p>
+            <form id="nominationForm" enctype="multipart/form-data" style="margin-top: 2rem;">
 
                 <!-- NOMINATING PARTY DETAILS -->
                 <h3 class="form-section-heading">Nominating Party Details</h3>
@@ -246,7 +244,7 @@
                     <input type="file" id="document-upload" name="document-upload" class="form-input" accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.rtf">
                 </div>
 
-                <p class="form-note">Upload relevant documents such as the terms of engagement, contract, or brief. Maximum file size: 10MB.</p>
+                <p class="form-note">Upload relevant documents such as the terms of engagement, contract, or brief. Maximum file size: 50MB.</p>
 
                 <!-- CONFLICTS CHECK -->
                 <h3 class="form-section-heading">Conflicts Check</h3>
@@ -352,6 +350,38 @@
 
 <div class="scroll-progress" id="scrollProgress"></div>
 <script>
+/* Nomination Upload to SharePoint */
+const nominationForm = document.getElementById('nominationForm');
+if (nominationForm) {
+    nominationForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const submitBtn = nominationForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = 'Submitting&hellip;';
+        submitBtn.disabled = true;
+
+        try {
+            const formData = new FormData(nominationForm);
+            const response = await fetch('/.netlify/functions/upload-nomination', {
+                method: 'POST',
+                body: formData,
+            });
+            const result = await response.json();
+            if (response.ok && result.success) {
+                window.location.href = '/nomination-success.html';
+            } else {
+                alert('Submission failed: ' + (result.error || 'Unknown error. Please contact us directly.'));
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        } catch (err) {
+            alert('Submission failed. Please check your connection and try again, or contact us directly.');
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }
+    });
+}
+
 /* Menu toggle */
 const mt=document.getElementById('menuToggle'),mn=document.getElementById('mainNav');
 if(mt&&mn){
