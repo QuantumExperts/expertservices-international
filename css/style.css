@@ -676,3 +676,134 @@ a.case-law-item__title:hover::after {
     grid-template-columns: 1fr;
   }
 }
+
+/* ====== PROFILE PAGE ====== */
+.profile-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3.5rem;
+  align-items: start;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.profile-photo {
+  position: relative;
+}
+.profile-photo__img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  display: block;
+}
+.profile-intro {
+  padding-top: 0.25rem;
+}
+.profile-contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--slate-200);
+}
+.profile-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--slate-500);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.profile-contact-link:hover {
+  color: var(--accent);
+}
+@media (max-width: 768px) {
+  .profile-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  .profile-photo {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+  .profile-contact-row {
+    justify-content: center;
+  }
+}
+
+/* ====== CREDENTIALS ====== */
+.credentials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+.credential-group__title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--accent);
+}
+.credential-item {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--slate-600);
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--slate-100);
+}
+@media (max-width: 640px) {
+  .credentials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ====== SECTOR TAGS ====== */
+.sector-tag {
+  padding: 1rem 1.25rem;
+  text-align: center;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  border: 1px solid var(--slate-200);
+  border-radius: 6px;
+  background: var(--white);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.sector-tag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ====== JURISDICTION GRID ====== */
+.jurisdiction-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.jurisdiction-item {
+  padding: 1.5rem;
+  border: 1px solid var(--slate-100);
+  border-radius: 8px;
+  background: var(--slate-50);
+}
+.jurisdiction-item__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 0.5rem;
+}
+.jurisdiction-item__text {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--slate-500);
+  margin: 0;
+}
+@media (max-width: 640px) {
+  .jurisdiction-grid {
+    grid-template-columns: 1fr;
+  }
+}
