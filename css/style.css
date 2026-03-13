@@ -88,7 +88,7 @@ p:last-child { margin-bottom: 0; }
 .btn--outline:hover { border-color: var(--accent); color: var(--accent); background: rgba(176,124,75,0.08); }
 .btn--outline-dark { background: transparent; color: var(--charcoal); border: 1.5px solid var(--slate-300); }
 .btn--outline-dark:hover { border-color: var(--accent); color: var(--accent); }
-.btn--small { padding: 0.7rem 1.75rem; font-size: 0.82rem; }
+.btn--small { padding: 0.55rem 1.25rem; font-size: 0.78rem; white-space: nowrap; }
 .btn--white { background: var(--white); color: var(--charcoal); }
 .btn--white:hover { background: var(--slate-50); box-shadow: var(--shadow-lg); transform: translateY(-1px); }
 
@@ -122,7 +122,7 @@ p:last-child { margin-bottom: 0; }
 .nav__item:hover .nav__dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
 .nav__dropdown-link { display: block; padding: 0.6rem 1.75rem; font-size: 0.85rem; color: rgba(255,255,255,0.65); transition: var(--transition); font-weight: 400; }
 .nav__dropdown-link:hover { background: rgba(255,255,255,0.06); color: var(--accent-light); padding-left: 2rem; }
-.nav__actions { margin-left: auto; display: flex; align-items: center; gap: 0.75rem; }
+.nav__actions { margin-left: auto; display: flex; align-items: center; gap: 0.5rem; }
 
 .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; margin-left: auto; z-index: 10; }
 .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--white); margin: 6px 0; transition: var(--transition); border-radius: 2px; }
