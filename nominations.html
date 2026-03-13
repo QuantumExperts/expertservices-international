@@ -3,12 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Expert Services International for expert witness, dispute resolution and advisory services. Based in Sydney with offices across Australia, Asia and the United Kingdom.">
-    <title>Contact Us — Expert Services International</title>
+    <meta name="description" content="Submit a nomination for expert witness, arbitrator, adjudicator, expert determiner or mediator engagement with Expert Services International.">
+    <title>Nominations & Engagements — Expert Services International</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .form-section-heading {
+            color: var(--accent);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent);
+        }
+        .form-section-heading:first-of-type {
+            margin-top: 0;
+        }
+        .form-note {
+            font-size: 0.85rem;
+            color: var(--slate-500);
+            font-style: italic;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background-color: rgba(176, 124, 75, 0.05);
+            border-left: 3px solid var(--accent);
+        }
+        .confidentiality-notice {
+            background-color: rgba(26, 39, 68, 0.05);
+            border-left: 3px solid var(--navy);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--slate-600);
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
 
@@ -79,114 +113,148 @@
     <div class="hero__overlay"></div>
     <div class="container">
         <div class="hero__content">
-            <p class="hero__eyebrow">Get in Touch</p>
-            <h1 class="hero__title">Contact Us</h1>
-            <p class="hero__text">Contact Expert Services International to discuss how our expertise can support your case or project.</p>
+            <p class="hero__eyebrow">Engagements</p>
+            <h1 class="hero__title">Nominations & Engagements</h1>
+            <p class="hero__text">Submit a nomination for expert witness, arbitrator, adjudicator, expert determiner, or mediator engagement.</p>
         </div>
     </div>
 </section>
 
-<!-- ====== CONTACT INFORMATION ====== -->
+<!-- ====== NOMINATION FORM ====== -->
 <section class="section">
     <div class="container">
-        <div class="grid-2 fade-up" style="gap: 5rem;">
-            <div>
-                <p class="eyebrow">Contact Details</p>
-                <h2>Reach Out to Our Team</h2>
-                <p>We're based in Sydney with offices serving Australia, Asia, and the United Kingdom. Contact us using any of the methods below.</p>
+        <div class="fade-up" style="max-width: 900px;">
+            <p class="eyebrow">Submit Your Nomination</p>
+            <h2 style="margin-bottom: 0.5rem;">Nominations & Engagements</h2>
+            <p style="color: var(--slate-600); margin-bottom: 2rem;">Submit a nomination for expert witness, arbitrator, adjudicator, expert determiner, or mediator engagement. All nominations are treated as strictly confidential and will be reviewed promptly.</p>
 
-                <div style="margin-top: 3rem;">
-                    <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Primary Contact</h3>
-                    <div style="margin-bottom: 2rem;">
-                        <p style="color: var(--accent); font-weight: 600; margin-bottom: 0.25rem;">Email</p>
-                        <a href="mailto:contact@expertservices.international" style="color: var(--slate-600); font-size: 1rem;">contact@expertservices.international</a>
-                    </div>
-                    <div style="margin-bottom: 2rem;">
-                        <p style="color: var(--accent); font-weight: 600; margin-bottom: 0.25rem;">Phone</p>
-                        <a href="tel:+61290579088" style="color: var(--slate-600); font-size: 1rem;">+61 (0) 2 9057 9088</a>
-                    </div>
+            <form name="nomination" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/nomination-success.html" style="margin-top: 2rem;">
+                <input type="hidden" name="form-name" value="nomination">
+                <p class="form-hidden" style="display:none;"><label>Don&rsquo;t fill this out: <input name="bot-field"></label></p>
+
+                <!-- NOMINATING PARTY DETAILS -->
+                <h3 class="form-section-heading">Nominating Party Details</h3>
+
+                <div class="form-group">
+                    <label for="nominating-full-name" class="form-label">Full Name <span style="color: var(--accent);">*</span></label>
+                    <input type="text" id="nominating-full-name" name="nominating-full-name" class="form-input" required>
                 </div>
 
-                <div style="margin-top: 3rem;">
-                    <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Office Address</h3>
-                    <p style="color: var(--slate-600); line-height: 1.8;">
-                        Grosvenor Place<br>
-                        Level 15, 225 George Street<br>
-                        Sydney, NSW 2000<br>
-                        Australia
-                    </p>
+                <div class="form-group">
+                    <label for="organisation" class="form-label">Organisation / Law Firm <span style="color: var(--accent);">*</span></label>
+                    <input type="text" id="organisation" name="organisation" class="form-input" required>
                 </div>
 
-                <div style="margin-top: 3rem;">
-                    <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Service Regions</h3>
-                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <span class="tag">Australia</span>
-                        <span class="tag">Asia</span>
-                        <span class="tag">United Kingdom</span>
-                    </div>
+                <div class="form-group">
+                    <label for="nominating-email" class="form-label">Email Address <span style="color: var(--accent);">*</span></label>
+                    <input type="email" id="nominating-email" name="nominating-email" class="form-input" required>
                 </div>
-            </div>
 
-            <!-- ====== CONTACT FORM ====== -->
-            <div>
-                <p class="eyebrow">Send Message</p>
-                <h2>Get in Touch With Us</h2>
-                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact-success.html" style="margin-top: 2rem;">
-                    <input type="hidden" name="form-name" value="contact">
-                    <p class="form-hidden" style="display:none;"><label>Don&rsquo;t fill this out: <input name="bot-field"></label></p>
+                <div class="form-group">
+                    <label for="nominating-phone" class="form-label">Phone</label>
+                    <input type="tel" id="nominating-phone" name="nominating-phone" class="form-input">
+                </div>
 
-                    <div class="form-group">
-                        <label for="name" class="form-label">Full Name</label>
-                        <input type="text" id="name" name="name" class="form-input" required>
-                    </div>
+                <div class="form-group">
+                    <label for="position-title" class="form-label">Position / Title</label>
+                    <input type="text" id="position-title" name="position-title" class="form-input">
+                </div>
 
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email Address</label>
-                        <input type="email" id="email" name="email" class="form-input" required>
-                    </div>
+                <!-- ENGAGEMENT DETAILS -->
+                <h3 class="form-section-heading">Engagement Details</h3>
 
-                    <div class="form-group">
-                        <label for="phone" class="form-label">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" class="form-input">
-                    </div>
+                <div class="form-group">
+                    <label for="engagement-type" class="form-label">Engagement Type <span style="color: var(--accent);">*</span></label>
+                    <select id="engagement-type" name="engagement-type" class="form-input" required>
+                        <option value="" disabled selected>Select an engagement type</option>
+                        <option value="Expert Witness">Expert Witness</option>
+                        <option value="Arbitrator">Arbitrator</option>
+                        <option value="Adjudicator">Adjudicator</option>
+                        <option value="Expert Determiner">Expert Determiner</option>
+                        <option value="Mediator">Mediator</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
 
-                    <div class="form-group">
-                        <label for="organisation" class="form-label">Organisation / Law Firm</label>
-                        <input type="text" id="organisation" name="organisation" class="form-input">
-                    </div>
+                <div class="form-group">
+                    <label for="jurisdiction" class="form-label">Jurisdiction <span style="color: var(--accent);">*</span></label>
+                    <select id="jurisdiction" name="jurisdiction" class="form-input" required>
+                        <option value="" disabled selected>Select a jurisdiction</option>
+                        <option value="New South Wales">New South Wales</option>
+                        <option value="Western Australia">Western Australia</option>
+                        <option value="Queensland">Queensland</option>
+                        <option value="Northern Territory">Northern Territory</option>
+                        <option value="Victoria">Victoria</option>
+                        <option value="ACT">ACT</option>
+                        <option value="Hong Kong">Hong Kong</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="Malaysia">Malaysia</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="International">International</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
 
-                    <div class="form-group">
-                        <label for="enquiry-type" class="form-label">Enquiry Type</label>
-                        <select id="enquiry-type" name="enquiry-type" class="form-input" required>
-                            <option value="" disabled selected>Select an enquiry type</option>
-                            <option value="Expert Witness Engagement">Expert Witness Engagement</option>
-                            <option value="Adjudication">Adjudication</option>
-                            <option value="Arbitration">Arbitration</option>
-                            <option value="Expert Determination">Expert Determination</option>
-                            <option value="Mediation">Mediation</option>
-                            <option value="Quantum / Delay / Disruption">Quantum, Delay &amp; Disruption</option>
-                            <option value="Claims Analysis">Claims &amp; Damages Analysis</option>
-                            <option value="Strategic Advisory">Strategic Advisory</option>
-                            <option value="Training / Speaking">Training &amp; Speaking Engagement</option>
-                            <option value="General Enquiry">General Enquiry</option>
-                        </select>
-                    </div>
+                <div class="form-group">
+                    <label for="matter-reference" class="form-label">Matter Reference</label>
+                    <input type="text" id="matter-reference" name="matter-reference" class="form-input">
+                </div>
 
-                    <div class="form-group">
-                        <label for="subject" class="form-label">Subject</label>
-                        <input type="text" id="subject" name="subject" class="form-input" required>
-                    </div>
+                <div class="form-group">
+                    <label for="matter-description" class="form-label">Brief Description of Matter <span style="color: var(--accent);">*</span></label>
+                    <textarea id="matter-description" name="matter-description" class="form-textarea" rows="5" required></textarea>
+                </div>
 
-                    <div class="form-group">
-                        <label for="message" class="form-label">Your Message</label>
-                        <textarea id="message" name="message" class="form-textarea" rows="6" required></textarea>
-                    </div>
+                <div class="form-group">
+                    <label for="dispute-value" class="form-label">Estimated Value of Dispute <span style="color: var(--accent);">*</span></label>
+                    <select id="dispute-value" name="dispute-value" class="form-input" required>
+                        <option value="" disabled selected>Select estimated value</option>
+                        <option value="Under $500,000">Under $500,000</option>
+                        <option value="$500,000 - $5M">$500,000 - $5M</option>
+                        <option value="$5M - $50M">$5M - $50M</option>
+                        <option value="Over $50M">Over $50M</option>
+                        <option value="Confidential">Confidential</option>
+                    </select>
+                </div>
 
-                    <p style="font-size: 0.8rem; color: var(--slate-400); margin-bottom: 1.5rem;">All enquiries are treated as confidential. We aim to respond within one business day.</p>
+                <!-- OPPOSING PARTY DETAILS -->
+                <h3 class="form-section-heading">Opposing Party Details</h3>
 
-                    <button type="submit" class="btn btn--primary">Send Enquiry <span class="arrow">&rarr;</span></button>
-                </form>
-            </div>
+                <div class="form-group">
+                    <label for="opposing-party-name" class="form-label">Opposing Party Name</label>
+                    <input type="text" id="opposing-party-name" name="opposing-party-name" class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="opposing-legal-rep" class="form-label">Opposing Party's Legal Representative</label>
+                    <input type="text" id="opposing-legal-rep" name="opposing-legal-rep" class="form-input">
+                </div>
+
+                <!-- DOCUMENT UPLOAD -->
+                <h3 class="form-section-heading">Document Upload</h3>
+
+                <div class="form-group">
+                    <label for="document-upload" class="form-label">Supporting Documents</label>
+                    <input type="file" id="document-upload" name="document-upload" class="form-input" accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.rtf">
+                </div>
+
+                <p class="form-note">Upload relevant documents such as the terms of engagement, contract, or brief. Maximum file size: 10MB.</p>
+
+                <!-- CONFLICTS CHECK -->
+                <h3 class="form-section-heading">Conflicts Check</h3>
+
+                <div class="form-group">
+                    <label for="conflicts-details" class="form-label">Parties and Personnel Details <span style="color: var(--accent);">*</span></label>
+                    <textarea id="conflicts-details" name="conflicts-details" class="form-textarea" rows="5" required placeholder="Please provide details of all parties, related entities, and key personnel involved in the matter to enable a conflicts check to be undertaken."></textarea>
+                </div>
+
+                <!-- CONFIDENTIALITY NOTICE -->
+                <div class="confidentiality-notice">
+                    <p><strong>Confidentiality Notice:</strong> All nominations and associated documents are treated as strictly confidential. Information provided will be used solely for the purpose of assessing the nomination and conducting a conflicts check.</p>
+                </div>
+
+                <button type="submit" class="btn btn--primary">Submit Nomination <span class="arrow">&rarr;</span></button>
+            </form>
         </div>
     </div>
 </section>
