@@ -161,16 +161,18 @@ exports.handler = async (event) => {
     const siteId = await getSiteId(token);
 
     // Validate matter reference and access code against Matter Register
-    const filterQuery = encodeURIComponent(
-      `fields/MatterReference eq '${matterRef.replace(/'/g, "''")}' and fields/AccessCode eq '${accessCode.replace(/'/g, "''")}' and fields/Status eq 'Active'`
-    );
     const validateRes = await fetch(
-      `https://graph.microsoft.com/v1.0/sites/${siteId}/lists/${encodeURIComponent(MATTER_REGISTER_LIST)}/items?$filter=${filterQuery}&$expand=fields&$top=1`,
+      `https://graph.microsoft.com/v1.0/sites/${siteId}/lists/${encodeURIComponent(MATTER_REGISTER_LIST)}/items?$expand=fields&$top=500`,
       { headers: { Authorization: `Bearer ${token}` } }
     );
     const validateData = await validateRes.json();
 
-    if (!validateRes.ok || !validateData.value || validateData.value.length === 0) {
+    const validMatter = validateRes.ok && validateData.value && validateData.value.find((item) => {
+      const f = item.fields;
+      return f && f.MatterReference === matterRef && f.AccessCode === accessCode && f.Status === 'Active';
+    });
+
+    if (!validMatter) {
       return {
         statusCode: 403,
         headers,

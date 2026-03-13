@@ -34,27 +34,33 @@ async function getSiteId(token) {
 }
 
 async function validateMatterAccess(token, siteId, matterReference, accessCode) {
-  // Query the Matter Register list for matching matter reference and access code
-  const filterQuery = encodeURIComponent(
-    `fields/MatterReference eq '${matterReference.replace(/'/g, "''")}' and fields/AccessCode eq '${accessCode.replace(/'/g, "''")}' and fields/Status eq 'Active'`
-  );
-
+  // Fetch all items from the Matter Register with their fields
   const res = await fetch(
-    `https://graph.microsoft.com/v1.0/sites/${siteId}/lists/${encodeURIComponent(LIST_NAME)}/items?$filter=${filterQuery}&$expand=fields&$top=1`,
+    `https://graph.microsoft.com/v1.0/sites/${siteId}/lists/${encodeURIComponent(LIST_NAME)}/items?$expand=fields&$top=500`,
     { headers: { Authorization: `Bearer ${token}` } }
   );
 
   const data = await res.json();
   if (!res.ok) throw new Error(`Failed to query list: ${JSON.stringify(data)}`);
 
+  // Find matching active matter with correct access code
   if (data.value && data.value.length > 0) {
-    const fields = data.value[0].fields;
-    return {
-      valid: true,
-      matterReference: fields.MatterReference,
-      clientName: fields.ClientName || '',
-      matterDescription: fields.MatterDescription || '',
-    };
+    const match = data.value.find((item) => {
+      const f = item.fields;
+      return f &&
+        f.MatterReference === matterReference &&
+        f.AccessCode === accessCode &&
+        f.Status === 'Active';
+    });
+
+    if (match) {
+      return {
+        valid: true,
+        matterReference: match.fields.MatterReference,
+        clientName: match.fields.ClientName || '',
+        matterDescription: match.fields.MatterDescription || '',
+      };
+    }
   }
 
   return { valid: false };
@@ -113,7 +119,7 @@ exports.handler = async (event) => {
       };
     }
   } catch (err) {
-    console.error('Validation error:', err);
+    console.error('Validation error:', err.message);
     return {
       statusCode: 500,
       headers,
