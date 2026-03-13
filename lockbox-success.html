@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Document submission confirmation — Expert Services International.">
+    <title>Documents Received — Expert Services International</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .success-hero { background: linear-gradient(160deg, #1a2744 0%, #0f172a 100%); min-height: 45vh; display: flex; align-items: center; }
+        .success-hero .hero__content { opacity: 0; animation: heroFade 0.8s var(--ease) 0.2s forwards; }
+        @keyframes heroFade { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+        .success-container { max-width: 700px; margin: 0 auto; text-align: center; padding: 5rem 2rem; }
+        .success-checkmark { width: 100px; height: 100px; margin: 0 auto 2.5rem; background: var(--accent-subtle); border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: slideDown 0.6s var(--ease) 0.3s backwards; }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        .success-checkmark svg { width: 60px; height: 60px; color: var(--accent); }
+
+        .success-container h1 { margin-bottom: 1.5rem; color: var(--charcoal); animation: slideDown 0.6s var(--ease) 0.4s backwards; }
+        .success-container p { font-size: 1.05rem; line-height: 1.8; color: var(--slate-600); margin-bottom: 1.5rem; animation: slideDown 0.6s var(--ease) 0.5s backwards; }
+
+        .success-notice { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.5rem; border-radius: 0 6px 6px 0; margin: 2.5rem 0; font-size: 0.9rem; line-height: 1.7; color: var(--slate-700); animation: slideDown 0.6s var(--ease) 0.6s backwards; }
+        .success-notice strong { color: var(--charcoal); }
+
+        .success-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 3rem; animation: slideDown 0.6s var(--ease) 0.7s backwards; }
+        .success-actions .btn { flex: 0 1 auto; }
+    </style>
+</head>
+<body>
+
+<header class="header" id="header">
+    <div class="header__inner">
+        <a href="index.html" class="logo">
+            <div class="logo__icon"><img src="images/logo.svg" alt="ESI Logo"></div>
+            <div class="logo__wordmark">
+                <span class="logo__name">Expert Services</span>
+                <span class="logo__sub">International</span>
+            </div>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <nav class="nav" id="mainNav">
+            <div class="nav__item"><a href="index.html" class="nav__link">Home</a></div>
+            <div class="nav__item">
+                <a href="about.html" class="nav__link">About</a>
+                <div class="nav__dropdown">
+                    <a href="about.html" class="nav__dropdown-link">The Consultancy</a>
+                    <a href="neil-kirkpatrick.html" class="nav__dropdown-link">Neil Kirkpatrick</a>
+                    <a href="consultants.html" class="nav__dropdown-link">Consultants</a>
+                </div>
+            </div>
+            <div class="nav__item">
+                <a href="services.html" class="nav__link">Services</a>
+                <div class="nav__dropdown">
+                    <a href="expert-witness.html" class="nav__dropdown-link">Expert Witness Services</a>
+                    <a href="expert-witness-protocols.html" class="nav__dropdown-link">Expert Witness Protocols</a>
+                    <a href="quantum-delay-disruption.html" class="nav__dropdown-link">Quantum, Delay &amp; Disruption</a>
+                    <a href="claims-analysis.html" class="nav__dropdown-link">Claims &amp; Damages Analysis</a>
+                    <a href="construction-defects.html" class="nav__dropdown-link">Construction Defects</a>
+                    <a href="commercial-analysis.html" class="nav__dropdown-link">Commercial Analysis</a>
+                </div>
+            </div>
+            <div class="nav__item">
+                <a href="dispute-resolution.html" class="nav__link">Disputes</a>
+                <div class="nav__dropdown">
+                    <a href="dispute-resolution.html" class="nav__dropdown-link">Dispute Resolution</a>
+                    <a href="expert-determination.html" class="nav__dropdown-link">Expert Determination</a>
+                    <a href="commercial-arbitration.html" class="nav__dropdown-link">Commercial Arbitration</a>
+                    <a href="commercial-mediation.html" class="nav__dropdown-link">Commercial Mediation</a>
+                    <a href="security-of-payment.html" class="nav__dropdown-link">Security of Payment</a>
+                </div>
+            </div>
+            <div class="nav__item">
+                <a href="case-law-sop.html" class="nav__link">Resources</a>
+                <div class="nav__dropdown">
+                    <a href="case-law-sop.html" class="nav__dropdown-link">Case Law: Security of Payment</a>
+                    <a href="case-law-expert-witness.html" class="nav__dropdown-link">Case Law: Expert Witness</a>
+                    <a href="case-law-arbitration.html" class="nav__dropdown-link">Case Law: Arbitration &amp; Expert Determination</a>
+                    <a href="insights.html" class="nav__dropdown-link">Insights &amp; Case Reviews</a>
+                    <a href="repository-sop.html" class="nav__dropdown-link">Full Repository: SOP</a>
+                    <a href="repository-expert-witness.html" class="nav__dropdown-link">Full Repository: Expert Witness</a>
+                    <a href="repository-arbitration.html" class="nav__dropdown-link">Full Repository: Arbitration</a>
+                </div>
+            </div>
+            <div class="nav__actions">
+                <a href="nominations.html" class="btn btn--outline btn--small">Nominations</a>
+                <a href="contact.html" class="btn btn--primary btn--small">Contact Us</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- ====== HERO ====== -->
+<section class="hero hero--sub success-hero">
+    <div class="hero__overlay"></div>
+    <div class="container">
+        <div class="hero__content">
+            <p class="hero__eyebrow">Submission Confirmed</p>
+            <h1 class="hero__title">Documents Received</h1>
+        </div>
+    </div>
+</section>
+
+<!-- ====== SUCCESS CONTENT ====== -->
+<section class="section">
+    <div class="success-container">
+        <div class="success-checkmark">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <h1>Documents Received Securely</h1>
+        <p>Your documents have been received securely and will be reviewed in connection with the referenced matter. You will receive confirmation at the email address provided.</p>
+
+        <div class="success-notice">
+            <strong>What happens next:</strong> Our team will review your submission and process it in accordance with the matter requirements. You will be contacted at the email address provided if we require any additional information.
+        </div>
+
+        <p style="font-size: 0.95rem; color: var(--slate-500); margin-top: 2.5rem;">If you have any questions or concerns regarding your submission, please contact us at <a href="mailto:contact@expertservices.international" style="color: var(--accent); font-weight: 600; text-decoration: none;">contact@expertservices.international</a> or call <a href="tel:+61290579088" style="color: var(--accent); font-weight: 600; text-decoration: none;">+61 (0) 2 9057 9088</a>.</p>
+
+        <div class="success-actions">
+            <a href="index.html" class="btn btn--primary">Return to Home</a>
+            <a href="contact.html" class="btn btn--outline-dark">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="footer">
+    <div class="container--wide">
+        <div class="footer__grid">
+            <div class="fade-up">
+                <a href="index.html" class="logo" style="margin-bottom: 1.5rem; display: inline-flex;">
+                    <div class="logo__icon" style="width:32px;height:32px;"><img src="images/logo.svg" alt="ESI Logo"></div>
+                    <div class="logo__wordmark">
+                        <span class="logo__name" style="font-size: 0.85rem;">Expert Services</span>
+                        <span class="logo__sub" style="font-size: 0.62rem; letter-spacing: 0.56em;">International</span>
+                    </div>
+                </a>
+                <p class="footer__brand-text">Independent advisory services for construction, infrastructure and engineering disputes across Australia, Asia and the United Kingdom.</p>
+                <div class="location-tags">
+                    <span class="location-tag">Australia</span>
+                    <span class="location-tag">Asia</span>
+                    <span class="location-tag">United Kingdom</span>
+                </div>
+            </div>
+            <div class="fade-up">
+                <h4 class="footer__heading">Services</h4>
+                <a href="expert-witness.html" class="footer__link">Expert Witness</a>
+                <a href="dispute-resolution.html" class="footer__link">Dispute Resolution</a>
+                <a href="quantum-delay-disruption.html" class="footer__link">Quantum &amp; Delay</a>
+                <a href="claims-analysis.html" class="footer__link">Claims Analysis</a>
+                <a href="expert-determination.html" class="footer__link">Expert Determination</a>
+                <a href="commercial-arbitration.html" class="footer__link">Arbitration</a>
+                <a href="commercial-mediation.html" class="footer__link">Mediation</a>
+            </div>
+            <div class="fade-up">
+                <h4 class="footer__heading">Resources</h4>
+                <a href="case-law-sop.html" class="footer__link">Case Law: SOP</a>
+                <a href="case-law-expert-witness.html" class="footer__link">Case Law: Expert Witness</a>
+                <a href="case-law-arbitration.html" class="footer__link">Case Law: Arbitration</a>
+                <a href="insights.html" class="footer__link">Insights &amp; Reviews</a>
+                <a href="expert-witness-protocols.html" class="footer__link">Expert Protocols</a>
+                <a href="contact.html" class="footer__link">Contact Us</a>
+            </div>
+            <div class="fade-up">
+                <h4 class="footer__heading">Contact</h4>
+                <div class="footer__contact-item">
+                    <div class="footer__contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                    </div>
+                    <div>
+                        <div class="footer__contact-label">Email</div>
+                        <a href="mailto:contact@expertservices.international">contact@expertservices.international</a>
+                    </div>
+                </div>
+                <div class="footer__contact-item">
+                    <div class="footer__contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                    </div>
+                    <div>
+                        <div class="footer__contact-label">Phone</div>
+                        <a href="tel:+61290579088">+61 (0) 2 9057 9088</a>
+                    </div>
+                </div>
+                <div class="footer__contact-item">
+                    <div class="footer__contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                    </div>
+                    <div>
+                        <div class="footer__contact-label">Address</div>
+                        <div style="line-height: 1.6; color: rgba(255,255,255,0.5);">Grosvenor Place<br>Level 15, 225 George Street<br>Sydney, NSW 2000, Australia</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <span>&copy; 2024 Expert Services International. All Rights Reserved.</span>
+            <div class="footer__social">
+                <a href="https://au.linkedin.com/company/constructionexpertservices" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<script>
+/* Menu toggle */
+const mt=document.getElementById('menuToggle'),mn=document.getElementById('mainNav');
+if(mt&&mn){
+  mt.addEventListener('click',()=>{mt.classList.toggle('active');mn.classList.toggle('nav--open');document.body.style.overflow=mn.classList.contains('nav--open')?'hidden':'';});
+  mn.querySelectorAll('.nav__link,.nav__dropdown-link').forEach(l=>l.addEventListener('click',()=>{mt.classList.remove('active');mn.classList.remove('nav--open');document.body.style.overflow='';}));
+  mn.querySelectorAll('.nav__item').forEach(i=>{const l=i.querySelector('.nav__link');if(l&&i.querySelector('.nav__dropdown')){l.addEventListener('click',e=>{if(window.innerWidth<1024){e.preventDefault();i.classList.toggle('nav__item--open');}});}});
+}
+
+/* Scroll header */
+const hdr=document.querySelector('.header');
+window.addEventListener('scroll',()=>{hdr.classList.toggle('header--scrolled',window.scrollY>60);},{passive:true});
+
+/* IntersectionObserver for fade-up */
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>
