@@ -7,6 +7,7 @@ const CLIENT_SECRET = process.env.AZURE_CLIENT_SECRET;
 const SITE_HOSTNAME = 'quantumexperts.sharepoint.com';
 const SITE_PATH = '/sites/ESISecurePortal';
 const LIBRARY_NAME = 'Lockbox';
+const MATTER_REGISTER_LIST = 'Matter Register';
 
 const msalConfig = {
   auth: {
@@ -150,16 +151,36 @@ exports.handler = async (event) => {
     const { fields, files } = await parseMultipart(event);
 
     const matterRef = fields['matter-reference'] || fields['matter-ref'] || 'Unspecified';
+    const accessCode = fields['access-code'] || '';
     const partyName = fields['uploading-party'] || 'Unknown';
     const organisation = fields['organisation'] || '';
     const email = fields['email'] || '';
     const description = fields['document-description'] || '';
 
+    const token = await getAccessToken();
+    const siteId = await getSiteId(token);
+
+    // Validate matter reference and access code against Matter Register
+    const filterQuery = encodeURIComponent(
+      `fields/MatterReference eq '${matterRef.replace(/'/g, "''")}' and fields/AccessCode eq '${accessCode.replace(/'/g, "''")}' and fields/Status eq 'Active'`
+    );
+    const validateRes = await fetch(
+      `https://graph.microsoft.com/v1.0/sites/${siteId}/lists/${encodeURIComponent(MATTER_REGISTER_LIST)}/items?$filter=${filterQuery}&$expand=fields&$top=1`,
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+    const validateData = await validateRes.json();
+
+    if (!validateRes.ok || !validateData.value || validateData.value.length === 0) {
+      return {
+        statusCode: 403,
+        headers,
+        body: JSON.stringify({ error: 'Invalid matter reference or access code. Upload rejected.' }),
+      };
+    }
+
     // Sanitise folder name
     const folderName = matterRef.replace(/[<>:"/\\|?*]/g, '_').trim();
 
-    const token = await getAccessToken();
-    const siteId = await getSiteId(token);
     const driveId = await getDriveId(token, siteId);
 
     // Create matter folder

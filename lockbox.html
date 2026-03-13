@@ -386,26 +386,56 @@ const uploadSection = document.getElementById('uploadSection');
 const errorMessage = document.getElementById('errorMessage');
 
 if (accessForm) {
-    accessForm.addEventListener('submit', function(e) {
+    accessForm.addEventListener('submit', async function(e) {
         e.preventDefault();
 
         const matterRef = document.getElementById('matter-ref').value.trim();
         const accessCode = document.getElementById('access-pwd').value.trim();
+        const submitBtn = accessForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
 
-        if (matterRef && accessCode.length >= 8) {
-            document.getElementById('hidden-matter-ref').value = matterRef;
-            document.getElementById('hidden-access-code').value = accessCode;
+        if (!matterRef || !accessCode) {
+            errorMessage.textContent = 'Please enter both a matter reference and access code.';
+            errorMessage.classList.add('show');
+            return;
+        }
 
-            uploadContainer.style.display = 'block';
-            setTimeout(() => {
-                uploadSection.classList.add('visible');
-                uploadContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 50);
+        // Validate against server
+        submitBtn.innerHTML = 'Verifying\u2026';
+        submitBtn.disabled = true;
+        errorMessage.classList.remove('show');
 
-            errorMessage.classList.remove('show');
-        } else {
+        try {
+            const response = await fetch('/.netlify/functions/validate-access', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ matterReference: matterRef, accessCode: accessCode }),
+            });
+            const result = await response.json();
+
+            if (result.valid) {
+                document.getElementById('hidden-matter-ref').value = matterRef;
+                document.getElementById('hidden-access-code').value = accessCode;
+
+                uploadContainer.style.display = 'block';
+                setTimeout(() => {
+                    uploadSection.classList.add('visible');
+                    uploadContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 50);
+
+                // Hide the access form after successful validation
+                accessForm.closest('.access-portal-section').style.display = 'none';
+            } else {
+                errorMessage.textContent = result.error || 'Invalid matter reference or access code.';
+                errorMessage.classList.add('show');
+            }
+        } catch (err) {
+            errorMessage.textContent = 'Unable to verify your access code. Please try again or contact us directly.';
             errorMessage.classList.add('show');
         }
+
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
     });
 }
 
