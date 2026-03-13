@@ -1,0 +1,5 @@
+# Redirects from old expertservices.com.au domain to new expertservices.international
+https://www.expertservices.com.au/* https://www.expertservices.international/:splat 301!
+https://expertservices.com.au/* https://www.expertservices.international/:splat 301!
+http://www.expertservices.com.au/* https://www.expertservices.international/:splat 301!
+http://expertservices.com.au/* https://www.expertservices.international/:splat 301!
