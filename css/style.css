@@ -97,11 +97,15 @@ p:last-child { margin-bottom: 0; }
    ================================================ */
 .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: var(--header-height); background: transparent; transition: background 0.4s var(--ease), box-shadow 0.4s var(--ease); }
 .header--scrolled { background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 1px 0 var(--slate-200); }
+.header.nav-active { backdrop-filter: none; -webkit-backdrop-filter: none; background: var(--charcoal-deep); box-shadow: none; }
 .header--scrolled .nav__link { color: var(--slate-500); font-weight: 400; }
 .header--scrolled .nav__link:hover, .header--scrolled .nav__link--active { color: var(--charcoal); }
 .header--scrolled .logo__name { color: var(--charcoal); }
 .header--scrolled .logo__sub { color: var(--slate-600); }
 .header--scrolled .menu-toggle span { background: var(--charcoal); }
+.header.nav-active .logo__name { color: var(--white); }
+.header.nav-active .logo__sub { color: rgba(255,255,255,0.6); }
+.header.nav-active .menu-toggle span { background: var(--white); }
 .header--scrolled .nav__actions .btn--outline { border-color: var(--slate-300); color: var(--charcoal); background: rgba(0,0,0,0.03); backdrop-filter: none; -webkit-backdrop-filter: none; }
 .header--scrolled .nav__actions .btn--outline:hover { border-color: var(--accent); color: var(--accent); background: rgba(176,124,75,0.08); }
 
