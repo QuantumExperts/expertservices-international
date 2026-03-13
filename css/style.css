@@ -695,6 +695,17 @@ a.case-law-item__title:hover::after {
   box-shadow: 0 8px 32px rgba(0,0,0,0.12);
   display: block;
 }
+.profile-monogram {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  overflow: hidden;
+}
+.profile-monogram svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 .profile-intro {
   padding-top: 0.25rem;
 }
