@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://quantumexperts.github.io/expertservices-international/sitemap.xml
+Sitemap: https://www.expertservices.international/sitemap.xml
