@@ -45,6 +45,31 @@
             color: var(--slate-600);
             line-height: 1.6;
         }
+
+        /* Upload progress styles */
+        .upload-progress-area { margin: 2rem 0; display: none; }
+        .upload-progress-area.active { display: block; }
+        .upload-overall { margin-bottom: 2rem; padding: 1.5rem; background: #f8fafc; border-radius: 8px; border: 1px solid var(--slate-100); }
+        .upload-overall__title { font-size: 1rem; font-weight: 700; color: var(--charcoal); margin-bottom: 0.5rem; }
+        .upload-overall__status { font-size: 0.85rem; color: var(--slate-600); margin-bottom: 0.75rem; }
+        .upload-overall__bar { width: 100%; height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; }
+        .upload-overall__fill { height: 100%; background: linear-gradient(90deg, var(--accent), #d4a574); border-radius: 4px; transition: width 0.3s ease; width: 0%; }
+        .file-progress-list { list-style: none; padding: 0; margin: 0; }
+        .file-progress-item { padding: 1rem 0; border-bottom: 1px solid #f1f5f9; }
+        .file-progress-item:last-child { border-bottom: none; }
+        .file-progress__name { font-size: 0.9rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.25rem; display: flex; justify-content: space-between; align-items: center; }
+        .file-progress__size { font-weight: 400; color: var(--slate-500); font-size: 0.82rem; }
+        .file-progress__bar { width: 100%; height: 6px; background: #e2e8f0; border-radius: 3px; overflow: hidden; margin-top: 0.5rem; }
+        .file-progress__fill { height: 100%; background: var(--accent); border-radius: 3px; transition: width 0.2s ease; width: 0%; }
+        .file-progress__fill.complete { background: #22c55e; }
+        .file-progress__fill.error { background: #dc2626; }
+        .file-progress__status { font-size: 0.78rem; color: var(--slate-500); margin-top: 0.25rem; }
+        .file-progress__status.complete { color: #22c55e; }
+        .file-progress__status.error { color: #dc2626; }
+        .upload-complete-message { text-align: center; padding: 2rem; background: #f0fdf4; border-radius: 8px; border: 1px solid #bbf7d0; margin-top: 2rem; display: none; }
+        .upload-complete-message.show { display: block; }
+        .upload-complete-message h3 { color: #166534; margin-bottom: 0.5rem; }
+        .upload-complete-message p { color: #15803d; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -241,10 +266,10 @@
 
                 <div class="form-group">
                     <label for="document-upload" class="form-label">Supporting Documents</label>
-                    <input type="file" id="document-upload" name="document-upload" class="form-input" accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.rtf">
+                    <input type="file" id="document-upload" name="document-upload" class="form-input" accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.rtf,.zip,.png,.jpg,.jpeg,.tif,.tiff,.dwg,.msg,.eml" multiple>
                 </div>
 
-                <p class="form-note">Upload relevant documents such as the terms of engagement, contract, or brief. Maximum file size: 50MB.</p>
+                <p class="form-note">Upload relevant documents such as the terms of engagement, contract, or brief. There is no file size limit. To select multiple files, hold Ctrl (Windows) or Command (Mac) while clicking.</p>
 
                 <!-- CONFLICTS CHECK -->
                 <h3 class="form-section-heading">Conflicts Check</h3>
@@ -259,8 +284,24 @@
                     <p><strong>Confidentiality Notice:</strong> All nominations and associated documents are treated as strictly confidential in accordance with our <a href="terms-of-use.html" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">Terms of Use</a>. Information provided will be used solely for the purpose of assessing the nomination and conducting a conflicts check.</p>
                 </div>
 
-                <button type="submit" class="btn btn--primary">Submit Nomination <span class="arrow">&rarr;</span></button>
+                <button type="submit" class="btn btn--primary" id="nominationSubmitBtn">Submit Nomination <span class="arrow">&rarr;</span></button>
             </form>
+
+            <!-- Upload Progress Area -->
+            <div class="upload-progress-area" id="uploadProgressArea">
+                <div class="upload-overall">
+                    <div class="upload-overall__title">Upload Progress</div>
+                    <div class="upload-overall__status" id="overallStatus">Preparing uploads&hellip;</div>
+                    <div class="upload-overall__bar"><div class="upload-overall__fill" id="overallBar"></div></div>
+                </div>
+                <ul class="file-progress-list" id="fileProgressList"></ul>
+            </div>
+
+            <!-- Upload Complete Message -->
+            <div class="upload-complete-message" id="uploadCompleteMessage">
+                <h3>Nomination Submitted Successfully</h3>
+                <p>Your nomination and supporting documents have been securely received. We will review your enquiry and respond promptly.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -350,52 +391,259 @@
 
 <div class="scroll-progress" id="scrollProgress"></div>
 <script>
-/* Nomination Upload to SharePoint */
-const nominationForm = document.getElementById('nominationForm');
+/* ========================================
+   CHUNKED UPLOAD ENGINE FOR NOMINATIONS
+   Files upload directly from browser to SharePoint
+   via pre-authenticated resumable upload sessions.
+   No file size limit.
+   ======================================== */
+
+var CHUNK_SIZE = 10 * 1024 * 1024; // 10 MB chunks
+
+function formatFileSize(bytes) {
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+    if (bytes < 1024 * 1024 * 1024) return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+    return (bytes / (1024 * 1024 * 1024)).toFixed(2) + ' GB';
+}
+
+async function uploadFileChunked(file, uploadUrl, onProgress) {
+    var totalSize = file.size;
+    var offset = 0;
+
+    if (totalSize <= 4 * 1024 * 1024) {
+        var buffer = await file.arrayBuffer();
+        var res = await fetch(uploadUrl, {
+            method: 'PUT',
+            headers: {
+                'Content-Length': totalSize.toString(),
+                'Content-Range': 'bytes 0-' + (totalSize - 1) + '/' + totalSize,
+            },
+            body: buffer,
+        });
+        if (!res.ok) {
+            var errText = await res.text();
+            throw new Error('Upload failed: ' + errText);
+        }
+        onProgress(totalSize);
+        return await res.json();
+    }
+
+    while (offset < totalSize) {
+        var end = Math.min(offset + CHUNK_SIZE, totalSize);
+        var chunk = file.slice(offset, end);
+        var buf = await chunk.arrayBuffer();
+
+        var chunkRes = await fetch(uploadUrl, {
+            method: 'PUT',
+            headers: {
+                'Content-Length': (end - offset).toString(),
+                'Content-Range': 'bytes ' + offset + '-' + (end - 1) + '/' + totalSize,
+            },
+            body: buf,
+        });
+
+        if (!chunkRes.ok && chunkRes.status !== 202) {
+            var chunkErr = await chunkRes.text();
+            throw new Error('Chunk upload failed at byte ' + offset + ': ' + chunkErr);
+        }
+
+        offset = end;
+        onProgress(offset);
+    }
+}
+
+/* ====== NOMINATION FORM HANDLER ====== */
+var nominationForm = document.getElementById('nominationForm');
 if (nominationForm) {
     nominationForm.addEventListener('submit', async function(e) {
         e.preventDefault();
-        const submitBtn = nominationForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = 'Submitting&hellip;';
-        submitBtn.disabled = true;
 
-        try {
-            const formData = new FormData(nominationForm);
-            const response = await fetch('/.netlify/functions/upload-nomination', {
-                method: 'POST',
-                body: formData,
-            });
-            const result = await response.json();
-            if (response.ok && result.success) {
-                window.location.href = '/nomination-success.html';
-            } else {
-                alert('Submission failed: ' + (result.error || 'Unknown error. Please contact us directly.'));
-                submitBtn.innerHTML = originalText;
+        var submitBtn = document.getElementById('nominationSubmitBtn');
+        var fileInput = document.getElementById('document-upload');
+        var files = fileInput.files;
+        var progressArea = document.getElementById('uploadProgressArea');
+        var fileList = document.getElementById('fileProgressList');
+        var overallStatus = document.getElementById('overallStatus');
+        var overallBar = document.getElementById('overallBar');
+        var completeMessage = document.getElementById('uploadCompleteMessage');
+
+        var nominatingName = document.getElementById('nominating-full-name').value.trim();
+        var organisation = document.getElementById('organisation').value.trim();
+
+        // If no files selected, submit metadata only (files are optional on nominations)
+        if (files.length === 0) {
+            submitBtn.innerHTML = 'Submitting&hellip;';
+            submitBtn.disabled = true;
+
+            try {
+                // Submit metadata directly without file uploads
+                var dateStr = new Date().toISOString().split('T')[0];
+                var folderBase = (nominatingName + ' - ' + (organisation || 'Individual')).replace(/[<>:"\/\\|?*]/g, '_').trim();
+                var folderName = dateStr + ' ' + folderBase;
+
+                await fetch('/.netlify/functions/nomination-metadata', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        folderName: folderName,
+                        nominatingName: nominatingName,
+                        organisation: organisation,
+                        email: document.getElementById('nominating-email').value,
+                        phone: document.getElementById('nominating-phone').value,
+                        positionTitle: document.getElementById('position-title').value,
+                        engagementType: document.getElementById('engagement-type').value,
+                        jurisdiction: document.getElementById('jurisdiction').value,
+                        matterReference: document.getElementById('matter-reference').value,
+                        matterDescription: document.getElementById('matter-description').value,
+                        disputeValue: document.getElementById('dispute-value').value,
+                        opposingParty: document.getElementById('opposing-party-name').value,
+                        opposingRep: document.getElementById('opposing-legal-rep').value,
+                        conflictsDetails: document.getElementById('conflicts-details').value,
+                        uploadedFiles: [],
+                    }),
+                });
+
+                nominationForm.style.display = 'none';
+                completeMessage.classList.add('show');
+            } catch (err) {
+                alert('Submission failed. Please try again or contact us directly.');
+                submitBtn.innerHTML = 'Submit Nomination <span class="arrow">&rarr;</span>';
                 submitBtn.disabled = false;
             }
+            return;
+        }
+
+        // Files selected — use chunked upload
+        submitBtn.style.display = 'none';
+        nominationForm.querySelectorAll('input, textarea, select').forEach(function(el) { el.disabled = true; });
+        progressArea.classList.add('active');
+
+        var fileMetadata = [];
+        fileList.innerHTML = '';
+        for (var i = 0; i < files.length; i++) {
+            var f = files[i];
+            fileMetadata.push({ name: f.name, size: f.size });
+            var li = document.createElement('li');
+            li.className = 'file-progress-item';
+            li.id = 'file-progress-' + i;
+            li.innerHTML =
+                '<div class="file-progress__name"><span>' + f.name + '</span><span class="file-progress__size">' + formatFileSize(f.size) + '</span></div>' +
+                '<div class="file-progress__bar"><div class="file-progress__fill" id="file-bar-' + i + '"></div></div>' +
+                '<div class="file-progress__status" id="file-status-' + i + '">Waiting\u2026</div>';
+            fileList.appendChild(li);
+        }
+
+        var totalBytes = 0;
+        for (var j = 0; j < files.length; j++) totalBytes += files[j].size;
+        var uploadedBytes = 0;
+
+        overallStatus.textContent = 'Preparing secure upload sessions\u2026';
+
+        try {
+            // Step 1: Request upload session URLs
+            var sessionRes = await fetch('/.netlify/functions/create-nomination-sessions', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    nominatingName: nominatingName,
+                    organisation: organisation,
+                    files: fileMetadata,
+                }),
+            });
+            var sessionData = await sessionRes.json();
+
+            if (!sessionRes.ok || !sessionData.success) {
+                throw new Error(sessionData.error || 'Failed to create upload sessions.');
+            }
+
+            overallStatus.textContent = 'Uploading ' + files.length + ' file' + (files.length > 1 ? 's' : '') + '\u2026';
+
+            // Step 2: Upload each file directly to SharePoint
+            var uploadedFiles = [];
+            for (var k = 0; k < files.length; k++) {
+                var file = files[k];
+                var session = sessionData.sessions[k];
+                var fileBar = document.getElementById('file-bar-' + k);
+                var fileStatus = document.getElementById('file-status-' + k);
+                var fileStartBytes = uploadedBytes;
+
+                fileStatus.textContent = 'Uploading\u2026';
+
+                try {
+                    await uploadFileChunked(file, session.uploadUrl, function(bytesUploaded) {
+                        var pct = Math.round((bytesUploaded / file.size) * 100);
+                        fileBar.style.width = pct + '%';
+                        fileStatus.textContent = formatFileSize(bytesUploaded) + ' of ' + formatFileSize(file.size) + ' (' + pct + '%)';
+
+                        uploadedBytes = fileStartBytes + bytesUploaded;
+                        var overallPct = totalBytes > 0 ? Math.round((uploadedBytes / totalBytes) * 100) : 0;
+                        overallBar.style.width = overallPct + '%';
+                        overallStatus.textContent = 'Uploading ' + files.length + ' file' + (files.length > 1 ? 's' : '') + ' \u2014 ' + overallPct + '% complete';
+                    });
+
+                    fileBar.classList.add('complete');
+                    fileStatus.textContent = 'Complete';
+                    fileStatus.classList.add('complete');
+                    uploadedFiles.push({ name: file.name, size: file.size });
+                } catch (fileErr) {
+                    fileBar.classList.add('error');
+                    fileStatus.textContent = 'Failed: ' + fileErr.message;
+                    fileStatus.classList.add('error');
+                }
+            }
+
+            // Step 3: Submit nomination metadata
+            overallStatus.textContent = 'Recording nomination details\u2026';
+
+            await fetch('/.netlify/functions/nomination-metadata', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    folderName: sessionData.folderName,
+                    nominatingName: nominatingName,
+                    organisation: organisation,
+                    email: document.getElementById('nominating-email').value,
+                    phone: document.getElementById('nominating-phone').value,
+                    positionTitle: document.getElementById('position-title').value,
+                    engagementType: document.getElementById('engagement-type').value,
+                    jurisdiction: document.getElementById('jurisdiction').value,
+                    matterReference: document.getElementById('matter-reference').value,
+                    matterDescription: document.getElementById('matter-description').value,
+                    disputeValue: document.getElementById('dispute-value').value,
+                    opposingParty: document.getElementById('opposing-party-name').value,
+                    opposingRep: document.getElementById('opposing-legal-rep').value,
+                    conflictsDetails: document.getElementById('conflicts-details').value,
+                    uploadedFiles: uploadedFiles,
+                }),
+            });
+
+            overallBar.style.width = '100%';
+            overallStatus.textContent = uploadedFiles.length + ' of ' + files.length + ' file' + (files.length > 1 ? 's' : '') + ' uploaded successfully \u2014 ' + formatFileSize(totalBytes);
+            completeMessage.classList.add('show');
+            nominationForm.style.display = 'none';
+
         } catch (err) {
-            alert('Submission failed. Please check your connection and try again, or contact us directly.');
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
+            overallStatus.textContent = 'Error: ' + err.message;
+            submitBtn.style.display = '';
+            nominationForm.querySelectorAll('input, textarea, select').forEach(function(el) { el.disabled = false; });
         }
     });
 }
 
 /* Menu toggle */
-const mt=document.getElementById('menuToggle'),mn=document.getElementById('mainNav');
+var mt=document.getElementById('menuToggle'),mn=document.getElementById('mainNav');
 if(mt&&mn){
-  mt.addEventListener('click',()=>{mt.classList.toggle('active');mn.classList.toggle('nav--open');document.getElementById('header').classList.toggle('nav-active');document.body.style.overflow=mn.classList.contains('nav--open')?'hidden':'';});
-  mn.querySelectorAll('.nav__link,.nav__dropdown-link').forEach(l=>l.addEventListener('click',()=>{mt.classList.remove('active');mn.classList.remove('nav--open');document.getElementById('header').classList.remove('nav-active');document.body.style.overflow='';}));
-  mn.querySelectorAll('.nav__item').forEach(i=>{const l=i.querySelector('.nav__link');if(l&&i.querySelector('.nav__dropdown')){l.addEventListener('click',e=>{if(window.innerWidth<1024){e.preventDefault();i.classList.toggle('nav__item--open');}});}});
+  mt.addEventListener('click',function(){mt.classList.toggle('active');mn.classList.toggle('nav--open');document.getElementById('header').classList.toggle('nav-active');document.body.style.overflow=mn.classList.contains('nav--open')?'hidden':'';});
+  mn.querySelectorAll('.nav__link,.nav__dropdown-link').forEach(function(l){l.addEventListener('click',function(){mt.classList.remove('active');mn.classList.remove('nav--open');document.getElementById('header').classList.remove('nav-active');document.body.style.overflow='';});});
+  mn.querySelectorAll('.nav__item').forEach(function(i){var l=i.querySelector('.nav__link');if(l&&i.querySelector('.nav__dropdown')){l.addEventListener('click',function(e){if(window.innerWidth<1024){e.preventDefault();i.classList.toggle('nav__item--open');}});}});
 }
 /* Scroll header */
-const hdr=document.querySelector('.header');
-window.addEventListener('scroll',()=>{hdr.classList.toggle('header--scrolled',window.scrollY>60);},{passive:true});
+var hdr=document.querySelector('.header');
+window.addEventListener('scroll',function(){hdr.classList.toggle('header--scrolled',window.scrollY>60);},{passive:true});
 /* IntersectionObserver for fade-up */
-const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
-
+var obs=new IntersectionObserver(function(e){e.forEach(function(el){if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el);});
 </script>
 
 </body>
